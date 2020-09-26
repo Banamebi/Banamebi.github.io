@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>JQuery notes</title>
+      <link href="2020/09/26/JQuery%20notes/"/>
+      <url>2020/09/26/JQuery%20notes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="0-储备知识"><a href="#0-储备知识" class="headerlink" title="0.储备知识"></a>0.储备知识</h2><p>基本语法：<code>$(selector).action()</code><br>文档就绪：<code>$(document).ready(function()&#123;&#125;);</code>或<code>$(function()&#123;&#125;);</code><br>选择器：<code>$(&quot;p&quot;)</code></p><h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><ul><li>鼠标事件 :click、dbclick、hover、mouseenter、mouseleave</li></ul><p>例：</p><pre><code>$(selector).click(function)or$(selector).click()</code></pre><ul><li>键盘事件：keypress、keydown、keyup<br>例：</li></ul><pre><code>$(selector).keypress(function)or$(selector).keypress()</code></pre><ul><li>表单事件：submit、change、focus、blur<br>例：</li></ul><pre><code>$(selector).submit(function)or$(selector).submit()</code></pre><ul><li><p>文档/窗口事件：load、unload、resize、scroll<br>例：<code>$(selector).load(function)</code></p><h2 id="2-效果"><a href="#2-效果" class="headerlink" title="2.效果"></a>2.效果</h2></li><li><p>隐藏和显示<code>hide();show()</code></p></li><li><p>fading: <code>fadeIn();fadeOut();fadeToggle();fadeTo()</code></p></li><li><p>滑动：<code>slideDown()；slideUp()；slideToggle()</code></p></li><li><p>动画：<code>animate();stop()</code></p><h2 id="3-HTML操作"><a href="#3-HTML操作" class="headerlink" title="3.HTML操作"></a>3.HTML操作</h2></li><li><p>捕获:<code>text();html();val();attr()</code></p></li><li><p>设置：<code>text();html();val();attr()</code></p></li><li><p>增删：<code>append() ；prepend() ；after() ；before()；remove() ；empty()</code></p><h2 id="4-CSS操作"><a href="#4-CSS操作" class="headerlink" title="4.CSS操作"></a>4.CSS操作</h2></li></ul><ul><li>类：<code>addClass()；removeClass()；toggleClass() ；css()</code></li><li>方法：</li></ul><pre><code>css(&quot;propertyname&quot;);orcss(&quot;propertyname&quot;,&quot;value&quot;);orcss(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...&#125;);</code></pre><ul><li><p>尺寸 ：<code>width()；height()；innerWidth()；innerHeight()；outerWidth()；outerHeight()</code></p><h2 id="5-遍历"><a href="#5-遍历" class="headerlink" title="5.遍历"></a>5.遍历</h2></li><li><p>祖先：<code>parent();parents();parentsUntil()</code></p></li><li><p>后代：<code>children();find();</code></p></li><li><p>兄弟：<code>siblings();next();nextALL();nextUntil()</code></p></li><li><p>过滤：<code>first();last();eq(n);filter();not()</code></p><h2 id="6-AJAX操作"><a href="#6-AJAX操作" class="headerlink" title="6.AJAX操作"></a>6.AJAX操作</h2></li><li><p><code>$(selector).load(URL,data,callback);</code></p></li><li><p><code>$.get(URL,callback);</code></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> web前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JQuery </tag>
+            
+            <tag> notes </tag>
+            
+            <tag> 框架 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>搭建vue脚手架</title>
       <link href="2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
       <url>2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/</url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建vue脚手架, Banamebi">
+    <meta name="keywords" content="JQuery notes, Banamebi">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>搭建vue脚手架 | Banamebi</title>
+    <title>JQuery notes | Banamebi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搭建vue脚手架</h1>
+                    <h1 class="description center-align post-title">JQuery notes</h1>
                 </div>
             </div>
         </div>
@@ -430,16 +430,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/VUE/">
-                                <span class="chip bg-color">VUE</span>
+                            <a href="/tags/JQuery/">
+                                <span class="chip bg-color">JQuery</span>
                             </a>
                         
-                            <a href="/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/">
-                                <span class="chip bg-color">脚手架</span>
+                            <a href="/tags/notes/">
+                                <span class="chip bg-color">notes</span>
                             </a>
                         
-                            <a href="/tags/cmd/">
-                                <span class="chip bg-color">cmd</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
                     </div>
@@ -479,21 +479,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h1><h2 id="0-检查已配置的环境"><a href="#0-检查已配置的环境" class="headerlink" title="0.检查已配置的环境"></a>0.检查已配置的环境</h2><p>打开cmd，输入：</p>
-<pre><code>node -v
-npm -v</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200926090156597.png#pic_center" alt="输出版本号即成功。"></p>
-<h2 id="1-找到要搭建的路径"><a href="#1-找到要搭建的路径" class="headerlink" title="1.找到要搭建的路径"></a>1.找到要搭建的路径</h2><p>例：</p>
-<pre><code>cd D:\work\code\vscode\projects</code></pre>
-<p>注意：cd后面有空格<br>如果默认是c盘路径，先输入d:进入d盘</p>
-<h2 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h2><pre><code>vue init webpack pro</code></pre>
-<p>pro为文件名，可自定义<br><img src="https://img-blog.csdnimg.cn/20200926091304321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"><br>选项为：enter enter enter enter no no no no enter</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926091711797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="安装成功！"></p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>cd到pro文件夹下</p>
-<pre><code>cd D:\work\code\vscode\projects\pro</code></pre>
-<pre><code>npm run dev</code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200926092043467.png#pic_center" alt="成功">将这个地址在浏览器中打开</p>
-<p><img src="https://img-blog.csdnimg.cn/20200926092221442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="成功"></p>
+                <h2 id="0-储备知识"><a href="#0-储备知识" class="headerlink" title="0.储备知识"></a>0.储备知识</h2><p>基本语法：<code>$(selector).action()</code><br>文档就绪：<code>$(document).ready(function()&#123;&#125;);</code>或<code>$(function()&#123;&#125;);</code><br>选择器：<code>$(&quot;p&quot;)</code></p>
+<h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><ul>
+<li>鼠标事件 :click、dbclick、hover、mouseenter、mouseleave</li>
+</ul>
+<p>例：</p>
+<pre><code>$(selector).click(function)
+or
+$(selector).click()</code></pre>
+<ul>
+<li>键盘事件：keypress、keydown、keyup<br>例：</li>
+</ul>
+<pre><code>$(selector).keypress(function)
+or
+$(selector).keypress()</code></pre>
+<ul>
+<li>表单事件：submit、change、focus、blur<br>例：</li>
+</ul>
+<pre><code>$(selector).submit(function)
+or
+$(selector).submit()</code></pre>
+<ul>
+<li><p>文档/窗口事件：load、unload、resize、scroll<br>例：<code>$(selector).load(function)</code></p>
+<h2 id="2-效果"><a href="#2-效果" class="headerlink" title="2.效果"></a>2.效果</h2></li>
+<li><p>隐藏和显示<code>hide();show()</code></p>
+</li>
+<li><p>fading: <code>fadeIn();fadeOut();fadeToggle();fadeTo()</code></p>
+</li>
+<li><p>滑动：<code>slideDown()；slideUp()；slideToggle()</code></p>
+</li>
+<li><p>动画：<code>animate();stop()</code></p>
+<h2 id="3-HTML操作"><a href="#3-HTML操作" class="headerlink" title="3.HTML操作"></a>3.HTML操作</h2></li>
+<li><p>捕获:<code>text();html();val();attr()</code></p>
+</li>
+<li><p>设置：<code>text();html();val();attr()</code></p>
+</li>
+<li><p>增删：<code>append() ；prepend() ；after() ；before()；remove() ；empty()</code></p>
+<h2 id="4-CSS操作"><a href="#4-CSS操作" class="headerlink" title="4.CSS操作"></a>4.CSS操作</h2></li>
+</ul>
+<ul>
+<li>类：<code>addClass()；removeClass()；toggleClass() ；css()</code></li>
+<li>方法：</li>
+</ul>
+<pre><code>css(&quot;propertyname&quot;);
+or
+css(&quot;propertyname&quot;,&quot;value&quot;);
+or
+css(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...&#125;);</code></pre>
+<ul>
+<li><p>尺寸 ：<code>width()；height()；innerWidth()；innerHeight()；outerWidth()；outerHeight()</code></p>
+<h2 id="5-遍历"><a href="#5-遍历" class="headerlink" title="5.遍历"></a>5.遍历</h2></li>
+<li><p>祖先：<code>parent();parents();parentsUntil()</code></p>
+</li>
+<li><p>后代：<code>children();find();</code></p>
+</li>
+<li><p>兄弟：<code>siblings();next();nextALL();nextUntil()</code></p>
+</li>
+<li><p>过滤：<code>first();last();eq(n);filter();not()</code></p>
+<h2 id="6-AJAX操作"><a href="#6-AJAX操作" class="headerlink" title="6.AJAX操作"></a>6.AJAX操作</h2></li>
+<li><p><code>$(selector).load(URL,data,callback);</code></p>
+</li>
+<li><p><code>$.get(URL,callback);</code></p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -519,7 +567,7 @@ npm -v</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://banamebi.github.io/2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/">https://banamebi.github.io/2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/</a>
+                    <a href="https://banamebi.github.io/2020/09/26/JQuery%20notes/">https://banamebi.github.io/2020/09/26/JQuery%20notes/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -557,16 +605,16 @@ npm -v</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/VUE/">
-                                    <span class="chip bg-color">VUE</span>
+                                <a href="/tags/JQuery/">
+                                    <span class="chip bg-color">JQuery</span>
                                 </a>
                             
-                                <a href="/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/">
-                                    <span class="chip bg-color">脚手架</span>
+                                <a href="/tags/notes/">
+                                    <span class="chip bg-color">notes</span>
                                 </a>
                             
-                                <a href="/tags/cmd/">
-                                    <span class="chip bg-color">cmd</span>
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                         </div>
@@ -734,9 +782,10 @@ npm -v</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/09/26/JQuery%20notes/">
                     <div class="card-image">
@@ -754,9 +803,9 @@ npm -v</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -769,6 +818,7 @@ npm -v</code></pre>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -795,32 +845,59 @@ npm -v</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/25/hello-world/">
+                <a href="/2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="搭建vue脚手架">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">搭建vue脚手架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            STEPS0.检查已配置的环境打开cmd，输入：
+node -v
+npm -v
+
+1.找到要搭建的路径例：
+cd D:\work\code\vscode\projects
+注意：cd后面有空格如果默认是c盘路径，先输入d:进入d盘
+2.搭建
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Banamebi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VUE/">
+                        <span class="chip bg-color">VUE</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/">
+                        <span class="chip bg-color">脚手架</span>
+                    </a>
+                    
+                    <a href="/tags/cmd/">
+                        <span class="chip bg-color">cmd</span>
+                    </a>
+                    
                 </div>
                 
             </div>
