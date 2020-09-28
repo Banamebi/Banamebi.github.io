@@ -8,7 +8,7 @@
       <link href="2020/09/28/%E9%85%8D%E7%BD%AEjson-server/"/>
       <url>2020/09/28/%E9%85%8D%E7%BD%AEjson-server/</url>
       
-        <content type="html"><![CDATA[<pre><code>npm install -g joson-server</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928083908147.png#pic_center"></p><p>创建一个放json文件的文件夹，然后cd到路径内<br>初始化一个名为package的json文件</p><pre><code>npm init</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928084014439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center">选项为：enter enter 描述自定义 enter enter enter enter enter enter enter</p><p>再来装一下json-server模块并保存数据</p><pre><code>npm install json-server --save</code></pre><p><img src="https://img-blog.csdnimg.cn/2020092808564123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>在文件夹中再创建一个db.json，内容自定义，最好包含多个属性</p><p>将package.json中script下的内容改为</p><pre><code>&quot;json:server&quot;: &quot;json-server --watch db.json&quot;</code></pre><p>如图<br><img src="https://img-blog.csdnimg.cn/20200928084712254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>回到cmd中运行</p><pre><code>npm run json:server</code></pre><p>结果<br><img src="https://img-blog.csdnimg.cn/20200928085753892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>最后可以在浏览器中通过地址查询想要的数据。</p>]]></content>
+        <content type="html"><![CDATA[<pre><code>npm install -g joson-server</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928083908147.png#pic_center"></p><p>创建一个放json文件的文件夹，然后cd到路径内<br>初始化一个名为package的json文件</p><pre><code>npm init</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928084014439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center">选项为：enter enter 描述自定义 enter enter enter enter enter enter enter</p><p>再来装一下json-server模块并保存数据</p><pre><code>npm install json-server --save</code></pre><p><img src="https://img-blog.csdnimg.cn/2020092808564123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>在文件夹中再创建一个db.json，内容自定义，最好包含多个属性。</p><p>将package.json中script下的内容改为</p><pre><code>&quot;json:server&quot;: &quot;json-server --watch db.json&quot;</code></pre><p>如图<br><img src="https://img-blog.csdnimg.cn/20200928084712254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>回到cmd中运行</p><pre><code>npm run json:server</code></pre><p>结果<br><img src="https://img-blog.csdnimg.cn/20200928085753892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>最后可以在浏览器中通过地址查询想要的数据。</p>]]></content>
       
       
       <categories>
@@ -22,9 +22,9 @@
             
             <tag> cmd </tag>
             
-            <tag> json-server </tag>
-            
             <tag> json </tag>
+            
+            <tag> json-server </tag>
             
         </tags>
       
