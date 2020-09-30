@@ -20,11 +20,11 @@
       
         <tags>
             
-            <tag> cmd </tag>
-            
             <tag> json </tag>
             
             <tag> json-server </tag>
+            
+            <tag> cmd </tag>
             
         </tags>
       
@@ -78,11 +78,11 @@
       
         <tags>
             
+            <tag> cmd </tag>
+            
             <tag> VUE </tag>
             
             <tag> 脚手架 </tag>
-            
-            <tag> cmd </tag>
             
         </tags>
       
