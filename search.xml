@@ -43,9 +43,9 @@
       
         <tags>
             
-            <tag> cmd </tag>
-            
             <tag> json </tag>
+            
+            <tag> cmd </tag>
             
             <tag> json-server </tag>
             
