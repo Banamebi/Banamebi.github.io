@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>JS之原型链，闭包，cookie</title>
+      <link href="2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/"/>
+      <url>2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>eg:</p><pre><code>function Grandfather()&#123;&#125;;Grandfather.prototype.name=&quot;Mike&quot;;function Father()&#123;&#125;;Father.prototype=new Grandfather();var me=new Father();console.log(me.name)；//Mike</code></pre><p>在me中没有找到name属性，于是往上找，在父级中依旧没有找到，再往上找，在Grandfather中找到。</p><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul><li>闭包就是能够读取其他函数内部变量的函数。</li><li>在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包(所有的function都是一个闭包).</li></ul><p>eg1:</p><pre><code>function me() &#123;  var name = &quot;Mike&quot;; //内部变量  return function() &#123;    console.log(name);  &#125;;&#125;var person = me();person(); //Mike</code></pre><p>eg2：</p><pre><code>var sum= 0;function sum1()&#123;  function sum2()&#123;            sum =sum + 1;          console.log(sum);     &#125;       return sum1;   &#125;   var a =sum1();   var b =sum1();   a();//1   b();//2   a();//3   b();//4</code></pre><p>eg3：</p><pre><code>function sum() &#123;   var sum = 0;  return function() &#123;    sum =sum + 1;     console.log(sum);  &#125;;&#125;var sum1 = sum();//外部函数sum1(); //1sum1(); //2var sum2 = sum();//新的外部函数地址sum2(); //1sum2(); //2</code></pre><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>eg from <a href="http://www.runoob.com/">www.runoob.com</a></p><pre><code>function setCookie(cname,cvalue,exdays)&#123;  //setCookie设置cookie    var d = new Date();    d.setTime(d.getTime()+(exdays*24*60*60*1000));    var expires = &quot;expires=&quot;+d.toGMTString(); //expires设置过期时间                                                                      //若想删除cookie，将expires设置为早于当前的时间    document.cookie = cname+&quot;=&quot;+cvalue+&quot;; &quot;+expires; //创建cookie语句：document.cookie=&quot; &quot;;&#125;function getCookie(cname)&#123; //getCookie获取cookie    var name = cname + &quot;=&quot;;    var ca = document.cookie.split(&#39;;&#39;);   //读取cookie语句：var x=document.cookie;                                                             //修改cookie语句：直接在document.cookie=后写上新的语句覆盖    for(var i=0; i&lt;ca.length; i++) &#123;        var c = ca[i].trim();        if (c.indexOf(name)==0) &#123; return c.substring(name.length,c.length); &#125;    &#125;    return &quot;&quot;;&#125;function checkCookie()&#123;  //checkCookie检测cookie    var user=getCookie(&quot;username&quot;);    if (user!=&quot;&quot;)&#123;        alert(&quot;欢迎 &quot; + user + &quot; 再次访问&quot;);    &#125;    else &#123;        user = prompt(&quot;请输入你的名字:&quot;,&quot;&quot;);          if (user!=&quot;&quot; &amp;&amp; user!=null)&#123;            setCookie(&quot;username&quot;,user,30);        &#125;    &#125;&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> web前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JS </tag>
+            
+            <tag> cookie </tag>
+            
+            <tag> 原型链 </tag>
+            
+            <tag> 闭包 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue+json实现数据导入</title>
       <link href="2020/10/11/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/"/>
       <url>2020/10/11/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/</url>
@@ -43,9 +74,9 @@
       
         <tags>
             
-            <tag> cmd </tag>
-            
             <tag> json </tag>
+            
+            <tag> cmd </tag>
             
             <tag> json-server </tag>
             

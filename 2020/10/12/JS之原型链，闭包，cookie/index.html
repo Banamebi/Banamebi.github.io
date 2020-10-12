@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JQuery notes, Banamebi">
+    <meta name="keywords" content="JS之原型链，闭包，cookie, Banamebi">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JQuery notes | Banamebi</title>
+    <title>JS之原型链，闭包，cookie | Banamebi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JQuery notes</h1>
+                    <h1 class="description center-align post-title">JS之原型链，闭包，cookie</h1>
                 </div>
             </div>
         </div>
@@ -430,16 +430,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JQuery/">
-                                <span class="chip bg-color">JQuery</span>
+                            <a href="/tags/JS/">
+                                <span class="chip bg-color">JS</span>
                             </a>
                         
-                            <a href="/tags/notes/">
-                                <span class="chip bg-color">notes</span>
+                            <a href="/tags/cookie/">
+                                <span class="chip bg-color">cookie</span>
                             </a>
                         
-                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                <span class="chip bg-color">框架</span>
+                            <a href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+                                <span class="chip bg-color">原型链</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%97%AD%E5%8C%85/">
+                                <span class="chip bg-color">闭包</span>
                             </a>
                         
                     </div>
@@ -463,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-26
+                    2020-10-12
                 </div>
                 
 
@@ -479,69 +483,88 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="0-储备知识"><a href="#0-储备知识" class="headerlink" title="0.储备知识"></a>0.储备知识</h2><p>基本语法：<code>$(selector).action()</code><br>文档就绪：<code>$(document).ready(function()&#123;&#125;);</code>或<code>$(function()&#123;&#125;);</code><br>选择器：<code>$(&quot;p&quot;)</code></p>
-<h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><ul>
-<li>鼠标事件 :click、dbclick、hover、mouseenter、mouseleave</li>
+                <h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>eg:</p>
+<pre><code>function Grandfather()&#123;&#125;;
+Grandfather.prototype.name=&quot;Mike&quot;;
+
+function Father()&#123;&#125;;
+Father.prototype=new Grandfather();
+
+var me=new Father();
+console.log(me.name)；//Mike</code></pre>
+<p>在me中没有找到name属性，于是往上找，在父级中依旧没有找到，再往上找，在Grandfather中找到。</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
+<li>闭包就是能够读取其他函数内部变量的函数。</li>
+<li>在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包(所有的function都是一个闭包).</li>
 </ul>
-<p>例：</p>
-<pre><code>$(selector).click(function)
-or
-$(selector).click()</code></pre>
-<ul>
-<li>键盘事件：keypress、keydown、keyup<br>例：</li>
-</ul>
-<pre><code>$(selector).keypress(function)
-or
-$(selector).keypress()</code></pre>
-<ul>
-<li>表单事件：submit、change、focus、blur<br>例：</li>
-</ul>
-<pre><code>$(selector).submit(function)
-or
-$(selector).submit()</code></pre>
-<ul>
-<li><p>文档/窗口事件：load、unload、resize、scroll<br>例：<code>$(selector).load(function)</code></p>
-<h2 id="2-效果"><a href="#2-效果" class="headerlink" title="2.效果"></a>2.效果</h2></li>
-<li><p>隐藏和显示<code>hide();show()</code></p>
-</li>
-<li><p>fading: <code>fadeIn();fadeOut();fadeToggle();fadeTo()</code></p>
-</li>
-<li><p>滑动：<code>slideDown()；slideUp()；slideToggle()</code></p>
-</li>
-<li><p>动画：<code>animate();stop()</code></p>
-<h2 id="3-HTML操作"><a href="#3-HTML操作" class="headerlink" title="3.HTML操作"></a>3.HTML操作</h2></li>
-<li><p>捕获:<code>text();html();val();attr()</code></p>
-</li>
-<li><p>设置：<code>text();html();val();attr()</code></p>
-</li>
-<li><p>增删：<code>append() ；prepend() ；after() ；before()；remove() ；empty()</code></p>
-<h2 id="4-CSS操作"><a href="#4-CSS操作" class="headerlink" title="4.CSS操作"></a>4.CSS操作</h2></li>
-</ul>
-<ul>
-<li>类：<code>addClass()；removeClass()；toggleClass() ；css()</code></li>
-<li>方法：</li>
-</ul>
-<pre><code>css(&quot;propertyname&quot;);
-or
-css(&quot;propertyname&quot;,&quot;value&quot;);
-or
-css(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...&#125;);</code></pre>
-<ul>
-<li><p>尺寸 ：<code>width()；height()；innerWidth()；innerHeight()；outerWidth()；outerHeight()</code></p>
-<h2 id="5-遍历"><a href="#5-遍历" class="headerlink" title="5.遍历"></a>5.遍历</h2></li>
-<li><p>祖先：<code>parent();parents();parentsUntil()</code></p>
-</li>
-<li><p>后代：<code>children();find();</code></p>
-</li>
-<li><p>兄弟：<code>siblings();next();nextALL();nextUntil()</code></p>
-</li>
-<li><p>过滤：<code>first();last();eq(n);filter();not()</code></p>
-<h2 id="6-AJAX操作"><a href="#6-AJAX操作" class="headerlink" title="6.AJAX操作"></a>6.AJAX操作</h2></li>
-<li><p><code>$(selector).load(URL,data,callback);</code></p>
-</li>
-<li><p><code>$.get(URL,callback);</code></p>
-</li>
-</ul>
+<p>eg1:</p>
+<pre><code>function me() &#123;
+  var name = &quot;Mike&quot;; //内部变量
+  return function() &#123;
+    console.log(name);
+  &#125;;
+&#125;
+var person = me();
+person(); //Mike</code></pre>
+<p>eg2：</p>
+<pre><code>var sum= 0;
+function sum1()&#123; 
+ function sum2()&#123;       
+     sum =sum + 1;    
+      console.log(sum);
+     &#125; 
+      return sum1;
+   &#125;
+   var a =sum1();
+   var b =sum1();
+   a();//1
+   b();//2
+   a();//3
+   b();//4</code></pre>
+<p>eg3：</p>
+<pre><code>function sum() &#123; 
+  var sum = 0;
+  return function() &#123;
+    sum =sum + 1; 
+    console.log(sum);
+  &#125;;
+&#125;
+var sum1 = sum();//外部函数
+sum1(); //1
+sum1(); //2
+var sum2 = sum();//新的外部函数地址
+sum2(); //1
+sum2(); //2</code></pre>
+<h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>eg from <a target="_blank" rel="noopener" href="http://www.runoob.com/">www.runoob.com</a></p>
+<pre><code>function setCookie(cname,cvalue,exdays)&#123;  //setCookie设置cookie
+    var d = new Date();
+    d.setTime(d.getTime()+(exdays*24*60*60*1000));
+    var expires = &quot;expires=&quot;+d.toGMTString(); //expires设置过期时间
+                                                                      //若想删除cookie，将expires设置为早于当前的时间
+    document.cookie = cname+&quot;=&quot;+cvalue+&quot;; &quot;+expires; //创建cookie语句：document.cookie=&quot; &quot;;
+&#125;
+function getCookie(cname)&#123; //getCookie获取cookie
+    var name = cname + &quot;=&quot;;
+    var ca = document.cookie.split(&#39;;&#39;);   //读取cookie语句：var x=document.cookie;
+                                                             //修改cookie语句：直接在document.cookie=后写上新的语句覆盖
+    for(var i=0; i&lt;ca.length; i++) &#123;
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0) &#123; return c.substring(name.length,c.length); &#125;
+    &#125;
+    return &quot;&quot;;
+&#125;
+function checkCookie()&#123;  //checkCookie检测cookie
+    var user=getCookie(&quot;username&quot;);
+    if (user!=&quot;&quot;)&#123;
+        alert(&quot;欢迎 &quot; + user + &quot; 再次访问&quot;);
+    &#125;
+    else &#123;
+        user = prompt(&quot;请输入你的名字:&quot;,&quot;&quot;);
+          if (user!=&quot;&quot; &amp;&amp; user!=null)&#123;
+            setCookie(&quot;username&quot;,user,30);
+        &#125;
+    &#125;
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -567,7 +590,7 @@ css(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&q
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://banamebi.github.io/2020/09/26/JQuery%20notes/">https://banamebi.github.io/2020/09/26/JQuery%20notes/</a>
+                    <a href="https://banamebi.github.io/2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/">https://banamebi.github.io/2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,16 +628,20 @@ css(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&q
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JQuery/">
-                                    <span class="chip bg-color">JQuery</span>
+                                <a href="/tags/JS/">
+                                    <span class="chip bg-color">JS</span>
                                 </a>
                             
-                                <a href="/tags/notes/">
-                                    <span class="chip bg-color">notes</span>
+                                <a href="/tags/cookie/">
+                                    <span class="chip bg-color">cookie</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
+                                <a href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+                                    <span class="chip bg-color">原型链</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%97%AD%E5%8C%85/">
+                                    <span class="chip bg-color">闭包</span>
                                 </a>
                             
                         </div>
@@ -782,96 +809,34 @@ css(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&q
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/28/%E9%85%8D%E7%BD%AEjson-server/">
+                <a href="/2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="配置json-server">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JS之原型链，闭包，cookie">
                         
-                        <span class="card-title">配置json-server</span>
+                        <span class="card-title">JS之原型链，闭包，cookie</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            npm install -g joson-server
+                            原型链eg:
+function Grandfather()&#123;&#125;;
+Grandfather.prototype.name=&quot;Mike&quot;;
 
-创建一个放json文件的文件夹，然后cd到路径内初始化一个名为package的json文件
-npm init
-选项为：enter enter 描述自定义 enter enter en
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    web前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/json/">
-                        <span class="chip bg-color">json</span>
-                    </a>
-                    
-                    <a href="/tags/cmd/">
-                        <span class="chip bg-color">cmd</span>
-                    </a>
-                    
-                    <a href="/tags/json-server/">
-                        <span class="chip bg-color">json-server</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="搭建vue脚手架">
-                        
-                        <span class="card-title">搭建vue脚手架</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            STEPS0.检查已配置的环境打开cmd，输入：
-node -v
-npm -v
+function Father()&#123;&#125;;
 
-1.找到要搭建的路径例：
-cd D:\work\code\vscode\projects
-注意：cd后面有空格如果默认是c盘路径，先输入d:进入d盘
-2.搭建
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-12
                             </span>
                         <span class="publish-author">
                             
@@ -885,6 +850,67 @@ cd D:\work\code\vscode\projects
                         </span>
                     </div>
                 </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                    <a href="/tags/cookie/">
+                        <span class="chip bg-color">cookie</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+                        <span class="chip bg-color">原型链</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%97%AD%E5%8C%85/">
+                        <span class="chip bg-color">闭包</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/10/11/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="vue+json实现数据导入">
+                        
+                        <span class="card-title">vue+json实现数据导入</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            step 0 准备(此例子为用户管理系统)template中的代码为：
+&lt;template&gt;
+  &lt;div class=&quot;customers container&quot;&gt;
+   &lt;h1 class
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-11
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Banamebi
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
@@ -892,12 +918,12 @@ cd D:\work\code\vscode\projects
                         <span class="chip bg-color">VUE</span>
                     </a>
                     
-                    <a href="/tags/%E8%84%9A%E6%89%8B%E6%9E%B6/">
-                        <span class="chip bg-color">脚手架</span>
+                    <a href="/tags/json/">
+                        <span class="chip bg-color">json</span>
                     </a>
                     
-                    <a href="/tags/cmd/">
-                        <span class="chip bg-color">cmd</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/">
+                        <span class="chip bg-color">数据交互</span>
                     </a>
                     
                 </div>
