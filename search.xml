@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>react-creat-app+antd</title>
+      <link href="2020/10/24/react-creat-app+antd/"/>
+      <url>2020/10/24/react-creat-app+antd/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>npx create-react-app demo</code></pre><p>cd到该文件路径下</p><pre><code>npm start</code></pre><p><img src="https://img-blog.csdnimg.cn/20201023153441508.png?x-oss-process=image"></p><pre><code>npm add antd</code></pre><h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><h2 id="1-在App-js中输入-例为按钮组件"><a href="#1-在App-js中输入-例为按钮组件" class="headerlink" title="1.在App.js中输入(例为按钮组件)"></a>1.在App.js中输入(例为按钮组件)</h2><pre><code>import &#123; button &#125; from &#39;antd&#39;;</code></pre><pre><code>const App = () =&gt; (  &lt;div className=&quot;App&quot;&gt;    &lt;Button type=&quot;primary&quot;&gt;Button&lt;/Button&gt;  &lt;/div&gt;);</code></pre><p>代码在：<a href="https://ant.design/components/overview-cn/">https://ant.design/components/overview-cn/</a></p><h2 id="2-在App-css顶部加上"><a href="#2-在App-css顶部加上" class="headerlink" title="2.在App.css顶部加上"></a>2.在App.css顶部加上</h2><pre><code>@import &#39;~antd/dist/antd.css&#39;;</code></pre><h2 id="3-最终效果"><a href="#3-最终效果" class="headerlink" title="3.最终效果"></a>3.最终效果</h2><p><img src="https://img-blog.csdnimg.cn/20201023155250809.png?x-oss-process=image"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> web前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 脚手架 </tag>
+            
+            <tag> react </tag>
+            
+            <tag> antd </tag>
+            
+            <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS之原型链，闭包，cookie</title>
       <link href="2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/"/>
       <url>2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/</url>
