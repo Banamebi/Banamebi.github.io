@@ -4,6 +4,91 @@
   
     
     <entry>
+      <title>promise&amp;fetch</title>
+      <link href="2020/11/26/promise&amp;fetch/"/>
+      <url>2020/11/26/promise&amp;fetch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><h2 id="promise状态"><a href="#promise状态" class="headerlink" title="promise状态"></a>promise状态</h2><p>pending（进行中）、fulfilled（已成功）和 rejected（已失败）。</p><h2 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h2><ol><li>then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise<br>执行失败时的回调，两个函数只会有一个被调用。</li><li>通过 .then 形式添加的回调函数，不论什么时候，都会被调用。</li></ol><h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><ol><li>fetch 规范与 jQuery.ajax() 的区别：</li></ol><ul><li>当接收到一个代表错误的 HTTP 状态码时，从 fetch() 返回的 Promise 不会被标记为 reject， 即使响应的 HTTP状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。</li><li>fetch() 可以不会接受跨域 cookies；你也可以不能使用 fetch() 建立起跨域会话。其他网站的 Set-Cookie头部字段将会被无视。</li><li>fetch 不会发送 cookies。除非你使用了credentials 的初始化选项。</li></ul><p>eg：</p><pre><code>fetch(&#39;http://example.com/movies.json&#39;)  .then(function(response) &#123;    return response.json();  &#125;)  .then(function(myJson) &#123;    console.log(myJson);  &#125;);</code></pre><ol start="2"><li>支持的请求参数<br>fetch() 接受第二个可选参数，一个可以控制不同配置的 init 对象</li><li>发送带凭据的请求<br>为了让浏览器发送包含凭据的请求（即使是跨域源），要将credentials: ‘include’添加到传递给 fetch()方法的init对象。<br>如果只想在请求URL与调用脚本位于同一起源处时发送凭据，添加 credentials: ‘same-origin’。<br>要改为确保浏览器不在请求中包含凭据，使用 credentials: ‘omit’。</li><li>上传 JSON 数据<br>使用 fetch() POST JSON数据</li><li>上传文件<br>可以通过 HTML <code>&lt;input type=&quot;file&quot; /&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>上传多个文件<br>可以通过HTML <code>&lt;input type=&quot;file&quot; mutiple/&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>检测请求是否成功<br>如果遇到网络故障，<code>fetch()</code> promise 将会 reject，带上一个 TypeError 对象。虽然这个情况经常是遇到了权限问题或类似问题——比如 404 不是一个网络故障。想要精确的判断 <code>fetch()</code> 是否成功，需要包含 promise resolved 的情况，此时再判断 Response.ok 是不是为 true。</li><li>自定义请求对象<br>除了传给 <code>fetch()</code> 一个资源的地址，还可以通过使用 <code>Request()</code> 构造函数来创建一个 request 对象，然后再作为参数传给 <code>fetch()</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 异步交互 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+            <tag> 异步交互 </tag>
+            
+            <tag> promise </tag>
+            
+            <tag> fetch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6 notes (part2)</title>
+      <link href="2020/11/26/ES6%20notes%EF%BC%88part2%EF%BC%89/"/>
+      <url>2020/11/26/ES6%20notes%EF%BC%88part2%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><ol><li>字符的 Unicode 表示法<br>将码点放入大括号：<code>&quot;\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;&quot;</code></li><li>字符串的遍历器接口<br>ES6 为字符串添加了遍历器接口，使得字符串可以被for…of循环遍历。</li><li>JavaScript 规定有5个字符，不能在字符串里面直接使用，只能使用转义形式</li></ol><pre><code>U+005C：反斜杠（reverse solidus)U+000D：回车（carriage return）U+2028：行分隔符（line separator）U+2029：段分隔符（paragraph separator）U+000A：换行符（line feed）</code></pre><ol start="4"><li>JSON.stringify() 的改造<br>如果遇到0xD800到0xDFFF之间的单个码点，或者不存在的配对形式，它会返回转义字符串，留给应用自己决定下一步的处理。</li><li>模板字符串<br>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</li><li>标签模板<br>它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。</li></ol><h2 id="字符串的新增方法"><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h2><ol><li>String.fromCodePoint()<br>从 Unicode 码点返回对应字符，并且可以识别大于0xFFFF的字符。</li><li>String.raw()<br>返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，往往用于模板字符串的处理方法。</li><li>实例方法：codePointAt()<br>能够正确处理 4 个字节储存的字符，返回一个字符的码点。</li><li>实例方法：normalize()<br>用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</li><li>实例方法：includes(), startsWith(), endsWith()</li></ol><pre><code>includes()：返回布尔值，表示是否找到了参数字符串。startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</code></pre><ol start="6"><li><p>实例方法：repeat()<br>repeat方法返回一个新字符串，表示将原字符串重复n次。</p></li><li><p>实例方法：padStart()，padEnd()<br>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全</p></li><li><p>实例方法：trimStart()，trimEnd()<br>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。</p></li><li><p>实例方法：matchAll()<br>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p></li><li><p>实例方法：replaceAll()<br>可以一次性替换所有匹配。它的用法与replace()相同，返回一个新字符串，不会改变原字符串。</p><h2 id="正则的扩展"><a href="#正则的扩展" class="headerlink" title="正则的扩展"></a>正则的扩展</h2></li><li><p>RegExp构造函数<br>如果RegExp构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p></li><li><p>字符串的正则方法</p></li></ol><pre><code>String.prototype.match 调用 RegExp.prototype[Symbol.match]String.prototype.replace 调用 RegExp.prototype[Symbol.replace]String.prototype.search 调用 RegExp.prototype[Symbol.search]String.prototype.split 调用 RegExp.prototype[Symbol.split]</code></pre><ol start="3"><li>u 修饰符<br><strong>点字符</strong>:点（.）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于0xFFFF的 Unicode 字符，点字符不能识别，必须加上u修饰符。<br><strong>Unicode 字符表示法</strong>:ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上u修饰符，才能识别当中的大括号，否则会被解读为量词。<br><strong>量词</strong>:使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>预定义模式</strong>:u修饰符也影响到预定义模式，能否正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>i 修饰符</strong>:有些 Unicode 字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。<br><strong>转义</strong>:没有u修饰符的情况下，正则中没有定义的转义（如逗号的转义,）无效，而在u模式会报错。</li><li>RegExp.prototype.unicode 属性<br>正则实例对象新增unicode属性，表示是否设置了u修饰符。</li><li>y 修饰符<br>y修饰符的作用与g修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始。</li><li>RegExp.prototype.sticky 属性<br>与y修饰符相匹配，ES6 的正则实例对象多了sticky属性，表示是否设置了y修饰符。</li><li>RegExp.prototype.flags 属性<br>ES6 为正则表达式新增了flags属性，会返回正则表达式的修饰符。</li><li>s 修饰符：dotAll 模式<br>ES2018 引入s修饰符，使得.可以匹配任意单个字符。<code>/foo.bar/s.test(&#39;foo\nbar&#39;) // true</code><br>这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。</li><li>后行断言<br>x只有在y后面才匹配，必须写成<code>/(?&lt;=y)x/</code></li><li>Unicode 属性类<br>引入了一种新的类的写法\p{…}和\P{…}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</li><li>具名组匹配<br>引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。<ol start="12"><li>正则匹配索引<pre><code>`const text = &#39;zabbcdef&#39;;const re = /ab/;const result = re.exec(text);</code></pre></li></ol></li></ol><p>result.index // 1<br>result.indices // [ [1, 3] ]`</p><pre><code>exec()方法的返回结果result，它的index属性是整个匹配结果（ab）的开始位置，而它的indices属性是一个数组，成员是每个匹配的开始位置和结束位置的数组。由于该例子的正则表达式没有组匹配，所以indices数组只有一个成员，表示整个匹配的开始位置是1，结束位置是3。13. String.prototype.matchAll()ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。## 数值的扩展 1. 二进制和八进制表示法 ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。 2. Number.isFinite(), Number.isNaN()Number.isFinite()用来检查一个数值是否为有限的（finite），Number.isNaN()用来检查一个值是否为NaN。 3. Number.parseInt(), Number.parseFloat()ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。 4. Number.isInteger()Number.isInteger()用来判断一个数值是否为整数。 5. Number.EPSILONES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。 6. 安全整数和 Number.isSafeInteger()JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。 7. Math 对象的扩展**Math.trunc()**：用于去除一个数的小数部分，返回整数部分。**Math.sign()** ：Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。**Math.cbrt()**：Math.cbrt()方法用于计算一个数的立方根。**Math.clz32()** ：Math.clz32()方法将参数转为 32 位无符号整数的形式，然后返回这个 32 位值里面有多少个前导 0。**Math.imul()** ：Math.imul方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。**Math.fround()** ：Math.fround方法返回一个数的32位单精度浮点数形式。**Math.hypot()**：Math.hypot方法返回所有参数的平方和的平方根。 8. 指数运算符ES2016 新增了一个指数运算符（**）。 9. BigInt 数据类型BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+            <tag> notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6 notes (part1)</title>
+      <link href="2020/11/26/ES6%20notes%EF%BC%88part1%EF%BC%89/"/>
+      <url>2020/11/26/ES6%20notes%EF%BC%88part1%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>作用：ES6 代码–&gt;ES5 代码<br>安装：<code>npm install --save-dev @babel/core</code><br>转码规则：<code>npm install --save-dev @babel/preset-env</code><br>react转码规则：<code>npm install --save-dev @babel/preset-react</code><br>配置文件（.babelrc ）： </p><pre><code> &#123;    &quot;presets&quot;: [      &quot;@babel/env&quot;,      &quot;@babel/preset-react&quot;    ],    &quot;plugins&quot;: []  &#125;</code></pre><p>命令行转码（@babel/cli）：<code>npm install --save-dev @babel/cli</code><br>babel-node:提供一个支持 ES6 的 REPL 环境,支持 Node 的 REPL 环境的所有功能，而且可以直接运行 ES6 代码。</p><ul><li>安装：<code>npm install --save-dev @babel/node</code></li><li>进入REPL环境：<code>npx babel-node</code></li><li>直接运行 ES6 脚本：<code>npx babel-node es6.js</code></li></ul><p>@babel/register 模块：<code>npm install --save-dev @babel/register</code><br>此模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用 Babel 进行转码。  </p><pre><code>require(&#39;@babel/register&#39;);require(&#39;./es6.js&#39;);</code></pre><h2 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h2><p>Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>安装：<code>npm install --save-dev core-js regenerator-runtime</code><br>脚本头部加入：</p><pre><code>import &#39;core-js&#39;;import &#39;regenerator-runtime/runtime&#39;;</code></pre><p>或</p><pre><code>require(&#39;core-js&#39;);require(&#39;regenerator-runtime/runtime);</code></pre><h2 id="浏览器环境"><a href="#浏览器环境" class="headerlink" title="浏览器环境"></a>浏览器环境</h2><pre><code>&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/babel&quot;&gt;// Your ES6 code&lt;/script&gt;</code></pre><h1 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let&amp;const"></a>let&amp;const</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>作用：声明变量<br>和var的区别：<br>1.var是全局的，而let只在命令所在的代码块内有效<br>2.var命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined；let命令所声明的变量一定要在声明后使用，否则报错。<br>3.let不允许重复声明<br>暂时性死区:只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。<br>块级作用域:let实际上为 JavaScript 新增了块级作用域</p><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>const 声明一个只读<strong>常量</strong>，声明之后不允许改变。一旦声明必须初始化，只声明不赋值，就会报错。<br>const声明的常量，也与let一样不可重复声明。 </p><h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。<br>数组模型的解构：<code>let [a, b, c] = [1, 2, 3];</code><br>对象模型的解构：<code>let &#123; foo, bar &#125; = &#123; foo: &#39;aaa&#39;, bar: &#39;bbb&#39; &#125;;</code><br>Set 结构：<code>let [x, y, z] = new Set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]);</code><br>解构赋值允许指定默认值：<code>let [x, y = &#39;b&#39;] = [&#39;a&#39;]; </code> or <code>var &#123;x = 3&#125; = &#123;&#125;;</code><br>字符串的解构:<code>const [a, b, c, d, e] = &#39;hello&#39;;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ES6 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+            <tag> notes </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>React onClick() 三目运算&amp;条件判断</title>
       <link href="2020/11/05/React%20onClick%EF%BC%88%EF%BC%89%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97_%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/"/>
       <url>2020/11/05/React%20onClick%EF%BC%88%EF%BC%89%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97_%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD/</url>
@@ -223,9 +308,9 @@
       
         <tags>
             
-            <tag> Jquery </tag>
-            
             <tag> notes </tag>
+            
+            <tag> Jquery </tag>
             
             <tag> 框架 </tag>
             
