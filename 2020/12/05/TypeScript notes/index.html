@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="promise&amp;fetch, Banamebi">
+    <meta name="keywords" content="TypeScript notes, Banamebi">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>promise&amp;fetch | Banamebi</title>
+    <title>TypeScript notes | Banamebi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">promise&amp;fetch</h1>
+                    <h1 class="description center-align post-title">TypeScript notes</h1>
                 </div>
             </div>
         </div>
@@ -430,20 +430,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ES6/">
-                                <span class="chip bg-color">ES6</span>
+                            <a href="/tags/notes/">
+                                <span class="chip bg-color">notes</span>
                             </a>
                         
-                            <a href="/tags/%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92/">
-                                <span class="chip bg-color">异步交互</span>
-                            </a>
-                        
-                            <a href="/tags/promise/">
-                                <span class="chip bg-color">promise</span>
-                            </a>
-                        
-                            <a href="/tags/fetch/">
-                                <span class="chip bg-color">fetch</span>
+                            <a href="/tags/TypeScript/">
+                                <span class="chip bg-color">TypeScript</span>
                             </a>
                         
                     </div>
@@ -454,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92/" class="post-category">
-                                异步交互
+                            <a href="/categories/TypeScript/" class="post-category">
+                                TypeScript
                             </a>
                         
                     </div>
@@ -467,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-26
+                    2020-12-05
                 </div>
                 
 
@@ -483,36 +475,203 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><h2 id="promise状态"><a href="#promise状态" class="headerlink" title="promise状态"></a>promise状态</h2><p>pending（进行中）、fulfilled（已成功）和 rejected（已失败）。</p>
-<h2 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h2><ol>
-<li>then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise<br>执行失败时的回调，两个函数只会有一个被调用。</li>
-<li>通过 .then 形式添加的回调函数，不论什么时候，都会被调用。</li>
-</ol>
-<h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><ol>
-<li>fetch 规范与 jQuery.ajax() 的区别：</li>
-</ol>
+                <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装</p>
+<pre><code>npm install -g typescript</code></pre>
+<p>将 TypeScript 转换为 JavaScript 代码</p>
+<pre><code>tsc 文件名.ts</code></pre>
+<p>tsc 常用编译参数如下表所示：<br><img src="https://img-blog.csdnimg.cn/20201202102531787.png?x-oss-process=image" alt="在这里插入图片描述"></p>
+<h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p><strong>任意类型</strong> <code>any</code>：声明为 any 的变量可以赋予任意类型的值。<br><strong>数字类型</strong>    <code>number</code>：双精度 64 位浮点值。它可以用来表示整数和分数。<br><strong>字符串类型</strong> <code>string</code>：一个字符系列，使用单引号（’）或双引号（”）来表示字符串类型。反引号（`）来定义多行文本和内嵌表达式。</p>
+<p><strong>布尔类型</strong><code>boolean</code>：表示逻辑值：true 和 false。<br><strong>枚举</strong>    <code>enum</code>：枚举类型用于定义数值集合。<br><strong>void</strong>    <code>void</code>：用于标识方法返回值的类型，表示该方法没有返回值。<br><strong>null</strong>    <code>null</code>：表示对象值缺失。<br><strong>undefined</strong>    <code>undefined</code>：用于初始化变量为一个未定义的值。<br><strong>never</strong>    <code>never</code>：是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。</p>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p><strong>TypeScript 变量的命名规则</strong>：</p>
 <ul>
-<li>当接收到一个代表错误的 HTTP 状态码时，从 fetch() 返回的 Promise 不会被标记为 reject， 即使响应的 HTTP状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。</li>
-<li>fetch() 可以不会接受跨域 cookies；你也可以不能使用 fetch() 建立起跨域会话。其他网站的 Set-Cookie头部字段将会被无视。</li>
-<li>fetch 不会发送 cookies。除非你使用了credentials 的初始化选项。</li>
+<li>变量名称可以包含数字和字母。</li>
+<li>除了下划线 _ 和美元 $ 符号外，不能包含其他特殊字符，包括空格。</li>
+<li>变量名不能以数字开头。</li>
 </ul>
-<p>eg：</p>
-<pre><code>fetch(&#39;http://example.com/movies.json&#39;)
-  .then(function(response) &#123;
-    return response.json();
-  &#125;)
-  .then(function(myJson) &#123;
-    console.log(myJson);
-  &#125;);</code></pre>
-<ol start="2">
-<li>支持的请求参数<br>fetch() 接受第二个可选参数，一个可以控制不同配置的 init 对象</li>
-<li>发送带凭据的请求<br>为了让浏览器发送包含凭据的请求（即使是跨域源），要将credentials: ‘include’添加到传递给 fetch()方法的init对象。<br>如果只想在请求URL与调用脚本位于同一起源处时发送凭据，添加 credentials: ‘same-origin’。<br>要改为确保浏览器不在请求中包含凭据，使用 credentials: ‘omit’。</li>
-<li>上传 JSON 数据<br>使用 fetch() POST JSON数据</li>
-<li>上传文件<br>可以通过 HTML <code>&lt;input type=&quot;file&quot; /&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li>
-<li>上传多个文件<br>可以通过HTML <code>&lt;input type=&quot;file&quot; mutiple/&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li>
-<li>检测请求是否成功<br>如果遇到网络故障，<code>fetch()</code> promise 将会 reject，带上一个 TypeError 对象。虽然这个情况经常是遇到了权限问题或类似问题——比如 404 不是一个网络故障。想要精确的判断 <code>fetch()</code> 是否成功，需要包含 promise resolved 的情况，此时再判断 Response.ok 是不是为 true。</li>
-<li>自定义请求对象<br>除了传给 <code>fetch()</code> 一个资源的地址，还可以通过使用 <code>Request()</code> 构造函数来创建一个 request 对象，然后再作为参数传给 <code>fetch()</code></li>
+<p><strong>声明变量的始终方式</strong>：</p>
+<p>声明变量的类型及初始值：</p>
+<pre><code>var [变量名] : [类型] = 值;</code></pre>
+<p>声明变量的类型，但没有初始值，变量值会设置为 undefined：</p>
+<pre><code>var [变量名] : [类型];</code></pre>
+<p>声明变量并初始值，但不设置类型，该变量可以是任意类型：</p>
+<pre><code>var [变量名] = 值;</code></pre>
+<p>声明变量没有设置类型和初始值，类型可以是任意类型，默认初始值为 undefined：</p>
+<pre><code>var [变量名];</code></pre>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ol>
+<li>算术运算符</li>
 </ol>
+<pre><code>+  -  *  /  %  ++  --</code></pre>
+<ol start="2">
+<li>逻辑运算符</li>
+</ol>
+<pre><code>&amp;&amp;  ||  ! </code></pre>
+<ol start="3">
+<li>关系运算符</li>
+</ol>
+<pre><code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code></pre>
+<ol start="4">
+<li>按位运算符</li>
+</ol>
+<pre><code>&amp;  !  ~  ^  &lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></pre>
+<ol start="5">
+<li>赋值运算符</li>
+</ol>
+<pre><code>=  += -=  *=  /=</code></pre>
+<ol start="6">
+<li>三元/条件运算符</li>
+</ol>
+<pre><code>Test ? expr1 : expr2</code></pre>
+<ol start="7">
+<li>字符串运算符</li>
+</ol>
+<pre><code>连接运算符 (+)</code></pre>
+<ol start="8">
+<li>类型运算符</li>
+</ol>
+<pre><code>typeof  instanceof </code></pre>
+<h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><ol>
+<li>if</li>
+</ol>
+<pre><code>if(boolean_expression)&#123;
+    # 在布尔表达式 boolean_expression 为 true 执行
+&#125;</code></pre>
+<ol start="2">
+<li>if…else</li>
+</ol>
+<pre><code>if(boolean_expression)&#123;
+   # 在布尔表达式 boolean_expression 为 true 执行
+&#125;else&#123;
+   # 在布尔表达式 boolean_expression 为 false 执行
+&#125;</code></pre>
+<ol start="3">
+<li>if…else if….else<pre><code>if(boolean_expression 1)&#123;
+# 在布尔表达式 boolean_expression 1 为 true 执行
+&#125;
+else if( boolean_expression 2)&#123;
+# 在布尔表达式 boolean_expression 2 为 true 执行
+&#125;
+else if(( boolean_expression 3)&#123;
+# 在布尔表达式 boolean_expression 3 为 true 执行
+&#125;
+else&#123;
+# 布尔表达式的条件都为 false 时执行
+&#125;</code></pre>
+</li>
+<li>switch </li>
+</ol>
+<pre><code>switch(expression)&#123;
+    case constant-expression  :
+       statement(s);
+       break; /* 可选的 */
+    case constant-expression  :
+       statement(s);
+       break; /* 可选的 */
+
+    /* 您可以有任意数量的 case 语句 */
+    default : /* 可选的 */
+       statement(s);
+&#125;</code></pre>
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ol>
+<li>for<pre><code>for ( init; condition; increment )&#123;
+statement(s);
+&#125;</code></pre>
+</li>
+<li>for…in</li>
+</ol>
+<pre><code>for (var val in list) &#123; 
+    //语句 
+&#125;</code></pre>
+<ol start="3">
+<li>for…of</li>
+</ol>
+<pre><code>let someArray = [1, &quot;string&quot;, false];
+
+for (let entry of someArray) &#123;
+    console.log(entry); // 1, &quot;string&quot;, false
+&#125;</code></pre>
+<ol start="4">
+<li>forEach</li>
+</ol>
+<pre><code>let list = [4, 5, 6];
+list.forEach((val, idx, array) =&gt; &#123;
+    // val: 当前值
+    // idx：当前index
+    // array: Array
+&#125;);</code></pre>
+<ol start="5">
+<li>every<pre><code>let list = [4, 5, 6];
+list.every((val, idx, array) =&gt; &#123;
+// val: 当前值
+// idx：当前index
+// array: Array
+return true; // Continues
+// Return false will quit the iteration
+&#125;);</code></pre>
+</li>
+<li>while<pre><code>while(condition)
+&#123;
+statement(s);
+&#125;</code></pre>
+</li>
+<li>do…while </li>
+</ol>
+<pre><code>do
+&#123;
+   statement(s);
+&#125;while( condition );</code></pre>
+<ol start="8">
+<li>无限循环</li>
+</ol>
+<pre><code>for(;;) &#123; 
+   // 语句
+&#125;</code></pre>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数定义 </p>
+<pre><code>function function_name()
+&#123;
+    // 执行代码
+&#125;</code></pre>
+<p>调用函数 <code>function_name()</code><br>函数返回值</p>
+<pre><code>function function_name():return_type &#123; 
+    // 语句
+    return value; 
+&#125;</code></pre>
+<p>带参数函数</p>
+<pre><code>function func_name( param1 [:datatype], param2 [:datatype]) &#123;   
+&#125;</code></pre>
+<p>匿名函数 <code>var res = function( [arguments] ) &#123; ... &#125;</code><br>构造函数 <code>var res = new Function ([arg1[, arg2[, ...argN]],] functionBody)</code><br>Lambda 函数 <code>( [param1, parma2,…param n] )=&gt;statement;</code><br>函数重载<br>参数类型不同：</p>
+<pre><code>function disp(string):void; 
+function disp(number):void;</code></pre>
+<p>参数数量不同：</p>
+<pre><code>function disp(n1:number):void; 
+function disp(x:number,y:number):void;</code></pre>
+<p>参数类型顺序不同：</p>
+<pre><code>function disp(n1:number,s1:string):void; 
+function disp(s:string,n:number):void;</code></pre>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><pre><code>var num = new Number(value);</code></pre>
+<p> 对象属性<br> <code>MAX_VALUE</code>  <code>MIN_VALUE</code>  <code>NaN</code>  <code>NEGATIVE_INFINITY</code>  <code>POSITIVE_INFINITY</code>  <code>prototype  constructor</code><br> 对象方法<br> <code>toExponential()</code>  <code>toFixed()</code>  <code>toLocaleString()</code>  <code>toPrecision()</code>  <code>toString()</code>  <code>valueOf()</code></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><pre><code> var array_name[:datatype];        //声明 
+array_name = [val1,val2,valn..]   //初始化</code></pre>
+<p>or</p>
+<pre><code>var array_name[:data type] = [val1,val2…valn]</code></pre>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code>let myMap = new Map();</code></pre>
+<pre><code>let myMap = new Map([
+        [&quot;key1&quot;, &quot;value1&quot;],
+        [&quot;key2&quot;, &quot;value2&quot;]
+    ]); </code></pre>
+<p><strong>Map 相关的函数与属性</strong>：</p>
+<p><code>map.clear()</code> – 移除 Map 对象的所有键/值对 。<br><code>map.set()</code> – 设置键值对，返回该 Map 对象。<br><code>map.get()</code> – 返回键对应的值，如果不存在，则返回 undefined。<br><code>map.has()</code> – 返回一个布尔值，用于判断 Map 中是否包含键对应的值。<br><code>map.delete()</code> – 删除 Map 中的元素，删除成功返回 true，失败返回 false。<br><code>map.size</code> – 返回 Map 对象键/值对的数量。<br><code>map.keys()</code> - 返回一个 Iterator 对象， 包含了 Map 对象中每个元素的键 。<br><code>map.values()</code> – 返回一个新的Iterator对象，包含了Map对象中每个元素的值 。</p>
+<h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>数组中元素的数据类型都一般是相同的（any[] 类型的数组可以不同），如果存储的元素数据类型不同，则需要使用元组。<br>元组中允许存储不同类型的元素，元组可以作为参数传递给函数。</p>
+<pre><code>var tuple_name = [value1,value2,value3,…value n]</code></pre>
+<h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><p>Type1|Type2|Type3 </p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><pre><code>interface interface_name &#123; 
+&#125;</code></pre>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><pre><code>class class_name &#123; 
+    // 类作用域
+&#125;</code></pre>
+<p>创建实例化对象</p>
+<pre><code>var object_name = new class_name([ arguments ])</code></pre>
+<p>类的继承</p>
+<pre><code>class child_class_name extends parent_class_name</code></pre>
 
             </div>
             <hr/>
@@ -538,7 +697,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://banamebi.github.io/2020/11/26/promise&fetch/">https://banamebi.github.io/2020/11/26/promise&fetch/</a>
+                    <a href="https://banamebi.github.io/2020/12/05/TypeScript%20notes/">https://banamebi.github.io/2020/12/05/TypeScript%20notes/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,20 +735,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ES6/">
-                                    <span class="chip bg-color">ES6</span>
+                                <a href="/tags/notes/">
+                                    <span class="chip bg-color">notes</span>
                                 </a>
                             
-                                <a href="/tags/%E5%BC%82%E6%AD%A5%E4%BA%A4%E4%BA%92/">
-                                    <span class="chip bg-color">异步交互</span>
-                                </a>
-                            
-                                <a href="/tags/promise/">
-                                    <span class="chip bg-color">promise</span>
-                                </a>
-                            
-                                <a href="/tags/fetch/">
-                                    <span class="chip bg-color">fetch</span>
+                                <a href="/tags/TypeScript/">
+                                    <span class="chip bg-color">TypeScript</span>
                                 </a>
                             
                         </div>
@@ -757,52 +908,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/12/05/ES6%20notes%20(part3)/">
+                <a href="/2020/12/05/TypeScript%20notes/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="ES6 notes (part3)">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="TypeScript notes">
                         
-                        <span class="card-title">ES6 notes (part3)</span>
+                        <span class="card-title">TypeScript notes</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            函数的扩展
-函数参数的默认值ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。
-rest 参数ES6 引入 rest 参数（形式为…变量名），用于获取函数的多余参数，这样就不需要使用arguments对象了。rest 参数之后不
+                            安装全局安装
+npm install -g typescript
+将 TypeScript 转换为 JavaScript 代码
+tsc 文件名.ts
+tsc 常用编译参数如下表所示：
+类型任意类型 any：声明为 any 的变量可以赋予任意
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/ES6/" class="post-category">
-                                    ES6
+                            <a href="/categories/TypeScript/" class="post-category">
+                                    TypeScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ES6/">
-                        <span class="chip bg-color">ES6</span>
-                    </a>
-                    
                     <a href="/tags/notes/">
                         <span class="chip bg-color">notes</span>
+                    </a>
+                    
+                    <a href="/tags/TypeScript/">
+                        <span class="chip bg-color">TypeScript</span>
                     </a>
                     
                 </div>
@@ -816,26 +972,27 @@ rest 参数ES6 引入 rest 参数（形式为…变量名），用于获取函�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/26/ES6%20notes%EF%BC%88part2%EF%BC%89/">
+                <a href="/2020/12/05/ES6%20notes%20(part4)/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="ES6 notes (part2)">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="ES6 notes (part4)">
                         
-                        <span class="card-title">ES6 notes (part2)</span>
+                        <span class="card-title">ES6 notes (part4)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            扩展字符串的扩展
-字符的 Unicode 表示法将码点放入大括号：&quot;\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;&quot;
-字符串的遍历器接口ES6 为字符串添加了遍历器接口，
+                            SymbolES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。
+let s = Symbol();
+typeof s
+// &quot;
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-05
                             </span>
                         <span class="publish-author">
                             
