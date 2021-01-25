@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>antd组件英文改中文</title>
+      <link href="2021/01/25/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/"/>
+      <url>2021/01/25/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<p>英文版<br><img src="https://img-blog.csdnimg.cn/20210106091533901.png"><br>需要加入的代码<br>1、引入中文包和ConfigProvid配置</p><pre><code>import zhCN from &#39;antd/es/locale/zh_CN&#39;;import &#123; ConfigProvider &#125; from &#39;antd&#39;</code></pre><p>2.用ConfigProvid包裹需要汉化的组件</p><pre><code> &lt;ConfigProvider locale=&#123;zhCN&#125;&gt; &lt;xxx组件&gt; &lt;/ConfigProvider&gt;</code></pre><p>效果（中文版）</p><p><img src="https://img-blog.csdnimg.cn/20210106092938861.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> antd </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> antd </tag>
+            
+            <tag> and design </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于报错：无法加载文件 D__node_node_global_yarn.ps1，因为在此系统上禁止运行脚本的问题</title>
       <link href="2021/01/02/%E5%85%B3%E4%BA%8E%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%20D__node_node_global_yarn.ps1%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/"/>
       <url>2021/01/02/%E5%85%B3%E4%BA%8E%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%20D__node_node_global_yarn.ps1%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/</url>
