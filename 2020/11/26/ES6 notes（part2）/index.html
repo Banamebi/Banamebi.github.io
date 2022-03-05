@@ -529,47 +529,26 @@ String.prototype.split 调用 RegExp.prototype[Symbol.split]</code></pre>
 <li>s 修饰符：dotAll 模式<br>ES2018 引入s修饰符，使得.可以匹配任意单个字符。<code>/foo.bar/s.test(&#39;foo\nbar&#39;) // true</code><br>这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。</li>
 <li>后行断言<br>x只有在y后面才匹配，必须写成<code>/(?&lt;=y)x/</code></li>
 <li>Unicode 属性类<br>引入了一种新的类的写法\p{…}和\P{…}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</li>
-<li>具名组匹配<br>引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。<ol start="12">
-<li>正则匹配索引<pre><code>`const text = &#39;zabbcdef&#39;;
+<li>具名组匹配<br>引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</li>
+<li>正则匹配索引</li>
+</ol>
+<pre><code>const text = &#39;zabbcdef&#39;;
 const re = /ab/;
 const result = re.exec(text);
-</code></pre>
-</li>
+result.index // 1
+result.indices //  [1, 3] </code></pre>
+<p>exec()方法的返回结果result，它的index属性是整个匹配结果（ab）的开始位置，而它的indices属性是一个数组，成员是每个匹配的开始位置和结束位置的数组。由于该例子的正则表达式没有组匹配，所以indices数组只有一个成员，表示整个匹配的开始位置是1，结束位置是3。<br>13. String.prototype.matchAll()<br>ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。</p>
+<h2 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><ol>
+<li>二进制和八进制表示法<br>ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。</li>
+<li>Number.isFinite(), Number.isNaN()<br>Number.isFinite()用来检查一个数值是否为有限的（finite），Number.isNaN()用来检查一个值是否为NaN。</li>
+<li>Number.parseInt(), Number.parseFloat()<br>ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。</li>
+<li>Number.isInteger()<br>Number.isInteger()用来判断一个数值是否为整数。</li>
+<li>Number.EPSILON<br>ES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。</li>
+<li>安全整数和 Number.isSafeInteger()<br>JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。</li>
+<li>Math 对象的扩展<br><strong>Math.trunc()**：用于去除一个数的小数部分，返回整数部分。<br>**Math.sign()</strong> ：Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。<br><strong>Math.cbrt()**：Math.cbrt()方法用于计算一个数的立方根。<br>**Math.clz32()</strong> ：Math.clz32()方法将参数转为 32 位无符号整数的形式，然后返回这个 32 位值里面有多少个前导 0。<br><strong>Math.imul()</strong> ：Math.imul方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。<br><strong>Math.fround()</strong> ：Math.fround方法返回一个数的32位单精度浮点数形式。<br>**Math.hypot()**：Math.hypot方法返回所有参数的平方和的平方根。</li>
+<li>指数运算符<br>ES2016 新增了一个指数运算符（**）。</li>
+<li>BigInt 数据类型<br>BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。</li>
 </ol>
-</li>
-</ol>
-<p>result.index // 1<br>result.indices // [ [1, 3] ]`</p>
-<pre><code>exec()方法的返回结果result，它的index属性是整个匹配结果（ab）的开始位置，而它的indices属性是一个数组，成员是每个匹配的开始位置和结束位置的数组。由于该例子的正则表达式没有组匹配，所以indices数组只有一个成员，表示整个匹配的开始位置是1，结束位置是3。
-13. String.prototype.matchAll()
-ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。
-
-## 数值的扩展
-
- 1. 二进制和八进制表示法 
-ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。
- 2. Number.isFinite(), Number.isNaN()
-Number.isFinite()用来检查一个数值是否为有限的（finite），Number.isNaN()用来检查一个值是否为NaN。
- 3. Number.parseInt(), Number.parseFloat()
-ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。
- 4. Number.isInteger()
-Number.isInteger()用来判断一个数值是否为整数。
- 5. Number.EPSILON
-ES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。
- 6. 安全整数和 Number.isSafeInteger()
-JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。
- 7. Math 对象的扩展
-**Math.trunc()**：用于去除一个数的小数部分，返回整数部分。
-**Math.sign()** ：Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。
-**Math.cbrt()**：Math.cbrt()方法用于计算一个数的立方根。
-**Math.clz32()** ：Math.clz32()方法将参数转为 32 位无符号整数的形式，然后返回这个 32 位值里面有多少个前导 0。
-**Math.imul()** ：Math.imul方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。
-**Math.fround()** ：Math.fround方法返回一个数的32位单精度浮点数形式。
-**Math.hypot()**：Math.hypot方法返回所有参数的平方和的平方根。
- 8. 指数运算符
-ES2016 新增了一个指数运算符（**）。
- 9. BigInt 数据类型
-BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。
-</code></pre>
 
             </div>
             <hr/>
