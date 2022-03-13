@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>subway_gis_bg开发手册</title>
+      <link href="2022/03/13/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
+      <url>2022/03/13/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="subway-gis-bg开发手册"><a href="#subway-gis-bg开发手册" class="headerlink" title="subway_gis_bg开发手册"></a>subway_gis_bg开发手册</h1><h2 id="一-入口"><a href="#一-入口" class="headerlink" title="(一) 入口"></a>(一) 入口</h2><h2 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h2><pre><code>Login Earth - 如果套iframe就不用Home - Header 字体管理(现改为辅助功能)、操作日志、通知中心、管理员     - LeftPanel 导航     - RightPanel 页面内容(都在Component下)</code></pre><h2 id="二-页面"><a href="#二-页面" class="headerlink" title="(二) 页面"></a>(二) 页面</h2><h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><pre><code>HomePage -首页 AssetManagement(资产管理) - new/edit 资产新增/编辑                         -new/editInspection 盘点巡检新增/编辑                         -tabPages 五个文件夹分别对应五个tab页面(已取消ManagementContract(经营管理合同),现为四个)ContractManagement(合同管理) - 命名方式同上 new/edit xxxVisualizationManagement(可视化管理) - Layer (图层)                                   - 3DModeling (3D建模)WarrantManagement(权证管理)AssessManagement(评估管理) - 不要和资产管理搞错PassengerFlow(客流信息)SettingPage(设置) - 原结构为组织、角色、管理员，现加入白名单。</code></pre><h2 id="三-组件"><a href="#三-组件" class="headerlink" title="(三) 组件"></a>(三) 组件</h2><h2 id="Component-gt-Widgets"><a href="#Component-gt-Widgets" class="headerlink" title="Component-&gt;Widgets"></a>Component-&gt;Widgets</h2><pre><code>Charts - 所有图表ChartsBlock - 统一背景等样式的图表块，目前只在首页中使用Header - 统一部分新增页的头部样式Inputs - 暂时无用More - 首页中图表页的控制功能Relate - 关联功能组件，在合同新增和盘点巡查新增里用到Search - 所有页面用到的搜索，有prop的函 个数SelectBlock - 筛选块 各编辑页用到TableBlock - 统一样式的table prop中的transfer表示是否有移交(目前都不要)</code></pre><h2 id="四-接口"><a href="#四-接口" class="headerlink" title="(四) 接口"></a>(四) 接口</h2><p> 全部代码都有注释</p><h2 id="五-容易被遗漏的可进入页面或功能"><a href="#五-容易被遗漏的可进入页面或功能" class="headerlink" title="(五) 容易被遗漏的可进入页面或功能"></a>(五) 容易被遗漏的可进入页面或功能</h2><pre><code>header -  所有按钮的点击首页 - 配置分析报表 进入后是表格的配置操作资产新增 - 草稿箱        - 基本信息 为按钮的字段点击后都有功能资产编辑 - 表格 操作中几项点击会跳转新页面盘点巡查新增 - 可切换两个页面(剩下的页面都同理)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无法归类の情报 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>先前遇到的antd问题</title>
+      <link href="2022/03/13/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/"/>
+      <url>2022/03/13/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="column内width属性失效问题"><a href="#column内width属性失效问题" class="headerlink" title="column内width属性失效问题"></a>column内width属性失效问题</h1><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以</p><pre><code>        &lt;Table                            columns=&#123;columns&#125;                            scroll=&#123;&#123; x: "100%"&#125;&#125;                                                /&gt;</code></pre><h1 id="option下拉框样式问题"><a href="#option下拉框样式问题" class="headerlink" title="option下拉框样式问题"></a>option下拉框样式问题</h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>选项中的内容过长，导致下拉框长度变化，并且不能够显示所有内容。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code>    &lt;Form.Item label=&quot;xxx&quot; name=&quot;xxx&quot; &gt;                            &lt;Select                                placeholder=&quot;请选择&quot;                                allowClear=&#123;true&#125;                                style=&#123;&#123; width: "130px" &#125;&#125;                            &gt;                                &#123;industryType.map(item=&gt; (                                    &lt;Option key=&#123;item&#125; value=&#123;item&#125; title=&#123;item&#125;&gt;                                        &#123;item&#125;                                    &lt;/Option&gt;                                ))&#125;                            &lt;/Select&gt;                        &lt;/Form.Item&gt;</code></pre><p>1.为select添加宽度(防止被内容撑开，或长短随内容变化)<br>2.为Option添加title（鼠标悬停在下拉框的每一个选项时，都能够看到详细内容）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> antd </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test:记忆碎片</title>
       <link href="2022/03/05/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/"/>
       <url>2022/03/05/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/</url>
@@ -45,9 +89,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> hexo </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
@@ -351,9 +395,9 @@
       
         <tags>
             
-            <tag> cookie </tag>
-            
             <tag> JavaScript </tag>
+            
+            <tag> cookie </tag>
             
         </tags>
       
