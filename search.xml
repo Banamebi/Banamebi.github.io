@@ -81,11 +81,11 @@
     
     
     <entry>
-      <title>无法加载文件 D__node_node_global_yarn.ps1，因为在此系统上禁止运行脚本的问题</title>
+      <title>node配置问题</title>
       <link href="2022/03/28/node%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/"/>
       <url>2022/03/28/node%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<p>1.以管理员身份运行vscode。<br>2.<br>输入命令1</p><pre><code>get-ExecutionPolicy</code></pre><p>返回<code>Restricted</code><br>输入命令2</p><pre><code>set-ExecutionPolicy RemoteSigned</code></pre><p>输入命令3</p><pre><code>get-ExecutionPolicy</code></pre><p>返回RemoteSigned</p>]]></content>
+        <content type="html"><![CDATA[<p>Q.无法加载文件 D__node_node_global_yarn.ps1，因为在此系统上禁止运行脚本</p><p>输入命令1</p><pre><code>get-ExecutionPolicy</code></pre><p>返回<code>Restricted</code><br>输入命令2</p><pre><code>set-ExecutionPolicy RemoteSigned</code></pre><p>输入命令3</p><pre><code>get-ExecutionPolicy</code></pre><p>返回RemoteSigned</p>]]></content>
       
       
       <categories>
@@ -300,31 +300,6 @@
         <tags>
             
             <tag> antd </tag>
-            
-            <tag> react </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>React notes</title>
-      <link href="2022/03/28/react%20notes/"/>
-      <url>2022/03/28/react%20notes/</url>
-      
-        <content type="html"><![CDATA[<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code>create-react-app demo</code></pre><h2 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h2><pre><code>ReactDOM.render(  &lt;h1&gt;Hello, world!&lt;/h1&gt;,  document.getElementById(&#39;root&#39;));</code></pre><h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><ol><li>JSX可以使用引号来定义以字符串为值的属性</li></ol><pre><code>const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</code></pre><ol start="2"><li>也可以使用大括号来定义以JavaScript表达式为值的属性</li></ol><pre><code>const element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</code></pre><ol start="3"><li>JSX标签是闭合式的，结尾处用/&gt;表示</li><li>可嵌套</li><li>在JSX中可任意使用JavaScript表达式，但要包含在大括号里</li><li>Babel转译器会把JSX转换成一个名为React.createElement()的方法调用</li></ol><pre><code>const element=(...);</code></pre><p>等价于</p><pre><code>const element=React.createElement(...);</code></pre><ol start="7"><li>在 JSX 中不能使用 if else 语句</li><li>JSX 允许在模板中插入数组，数组会自动展开所有成员</li></ol><h2 id="元素渲染-amp-条件渲染"><a href="#元素渲染-amp-条件渲染" class="headerlink" title="元素渲染&amp;条件渲染"></a>元素渲染&amp;条件渲染</h2><p>元素渲染</p><ol><li>将元素渲染到根DOM节点</li></ol><pre><code>const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;ReactDOM.render(element, document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>更新已渲染的元素<br>将要展示的部分封装起来，再调用setInterval()</li></ol><p>条件渲染</p><ol><li>if语句</li></ol><pre><code>class LoginControl extends React.Component &#123;  constructor(props) &#123;    super(props);    this.handleLoginClick = this.handleLoginClick.bind(this);    this.handleLogoutClick = this.handleLogoutClick.bind(this);    this.state = &#123;isLoggedIn: false&#125;;  &#125;  handleLoginClick() &#123;    this.setState(&#123;isLoggedIn: true&#125;);  &#125;  handleLogoutClick() &#123;    this.setState(&#123;isLoggedIn: false&#125;);  &#125;  render() &#123;    const isLoggedIn = this.state.isLoggedIn;    let button;    if (isLoggedIn) &#123;      button = &lt;LogoutButton onClick=&#123;this.handleLogoutClick&#125; /&gt;;    &#125; else &#123;      button = &lt;LoginButton onClick=&#123;this.handleLoginClick&#125; /&gt;;    &#125;    return (      &lt;div&gt;        &lt;Greeting isLoggedIn=&#123;isLoggedIn&#125; /&gt;        &#123;button&#125;      &lt;/div&gt;    );  &#125;&#125;ReactDOM.render(  &lt;LoginControl /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>与运算符</li></ol><pre><code>function Mailbox(props) &#123;  const unreadMessages = props.unreadMessages;  return (    &lt;div&gt;      &lt;h1&gt;Hello!&lt;/h1&gt;      &#123;unreadMessages.length &gt; 0 &amp;&amp;        &lt;h2&gt;          You have &#123;unreadMessages.length&#125; unread messages.        &lt;/h2&gt;      &#125;    &lt;/div&gt;  );&#125;const messages = [&#39;React&#39;, &#39;Re: React&#39;, &#39;Re:Re: React&#39;];ReactDOM.render(  &lt;Mailbox unreadMessages=&#123;messages&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="3"><li>三目运算符</li></ol><pre><code>render() &#123;  const isLoggedIn = this.state.isLoggedIn;  return (    &lt;div&gt;      The user is &lt;b&gt;&#123;isLoggedIn ? &#39;currently&#39; : &#39;not&#39;&#125;&lt;/b&gt; logged in.    &lt;/div&gt;  );&#125;</code></pre><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ol><li>函数组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;</code></pre><ol start="2"><li>ES6类定义组件（等价于函数组件）</li></ol><pre><code>class Welcome extends React.Component &#123;  render() &#123;    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;  &#125;&#125;</code></pre><ol start="3"><li>元素可代表用户定义的组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render(  element,  document.getElementById(&#39;root&#39;));</code></pre><ol start="4"><li>复合组件</li></ol><pre><code>function Firstame(props) &#123;    return &lt;h1&gt;网站名称：&#123;props.firstname&#125;&lt;/h1&gt;;&#125;function Lastname(props) &#123;    return &lt;h1&gt;网站小名：&#123;props.lastname&#125;&lt;/h1&gt;;&#125;function App() &#123;    return (    &lt;div&gt;        &lt;Firstname firstname=&quot;Amebi&quot; /&gt;        &lt;Lastname lastname=&quot;Ban&quot; /&gt;    &lt;/div&gt;    );&#125;ReactDOM.render(     &lt;App /&gt;,    document.getElementById(&#39;root&#39;));</code></pre><h2 id="props-amp-state"><a href="#props-amp-state" class="headerlink" title="props&amp;state"></a>props&amp;state</h2><p>props:</p><ol><li><p>是一个从外部传进组件的参数</p></li><li><p>主要作用是从父组件向子组件传递数据</p></li><li><p>不可改变，除非通过外部组件传入新的props重新渲染子组件</p><p>state：</p></li><li><p>主要作用是组件保存、控制以及修改自己的状态</p></li><li><p>可改变</p></li><li><p>在修改state的值时，不能直接对它操作，必须通过state方法</p></li><li><p>当调用this.state时，组件的数据状态state更新，并重新调用render方法</p><h2 id="处理事件"><a href="#处理事件" class="headerlink" title="处理事件"></a>处理事件</h2></li></ol><ol><li>采用camelCase(驼峰式)命名</li><li>使用JSX语法时，要传入一个函数作为事件处理函数</li></ol><pre><code>&lt;button onClick=&#123;handleClick&#125;&gt;click me&lt;/button&gt;</code></pre><ol start="3"><li>箭头函数：将原函数的function和函数名都删除，用=&gt;连接参数和函数体<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol><li>设置状态 <code>setState(object nextState[, function callback])</code></li><li>替换状态 <code>replaceState(object nextState[, function callback])</code></li><li>设置属性 <code>setProps(object nextProps[, function callback])</code></li><li>替换属性 <code>replaceProps(object nextProps[, function callback])</code></li><li>强制更新 <code>forceUpdate([function callback])</code></li><li>获取DOM节点 <code>DOMElement findDOMNode()</code></li><li>判断组件挂载状态 <code>bool isMounted()</code></li></ol></li></ol><h2 id="list-amp-key"><a href="#list-amp-key" class="headerlink" title="list&amp;key"></a>list&amp;key</h2><pre><code>function ListItem(props) &#123;  // Correct! There is no need to specify the key here:  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;&#125;function NumberList(props) &#123;  const numbers = props.numbers;  const listItems = numbers.map((number) =&gt;    // Correct! Key should be specified inside the array.    &lt;ListItem key=&#123;number.toString()&#125;              value=&#123;number&#125; /&gt;  );  return (    &lt;ul&gt;      &#123;listItems&#125;    &lt;/ul&gt;  );&#125;const numbers = [1, 2, 3, 4, 5];ReactDOM.render(  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><p>该段代码演示了将array转化为list,且将key赋在数组里的元素上<br>要注意的是，键仅在包含带key属性的元素的数组的上下文中有意义</p><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="https://img-blog.csdnimg.cn/20201030143640454.jpg?x-oss-process=image" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> react </tag>
             
