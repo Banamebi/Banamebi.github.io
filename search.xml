@@ -4,30 +4,11 @@
   
     
     <entry>
-      <title>subway_gis_bg开发手册</title>
-      <link href="2022/03/13/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
-      <url>2022/03/13/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</url>
+      <title>vscode格式化失效问题</title>
+      <link href="2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
+      <url>2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h1 id="subway-gis-bg开发手册"><a href="#subway-gis-bg开发手册" class="headerlink" title="subway_gis_bg开发手册"></a>subway_gis_bg开发手册</h1><h2 id="一-入口"><a href="#一-入口" class="headerlink" title="(一) 入口"></a>(一) 入口</h2><h2 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h2><pre><code>Login Earth - 如果套iframe就不用Home - Header 字体管理(现改为辅助功能)、操作日志、通知中心、管理员     - LeftPanel 导航     - RightPanel 页面内容(都在Component下)</code></pre><h2 id="二-页面"><a href="#二-页面" class="headerlink" title="(二) 页面"></a>(二) 页面</h2><h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><pre><code>HomePage -首页 AssetManagement(资产管理) - new/edit 资产新增/编辑                         -new/editInspection 盘点巡检新增/编辑                         -tabPages 五个文件夹分别对应五个tab页面(已取消ManagementContract(经营管理合同),现为四个)ContractManagement(合同管理) - 命名方式同上 new/edit xxxVisualizationManagement(可视化管理) - Layer (图层)                                   - 3DModeling (3D建模)WarrantManagement(权证管理)AssessManagement(评估管理) - 不要和资产管理搞错PassengerFlow(客流信息)SettingPage(设置) - 原结构为组织、角色、管理员，现加入白名单。</code></pre><h2 id="三-组件"><a href="#三-组件" class="headerlink" title="(三) 组件"></a>(三) 组件</h2><h2 id="Component-gt-Widgets"><a href="#Component-gt-Widgets" class="headerlink" title="Component-&gt;Widgets"></a>Component-&gt;Widgets</h2><pre><code>Charts - 所有图表ChartsBlock - 统一背景等样式的图表块，目前只在首页中使用Header - 统一部分新增页的头部样式Inputs - 暂时无用More - 首页中图表页的控制功能Relate - 关联功能组件，在合同新增和盘点巡查新增里用到Search - 所有页面用到的搜索，有prop的函 个数SelectBlock - 筛选块 各编辑页用到TableBlock - 统一样式的table prop中的transfer表示是否有移交(目前都不要)</code></pre><h2 id="四-接口"><a href="#四-接口" class="headerlink" title="(四) 接口"></a>(四) 接口</h2><p> 全部代码都有注释</p><h2 id="五-容易被遗漏的可进入页面或功能"><a href="#五-容易被遗漏的可进入页面或功能" class="headerlink" title="(五) 容易被遗漏的可进入页面或功能"></a>(五) 容易被遗漏的可进入页面或功能</h2><pre><code>header -  所有按钮的点击首页 - 配置分析报表 进入后是表格的配置操作资产新增 - 草稿箱        - 基本信息 为按钮的字段点击后都有功能资产编辑 - 表格 操作中几项点击会跳转新页面盘点巡查新增 - 可切换两个页面(剩下的页面都同理)</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 无法归类の情报 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>先前遇到的antd问题</title>
-      <link href="2022/03/13/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/"/>
-      <url>2022/03/13/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<h1 id="column内width属性失效问题"><a href="#column内width属性失效问题" class="headerlink" title="column内width属性失效问题"></a>column内width属性失效问题</h1><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以</p><pre><code>        &lt;Table                            columns=&#123;columns&#125;                            scroll=&#123;&#123; x: "100%"&#125;&#125;                                                /&gt;</code></pre><h1 id="option下拉框样式问题"><a href="#option下拉框样式问题" class="headerlink" title="option下拉框样式问题"></a>option下拉框样式问题</h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>选项中的内容过长，导致下拉框长度变化，并且不能够显示所有内容。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code>    &lt;Form.Item label=&quot;xxx&quot; name=&quot;xxx&quot; &gt;                            &lt;Select                                placeholder=&quot;请选择&quot;                                allowClear=&#123;true&#125;                                style=&#123;&#123; width: "130px" &#125;&#125;                            &gt;                                &#123;industryType.map(item=&gt; (                                    &lt;Option key=&#123;item&#125; value=&#123;item&#125; title=&#123;item&#125;&gt;                                        &#123;item&#125;                                    &lt;/Option&gt;                                ))&#125;                            &lt;/Select&gt;                        &lt;/Form.Item&gt;</code></pre><p>1.为select添加宽度(防止被内容撑开，或长短随内容变化)<br>2.为Option添加title（鼠标悬停在下拉框的每一个选项时，都能够看到详细内容）</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><p>除了一些必要的配置，如 <code>&quot;eslint.autoFixOnSave&quot;: true</code>, <code>&quot;editor.formatOnSave&quot;: true</code>,  <code>&quot;eslint.enable&quot;: true</code>,等，容易疏漏的有：</p><pre><code>  &quot;eslint.options&quot;: &#123;      &quot;extensions&quot;: [          &quot;.js&quot;,          &quot;.jsx&quot;,          &quot;.vue&quot;,          &quot;.ts&quot;,          &quot;.tsx&quot;      ]  &#125;,</code></pre><p>和</p><pre><code> &quot;eslint.validate&quot;: [      &quot;javascript&quot;,      &quot;javascriptreact&quot;,      &#123;          &quot;language&quot;: &quot;vue&quot;,          &quot;autoFix&quot;: true      &#125;,      &#123;        &quot;language&quot;: &quot;html&quot;,        &quot;autoFix&quot;: true    &#125;,    &#123;        &quot;language&quot;: &quot;typescript&quot;,        &quot;autoFix&quot;: true    &#125;,    &#123;        &quot;language&quot;: &quot;typescriptreact&quot;,        &quot;autoFix&quot;: true    &#125;  ],</code></pre><h2 id="shift-alt-F"><a href="#shift-alt-F" class="headerlink" title="shift+alt+F"></a>shift+alt+F</h2><p>选择格式化插件</p>]]></content>
       
       
       <categories>
@@ -39,32 +20,7 @@
       
         <tags>
             
-            <tag> antd </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test:记忆碎片</title>
-      <link href="2022/03/05/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/"/>
-      <url>2022/03/05/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/</url>
-      
-        <content type="html"><![CDATA[<h2 id="人类世界的记忆"><a href="#人类世界的记忆" class="headerlink" title="人类世界的记忆"></a>人类世界的记忆</h2><p><img src="https://img-blog.csdnimg.cn/dec747943f294836940e1ef37a32a1c5.png?x-oss-process=image" alt="quantum mechanics"><br><img src="https://img-blog.csdnimg.cn/15fbba97acb04c8288b5105e63813cab.png?x-oss-process=image" alt="general physics or SQL?"><br><img src="https://img-blog.csdnimg.cn/986e2cdce48246d3923040d460926190.png?x-oss-process=image" alt="matlab"><br><img src="https://img-blog.csdnimg.cn/403252514f484688810932e6977a41d3.png?x-oss-process=image" alt="神秘组织の申请"><br><img src="https://img-blog.csdnimg.cn/927b15bef8ed4417861fc301031d98fa.png?x-oss-process=image" alt="《Pride And Prejudice》"><br><img src="https://img-blog.csdnimg.cn/c2ae9c40d4174d0c820be769e7e9bb9d.png?x-oss-process=image" alt="《The Nightingale And The Rose》"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 三次元世界の生活 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> plog </tag>
+            <tag> vscode </tag>
             
         </tags>
       
@@ -74,8 +30,8 @@
     
     <entry>
       <title>预防老年痴呆</title>
-      <link href="2022/03/05/%E9%A2%84%E9%98%B2%E8%80%81%E5%B9%B4%E7%97%B4%E5%91%86/"/>
-      <url>2022/03/05/%E9%A2%84%E9%98%B2%E8%80%81%E5%B9%B4%E7%97%B4%E5%91%86/</url>
+      <link href="2022/03/28/%E9%A2%84%E9%98%B2%E8%80%81%E5%B9%B4%E7%97%B4%E5%91%86/"/>
+      <url>2022/03/28/%E9%A2%84%E9%98%B2%E8%80%81%E5%B9%B4%E7%97%B4%E5%91%86/</url>
       
         <content type="html"><![CDATA[<pre><code>**.ssh** ~~id-rsa~~  ~~id-rsa.pub~~ </code></pre><pre><code>**cmd**git config --global user.name &#39; &#39;git config --global user.email &#39; &#39;</code></pre><pre><code>**git**settings -&gt; SSH and GPG keys -&gt; add SSH key</code></pre><pre><code>**hexo**hexo cleanhexo shexo ghexo d</code></pre><pre><code>**extra**node -vhexo -v...</code></pre>]]></content>
       
@@ -100,11 +56,11 @@
     
     
     <entry>
-      <title>antd组件英文改中文</title>
-      <link href="2021/01/25/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/"/>
-      <url>2021/01/25/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/</url>
+      <title>配置json-server</title>
+      <link href="2022/03/28/%E9%85%8D%E7%BD%AEjson-server/"/>
+      <url>2022/03/28/%E9%85%8D%E7%BD%AEjson-server/</url>
       
-        <content type="html"><![CDATA[<p>英文版<br><img src="https://img-blog.csdnimg.cn/20210106091533901.png"><br>需要加入的代码<br>1、引入中文包和ConfigProvid配置</p><pre><code>import zhCN from &#39;antd/es/locale/zh_CN&#39;;import &#123; ConfigProvider &#125; from &#39;antd&#39;</code></pre><p>2.用ConfigProvid包裹需要汉化的组件</p><pre><code> &lt;ConfigProvider locale=&#123;zhCN&#125;&gt; &lt;xxx组件&gt; &lt;/ConfigProvider&gt;</code></pre><p>效果（中文版）</p><p><img src="https://img-blog.csdnimg.cn/20210106092938861.png"></p>]]></content>
+        <content type="html"><![CDATA[<pre><code>npm install -g json-server</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928083908147.png#pic_center"></p><p>创建一个放json文件的文件夹，然后cd到路径内<br>初始化一个名为package的json文件</p><pre><code>npm init</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928084014439.png?x-oss-process=image">选项为：enter enter 描述自定义 enter enter enter enter enter enter enter</p><p>再来装一下json-server模块并保存数据</p><pre><code>npm install json-server --save</code></pre><p><img src="https://img-blog.csdnimg.cn/2020092808564123.png?x-oss-process=image"></p><p>在文件夹中再创建一个db.json，内容自定义，最好包含多个属性。</p><p>将package.json中script下的内容改为</p><pre><code>&quot;json:server&quot;: &quot;json-server --watch db.json&quot;</code></pre><p>如图<br><img src="https://img-blog.csdnimg.cn/20200928084712254.png?x-oss-process=image"></p><p>回到cmd中运行</p><pre><code>npm run json:server</code></pre><p>结果<br><img src="https://img-blog.csdnimg.cn/20200928085753892.png?x-oss-process=image"></p><p>最后可以在浏览器中通过地址查询想要的数据。</p>]]></content>
       
       
       <categories>
@@ -116,7 +72,7 @@
       
         <tags>
             
-            <tag> antd </tag>
+            <tag> json </tag>
             
         </tags>
       
@@ -126,8 +82,8 @@
     
     <entry>
       <title>无法加载文件 D__node_node_global_yarn.ps1，因为在此系统上禁止运行脚本的问题</title>
-      <link href="2021/01/02/%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%20D__node_node_global_yarn.ps1%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-      <url>2021/01/02/%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%20D__node_node_global_yarn.ps1%EF%BC%8C%E5%9B%A0%E4%B8%BA%E5%9C%A8%E6%AD%A4%E7%B3%BB%E7%BB%9F%E4%B8%8A%E7%A6%81%E6%AD%A2%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      <link href="2022/03/28/node%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/"/>
+      <url>2022/03/28/node%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98/</url>
       
         <content type="html"><![CDATA[<p>1.以管理员身份运行vscode。<br>2.<br>输入命令1</p><pre><code>get-ExecutionPolicy</code></pre><p>返回<code>Restricted</code><br>输入命令2</p><pre><code>set-ExecutionPolicy RemoteSigned</code></pre><p>输入命令3</p><pre><code>get-ExecutionPolicy</code></pre><p>返回RemoteSigned</p>]]></content>
       
@@ -143,6 +99,8 @@
             
             <tag> npm </tag>
             
+            <tag> node </tag>
+            
         </tags>
       
     </entry>
@@ -150,11 +108,11 @@
     
     
     <entry>
-      <title>TypeScript notes</title>
-      <link href="2020/12/05/TypeScript%20notes/"/>
-      <url>2020/12/05/TypeScript%20notes/</url>
+      <title>搭建vue脚手架</title>
+      <link href="2022/03/28/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
+      <url>2022/03/28/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/</url>
       
-        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装</p><pre><code>npm install -g typescript</code></pre><p>将 TypeScript 转换为 JavaScript 代码</p><pre><code>tsc 文件名.ts</code></pre><p>tsc 常用编译参数如下表所示：<br><img src="https://img-blog.csdnimg.cn/20201202102531787.png?x-oss-process=image" alt="在这里插入图片描述"></p><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p><strong>任意类型</strong> <code>any</code>：声明为 any 的变量可以赋予任意类型的值。<br><strong>数字类型</strong>    <code>number</code>：双精度 64 位浮点值。它可以用来表示整数和分数。<br><strong>字符串类型</strong> <code>string</code>：一个字符系列，使用单引号（’）或双引号（”）来表示字符串类型。反引号（`）来定义多行文本和内嵌表达式。</p><p><strong>布尔类型</strong><code>boolean</code>：表示逻辑值：true 和 false。<br><strong>枚举</strong>    <code>enum</code>：枚举类型用于定义数值集合。<br><strong>void</strong>    <code>void</code>：用于标识方法返回值的类型，表示该方法没有返回值。<br><strong>null</strong>    <code>null</code>：表示对象值缺失。<br><strong>undefined</strong>    <code>undefined</code>：用于初始化变量为一个未定义的值。<br><strong>never</strong>    <code>never</code>：是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。</p><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p><strong>TypeScript 变量的命名规则</strong>：</p><ul><li>变量名称可以包含数字和字母。</li><li>除了下划线 _ 和美元 $ 符号外，不能包含其他特殊字符，包括空格。</li><li>变量名不能以数字开头。</li></ul><p><strong>声明变量的始终方式</strong>：</p><p>声明变量的类型及初始值：</p><pre><code>var [变量名] : [类型] = 值;</code></pre><p>声明变量的类型，但没有初始值，变量值会设置为 undefined：</p><pre><code>var [变量名] : [类型];</code></pre><p>声明变量并初始值，但不设置类型，该变量可以是任意类型：</p><pre><code>var [变量名] = 值;</code></pre><p>声明变量没有设置类型和初始值，类型可以是任意类型，默认初始值为 undefined：</p><pre><code>var [变量名];</code></pre><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ol><li>算术运算符</li></ol><pre><code>+  -  *  /  %  ++  --</code></pre><ol start="2"><li>逻辑运算符</li></ol><pre><code>&amp;&amp;  ||  ! </code></pre><ol start="3"><li>关系运算符</li></ol><pre><code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code></pre><ol start="4"><li>按位运算符</li></ol><pre><code>&amp;  !  ~  ^  &lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></pre><ol start="5"><li>赋值运算符</li></ol><pre><code>=  += -=  *=  /=</code></pre><ol start="6"><li>三元/条件运算符</li></ol><pre><code>Test ? expr1 : expr2</code></pre><ol start="7"><li>字符串运算符</li></ol><pre><code>连接运算符 (+)</code></pre><ol start="8"><li>类型运算符</li></ol><pre><code>typeof  instanceof </code></pre><h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><ol><li>if</li></ol><pre><code>if(boolean_expression)&#123;    # 在布尔表达式 boolean_expression 为 true 执行&#125;</code></pre><ol start="2"><li>if…else</li></ol><pre><code>if(boolean_expression)&#123;   # 在布尔表达式 boolean_expression 为 true 执行&#125;else&#123;   # 在布尔表达式 boolean_expression 为 false 执行&#125;</code></pre><ol start="3"><li>if…else if….else<pre><code>if(boolean_expression 1)&#123;# 在布尔表达式 boolean_expression 1 为 true 执行&#125;else if( boolean_expression 2)&#123;# 在布尔表达式 boolean_expression 2 为 true 执行&#125;else if(( boolean_expression 3)&#123;# 在布尔表达式 boolean_expression 3 为 true 执行&#125;else&#123;# 布尔表达式的条件都为 false 时执行&#125;</code></pre></li><li>switch </li></ol><pre><code>switch(expression)&#123;    case constant-expression  :       statement(s);       break; /* 可选的 */    case constant-expression  :       statement(s);       break; /* 可选的 */    /* 您可以有任意数量的 case 语句 */    default : /* 可选的 */       statement(s);&#125;</code></pre><h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ol><li>for<pre><code>for ( init; condition; increment )&#123;statement(s);&#125;</code></pre></li><li>for…in</li></ol><pre><code>for (var val in list) &#123;     //语句 &#125;</code></pre><ol start="3"><li>for…of</li></ol><pre><code>let someArray = [1, &quot;string&quot;, false];for (let entry of someArray) &#123;    console.log(entry); // 1, &quot;string&quot;, false&#125;</code></pre><ol start="4"><li>forEach</li></ol><pre><code>let list = [4, 5, 6];list.forEach((val, idx, array) =&gt; &#123;    // val: 当前值    // idx：当前index    // array: Array&#125;);</code></pre><ol start="5"><li>every<pre><code>let list = [4, 5, 6];list.every((val, idx, array) =&gt; &#123;// val: 当前值// idx：当前index// array: Arrayreturn true; // Continues// Return false will quit the iteration&#125;);</code></pre></li><li>while<pre><code>while(condition)&#123;statement(s);&#125;</code></pre></li><li>do…while </li></ol><pre><code>do&#123;   statement(s);&#125;while( condition );</code></pre><ol start="8"><li>无限循环</li></ol><pre><code>for(;;) &#123;    // 语句&#125;</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数定义 </p><pre><code>function function_name()&#123;    // 执行代码&#125;</code></pre><p>调用函数 <code>function_name()</code><br>函数返回值</p><pre><code>function function_name():return_type &#123;     // 语句    return value; &#125;</code></pre><p>带参数函数</p><pre><code>function func_name( param1 [:datatype], param2 [:datatype]) &#123;   &#125;</code></pre><p>匿名函数 <code>var res = function( [arguments] ) &#123; ... &#125;</code><br>构造函数 <code>var res = new Function ([arg1[, arg2[, ...argN]],] functionBody)</code><br>Lambda 函数 <code>( [param1, parma2,…param n] )=&gt;statement;</code><br>函数重载<br>参数类型不同：</p><pre><code>function disp(string):void; function disp(number):void;</code></pre><p>参数数量不同：</p><pre><code>function disp(n1:number):void; function disp(x:number,y:number):void;</code></pre><p>参数类型顺序不同：</p><pre><code>function disp(n1:number,s1:string):void; function disp(s:string,n:number):void;</code></pre><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><pre><code>var num = new Number(value);</code></pre><p> 对象属性<br> <code>MAX_VALUE</code>  <code>MIN_VALUE</code>  <code>NaN</code>  <code>NEGATIVE_INFINITY</code>  <code>POSITIVE_INFINITY</code>  <code>prototype  constructor</code><br> 对象方法<br> <code>toExponential()</code>  <code>toFixed()</code>  <code>toLocaleString()</code>  <code>toPrecision()</code>  <code>toString()</code>  <code>valueOf()</code></p><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><pre><code> var array_name[:datatype];        //声明 array_name = [val1,val2,valn..]   //初始化</code></pre><p>or</p><pre><code>var array_name[:data type] = [val1,val2…valn]</code></pre><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code>let myMap = new Map();</code></pre><pre><code>let myMap = new Map([        [&quot;key1&quot;, &quot;value1&quot;],        [&quot;key2&quot;, &quot;value2&quot;]    ]); </code></pre><p><strong>Map 相关的函数与属性</strong>：</p><p><code>map.clear()</code> – 移除 Map 对象的所有键/值对 。<br><code>map.set()</code> – 设置键值对，返回该 Map 对象。<br><code>map.get()</code> – 返回键对应的值，如果不存在，则返回 undefined。<br><code>map.has()</code> – 返回一个布尔值，用于判断 Map 中是否包含键对应的值。<br><code>map.delete()</code> – 删除 Map 中的元素，删除成功返回 true，失败返回 false。<br><code>map.size</code> – 返回 Map 对象键/值对的数量。<br><code>map.keys()</code> - 返回一个 Iterator 对象， 包含了 Map 对象中每个元素的键 。<br><code>map.values()</code> – 返回一个新的Iterator对象，包含了Map对象中每个元素的值 。</p><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>数组中元素的数据类型都一般是相同的（any[] 类型的数组可以不同），如果存储的元素数据类型不同，则需要使用元组。<br>元组中允许存储不同类型的元素，元组可以作为参数传递给函数。</p><pre><code>var tuple_name = [value1,value2,value3,…value n]</code></pre><h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><p>Type1|Type2|Type3 </p><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><pre><code>interface interface_name &#123; &#125;</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><pre><code>class class_name &#123;     // 类作用域&#125;</code></pre><p>创建实例化对象</p><pre><code>var object_name = new class_name([ arguments ])</code></pre><p>类的继承</p><pre><code>class child_class_name extends parent_class_name</code></pre>]]></content>
+        <content type="html"><![CDATA[<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h1><h2 id="0-检查已配置的环境"><a href="#0-检查已配置的环境" class="headerlink" title="0.检查已配置的环境"></a>0.检查已配置的环境</h2><p>打开cmd，输入：</p><pre><code>node -vnpm -v</code></pre><p><img src="https://img-blog.csdnimg.cn/20200926090156597.png#pic_center" alt="输出版本号即成功。"></p><h2 id="1-找到要搭建的路径"><a href="#1-找到要搭建的路径" class="headerlink" title="1.找到要搭建的路径"></a>1.找到要搭建的路径</h2><pre><code>cd D:\work\code\vscode\projects</code></pre><p>d:<br>cd+space+路径</p><h2 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h2><pre><code>vue init webpack pro</code></pre><p>pro为文件名，可自定义<br><img src="https://img-blog.csdnimg.cn/20200926091304321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"><br>选项为：enter enter enter enter no no no no enter</p><p><img src="https://img-blog.csdnimg.cn/20200926091711797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="安装成功！"></p><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>cd到pro文件夹下</p><pre><code>cd D:\work\code\vscode\projects\pro</code></pre><pre><code>npm run dev</code></pre><p><img src="https://img-blog.csdnimg.cn/20200926092043467.png#pic_center" alt="成功">将这个地址在浏览器中打开</p><p><img src="https://img-blog.csdnimg.cn/20200926092221442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="成功"></p>]]></content>
       
       
       <categories>
@@ -166,7 +124,9 @@
       
         <tags>
             
-            <tag> TypeScript </tag>
+            <tag> VUE </tag>
+            
+            <tag> vue-cli </tag>
             
         </tags>
       
@@ -175,188 +135,11 @@
     
     
     <entry>
-      <title>ES6 notes (part4)</title>
-      <link href="2020/12/05/ES6%20notes%20(part4)/"/>
-      <url>2020/12/05/ES6%20notes%20(part4)/</url>
+      <title>先前遇到的antd问题</title>
+      <link href="2022/03/28/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/"/>
+      <url>2022/03/28/%E5%85%88%E5%89%8D%E9%81%87%E5%88%B0%E7%9A%84antd%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h1 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h1><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</p><pre><code>let s = Symbol();typeof s// &quot;symbol&quot;</code></pre><h1 id="Map-amp-Set"><a href="#Map-amp-Set" class="headerlink" title="Map &amp; Set"></a>Map &amp; Set</h1><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。<br>Set本身是一个构造函数，用来生成 Set 数据结构。<br>Set函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化。</p><p><strong>Set 结构的实例有以下属性:</strong></p><p><code>Set.prototype.constructor</code>：构造函数，默认就是Set函数。<br><code>Set.prototype.size</code>：返回Set实例的成员总数。<br>Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。</p><p><code>Set.prototype.add(value)</code>：添加某个值，返回 Set 结构本身。<br><code>Set.prototype.delete(value)</code>：删除某个值，返回一个布尔值，表示删除是否成功。<br><code>Set.prototype.has(value)</code>：返回一个布尔值，表示该值是否为Set的成员。<br><code>Set.prototype.clear()</code>：清除所有成员，没有返回值。</p><p><strong>Set 结构的实例有四个遍历方法:</strong></p><p><code>Set.prototype.keys()</code>：返回键名的遍历器<br><code>Set.prototype.values()</code>：返回键值的遍历器<br><code>Set.prototype.entries()</code>：返回键值对的遍历器<br><code>Set.prototype.forEach()</code>：使用回调函数遍历每个成员</p><h2 id="WeakSet"><a href="#WeakSet" class="headerlink" title="WeakSet"></a>WeakSet</h2><pre><code>const ws = new WeakSet();</code></pre><p>WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有两个区别。<br>WeakSet 的成员只能是对象，而不能是其他类型的值。<br>WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。</p><p><strong>WeakSet 结构有以下三个方法:</strong></p><p>WeakSet.prototype.add(value)：向 WeakSet 实例添加一个新成员。<br>WeakSet.prototype.delete(value)：清除 WeakSet 实例的指定成员。<br>WeakSet.prototype.has(value)：返回一个布尔值，表示某个值是否在 WeakSet 实例之中。</p><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。</p><p><strong>Map 结构的实例有以下属性和操作方法:</strong><br>（1）<code>size</code> 属性<br>size属性返回 Map 结构的成员总数。<br>（2）<code>Map.prototype.set(key, value)</code><br>set方法设置键名key对应的键值为value，然后返回整个 Map 结构。如果key已经有值，则键值会被更新，否则就新生成该键。<br>（3）<code>Map.prototype.get(key)</code><br>get方法读取key对应的键值，如果找不到key，返回undefined。<br>（4）<code>Map.prototype.has(key)</code><br>has方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。<br>（5）<code>Map.prototype.delete(key)</code><br>delete方法删除某个键，返回true。如果删除失败，返回false。<br>（6）<code>Map.prototype.clear()</code><br>clear方法清除所有成员，没有返回值。</p><p><strong>Map 结构原生提供三个遍历器生成函数和一个遍历方法:</strong></p><p><code>Map.prototype.keys()：</code>返回键名的遍历器。<br><code>Map.prototype.values()：</code>返回键值的遍历器。<br><code>Map.prototype.entries()：</code>返回所有成员的遍历器。<br><code>Map.prototype.forEach()：</code>遍历 Map 的所有成员。</p><h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><p>WeakMap结构与Map结构类似，也是用于生成键值对的集合。<br>WeakMap与Map的区别有两点。WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名。WeakMap的键名所指向的对象，不计入垃圾回收机制。</p><h1 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h1><p>Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。<br><code>Proxy.revocable()</code>方法返回一个可取消的 Proxy 实例。</p><h1 id="Reflect"><a href="#Reflect" class="headerlink" title="Reflect"></a>Reflect</h1><p>Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。Reflect对象的设计目的有这样几个：<br>（1） 将Object对象的一些明显属于语言内部的方法（比如Object.defineProperty），放到Reflect对象上。现阶段，某些方法同时在Object和Reflect对象上部署，未来的新方法将只部署在Reflect对象上。也就是说，从Reflect对象上可以拿到语言内部的方法。<br>（2） 修改某些Object方法的返回结果，让其变得更合理。<br>（3） 让Object操作都变成函数行为。<br>（4）Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。这就让Proxy对象可以方便地调用对应的Reflect方法，完成默认行为，作为修改行为的基础。 </p><h1 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h1><p>它是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。<br>Iterator 的作用有三个：一是为各种数据结构，提供一个统一的、简便的访问接口；二是使得数据结构的成员能够按某种次序排列；三是 ES6 创造了一种新的遍历命令for…of循环，Iterator 接口主要供for…of消费。</p><p><strong>Iterator 的遍历过程:</strong></p><p>（1）创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。<br>（2）第一次调用指针对象的next方法，可以将指针指向数据结构的第一个成员。<br>（3）第二次调用指针对象的next方法，指针就指向数据结构的第二个成员。<br>（4）不断调用指针对象的next方法，直到它指向数据结构的结束位置。</p><h1 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h1><p>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。<br>Generator 函数有多种理解角度。语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。<br>执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。<br>形式上，Generator 函数是一个普通函数，但是有两个特征。<strong>一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态.</strong><br>*<em>其中 * 用来表示函数为 Generator 函数，yield 用来定义函数内部的状态。*</em><br><code>Generator.prototype.throw()：</code>Generator 函数返回的遍历器对象，都有一个throw方法，可以在函数体外抛出错误，然后在 Generator 函数体内捕获。<br><code>Generator.prototype.return() ：</code>Generator 函数返回的遍历器对象，还有一个return()方法，可以返回给定的值，并且终结遍历 Generator 函数。</p><h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><p>async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await<br>async函数对 Generator 函数的改进，体现在以下四点。</p><p><strong>（1）内置执行器。</strong><br>Generator 函数的执行必须靠执行器，所以才有了co模块，而async函数自带执行器。也就是说，async函数的执行，与普通函数一模一样，只要一行。</p><pre><code>asyncReadFile();</code></pre><p>上面的代码调用了asyncReadFile函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用next方法。或者用co模块，才能真正执行，得到最后结果。<br><strong>（2）更好的语义。</strong><br>async和await，比起星号和yield，语义更清楚了。async表示函数里有异步操作，await表示紧跟在后面的表达式需要等待结果。<br><strong>（3）更广的适用性。</strong><br>co模块约定，yield命令后面只能是 Thunk 函数或 Promise 对象，而async函数的await命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象）。<br><strong>（4）返回值是 Promise。</strong><br>async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ES6 notes (part3)</title>
-      <link href="2020/12/05/ES6%20notes%20(part3)/"/>
-      <url>2020/12/05/ES6%20notes%20(part3)/</url>
-      
-        <content type="html"><![CDATA[<h2 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h2><ol><li>函数参数的默认值<br>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</li><li>rest 参数<br>ES6 引入 rest 参数（<strong>形式为…变量名</strong>），用于获取函数的多余参数，这样就不需要使用arguments对象了。<br><strong>rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</strong></li><li>严格模式<br>只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</li><li>name 属性<br>如果将一个匿名函数赋值给一个变量，ES5 的name属性，会返回空字符串，而 ES6 的name属性会返回实际的函数名。</li><li>箭头函数<br>ES6 允许使用“箭头”（=&gt;）定义函数。<br>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br>箭头函数有几个使用注意点。<br>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。<br>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。<br>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<br>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li><li>尾调用优化<br>尾调用：某个函数的最后一步是调用另一个函数。<br>尾调用优化:保留内层函数的调用帧<br>尾递归:尾调用自身，就称为尾递归</li><li>函数参数的尾逗号<br>ES2017 允许函数的最后一个参数有尾逗号</li><li>Function.prototype.toString()<br>toString()方法返回函数代码本身</li><li>catch 命令的参数省略<br>ES2019 允许catch语句省略参数</li></ol><h2 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h2><ol><li>扩展运算符<br>扩展运算符（spread）是三个点（…）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。</li><li>Array.from()<br>Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。</li><li>Array.of()<br>Array.of方法用于将一组值，转换为数组。</li><li>数组实例的 copyWithin()<br>在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。</li><li>数组实例的 find() 和 findIndex()<br>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。<br>数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。</li><li>数组实例的 fill()<br>fill方法使用给定值，填充一个数组。</li><li>数组实例的 entries()，keys() 和 values()<br>keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</li><li>数组实例的 includes()<br>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。</li><li>数组实例的 flat()，flatMap()<br>Array.prototype.flat()用于将嵌套的数组“拉平”，变成一维的数组。该方法返回一个新数组，对原数据没有影响。<br><code>flat()</code>默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将flat()方法的参数写成一个整数，表示想要拉平的层数，默认为1。<br><code>flatMap()</code>方法对原数组的每个成员执行一个函数（相当于执行Array.prototype.map()），然后对返回值组成的数组执行flat()方法。该方法返回一个新数组，不改变原数组。</li><li>数组的空位<br>数组的空位指，数组的某一个位置没有任何值。由于空位的处理规则非常不统一，所以建议避免出现空位。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>promise&amp;fetch</title>
-      <link href="2020/11/26/promise&amp;fetch/"/>
-      <url>2020/11/26/promise&amp;fetch/</url>
-      
-        <content type="html"><![CDATA[<h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><h2 id="promise状态"><a href="#promise状态" class="headerlink" title="promise状态"></a>promise状态</h2><p>pending（进行中）、fulfilled（已成功）和 rejected（已失败）。</p><h2 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h2><ol><li>then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise<br>执行失败时的回调，两个函数只会有一个被调用。</li><li>通过 .then 形式添加的回调函数，不论什么时候，都会被调用。</li></ol><h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><ol><li>fetch 规范与 jQuery.ajax() 的区别：</li></ol><ul><li>当接收到一个代表错误的 HTTP 状态码时，从 fetch() 返回的 Promise 不会被标记为 reject， 即使响应的 HTTP状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。</li><li>fetch() 可以不会接受跨域 cookies；你也可以不能使用 fetch() 建立起跨域会话。其他网站的 Set-Cookie头部字段将会被无视。</li><li>fetch 不会发送 cookies。除非你使用了credentials 的初始化选项。</li></ul><p>eg：</p><pre><code>fetch(&#39;http://example.com/movies.json&#39;)  .then(function(response) &#123;    return response.json();  &#125;)  .then(function(myJson) &#123;    console.log(myJson);  &#125;);</code></pre><ol start="2"><li>支持的请求参数<br>fetch() 接受第二个可选参数，一个可以控制不同配置的 init 对象</li><li>发送带凭据的请求<br>为了让浏览器发送包含凭据的请求（即使是跨域源），要将credentials: ‘include’添加到传递给 fetch()方法的init对象。<br>如果只想在请求URL与调用脚本位于同一起源处时发送凭据，添加 credentials: ‘same-origin’。<br>要改为确保浏览器不在请求中包含凭据，使用 credentials: ‘omit’。</li><li>上传 JSON 数据<br>使用 fetch() POST JSON数据</li><li>上传文件<br>可以通过 HTML <code>&lt;input type=&quot;file&quot; /&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>上传多个文件<br>可以通过HTML <code>&lt;input type=&quot;file&quot; mutiple/&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>检测请求是否成功<br>如果遇到网络故障，<code>fetch()</code> promise 将会 reject，带上一个 TypeError 对象。虽然这个情况经常是遇到了权限问题或类似问题——比如 404 不是一个网络故障。想要精确的判断 <code>fetch()</code> 是否成功，需要包含 promise resolved 的情况，此时再判断 Response.ok 是不是为 true。</li><li>自定义请求对象<br>除了传给 <code>fetch()</code> 一个资源的地址，还可以通过使用 <code>Request()</code> 构造函数来创建一个 request 对象，然后再作为参数传给 <code>fetch()</code></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 异步 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ES6 notes (part2)</title>
-      <link href="2020/11/26/ES6%20notes%EF%BC%88part2%EF%BC%89/"/>
-      <url>2020/11/26/ES6%20notes%EF%BC%88part2%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><ol><li>字符的 Unicode 表示法<br>将码点放入大括号：<code>&quot;\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;&quot;</code></li><li>字符串的遍历器接口<br>ES6 为字符串添加了遍历器接口，使得字符串可以被for…of循环遍历。</li><li>JavaScript 规定有5个字符，不能在字符串里面直接使用，只能使用转义形式</li></ol><pre><code>U+005C：反斜杠（reverse solidus)U+000D：回车（carriage return）U+2028：行分隔符（line separator）U+2029：段分隔符（paragraph separator）U+000A：换行符（line feed）</code></pre><ol start="4"><li>JSON.stringify() 的改造<br>如果遇到0xD800到0xDFFF之间的单个码点，或者不存在的配对形式，它会返回转义字符串，留给应用自己决定下一步的处理。</li><li>模板字符串<br>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</li><li>标签模板<br>它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。</li></ol><h2 id="字符串的新增方法"><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h2><ol><li>String.fromCodePoint()<br>从 Unicode 码点返回对应字符，并且可以识别大于0xFFFF的字符。</li><li>String.raw()<br>返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，往往用于模板字符串的处理方法。</li><li>实例方法：codePointAt()<br>能够正确处理 4 个字节储存的字符，返回一个字符的码点。</li><li>实例方法：normalize()<br>用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</li><li>实例方法：includes(), startsWith(), endsWith()</li></ol><pre><code>includes()：返回布尔值，表示是否找到了参数字符串。startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</code></pre><ol start="6"><li><p>实例方法：repeat()<br>repeat方法返回一个新字符串，表示将原字符串重复n次。</p></li><li><p>实例方法：padStart()，padEnd()<br>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全</p></li><li><p>实例方法：trimStart()，trimEnd()<br>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。</p></li><li><p>实例方法：matchAll()<br>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p></li><li><p>实例方法：replaceAll()<br>可以一次性替换所有匹配。它的用法与replace()相同，返回一个新字符串，不会改变原字符串。</p><h2 id="正则的扩展"><a href="#正则的扩展" class="headerlink" title="正则的扩展"></a>正则的扩展</h2></li><li><p>RegExp构造函数<br>如果RegExp构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p></li><li><p>字符串的正则方法</p></li></ol><pre><code>String.prototype.match 调用 RegExp.prototype[Symbol.match]String.prototype.replace 调用 RegExp.prototype[Symbol.replace]String.prototype.search 调用 RegExp.prototype[Symbol.search]String.prototype.split 调用 RegExp.prototype[Symbol.split]</code></pre><ol start="3"><li>u 修饰符<br><strong>点字符</strong>:点（.）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于0xFFFF的 Unicode 字符，点字符不能识别，必须加上u修饰符。<br><strong>Unicode 字符表示法</strong>:ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上u修饰符，才能识别当中的大括号，否则会被解读为量词。<br><strong>量词</strong>:使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>预定义模式</strong>:u修饰符也影响到预定义模式，能否正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>i 修饰符</strong>:有些 Unicode 字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。<br><strong>转义</strong>:没有u修饰符的情况下，正则中没有定义的转义（如逗号的转义,）无效，而在u模式会报错。</li><li>RegExp.prototype.unicode 属性<br>正则实例对象新增unicode属性，表示是否设置了u修饰符。</li><li>y 修饰符<br>y修饰符的作用与g修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始。</li><li>RegExp.prototype.sticky 属性<br>与y修饰符相匹配，ES6 的正则实例对象多了sticky属性，表示是否设置了y修饰符。</li><li>RegExp.prototype.flags 属性<br>ES6 为正则表达式新增了flags属性，会返回正则表达式的修饰符。</li><li>s 修饰符：dotAll 模式<br>ES2018 引入s修饰符，使得.可以匹配任意单个字符。<code>/foo.bar/s.test(&#39;foo\nbar&#39;) // true</code><br>这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。</li><li>后行断言<br>x只有在y后面才匹配，必须写成<code>/(?&lt;=y)x/</code></li><li>Unicode 属性类<br>引入了一种新的类的写法\p{…}和\P{…}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</li><li>具名组匹配<br>引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</li><li>正则匹配索引</li></ol><pre><code>const text = &#39;zabbcdef&#39;;const re = /ab/;const result = re.exec(text);result.index // 1result.indices //  [1, 3] </code></pre><p>exec()方法的返回结果result，它的index属性是整个匹配结果（ab）的开始位置，而它的indices属性是一个数组，成员是每个匹配的开始位置和结束位置的数组。由于该例子的正则表达式没有组匹配，所以indices数组只有一个成员，表示整个匹配的开始位置是1，结束位置是3。<br>13. String.prototype.matchAll()<br>ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。</p><h2 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><ol><li>二进制和八进制表示法<br>ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。</li><li>Number.isFinite(), Number.isNaN()<br>Number.isFinite()用来检查一个数值是否为有限的（finite），Number.isNaN()用来检查一个值是否为NaN。</li><li>Number.parseInt(), Number.parseFloat()<br>ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。</li><li>Number.isInteger()<br>Number.isInteger()用来判断一个数值是否为整数。</li><li>Number.EPSILON<br>ES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。</li><li>安全整数和 Number.isSafeInteger()<br>JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。</li><li>Math 对象的扩展<br><strong>Math.trunc()**：用于去除一个数的小数部分，返回整数部分。<br>**Math.sign()</strong> ：Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。<br><strong>Math.cbrt()**：Math.cbrt()方法用于计算一个数的立方根。<br>**Math.clz32()</strong> ：Math.clz32()方法将参数转为 32 位无符号整数的形式，然后返回这个 32 位值里面有多少个前导 0。<br><strong>Math.imul()</strong> ：Math.imul方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。<br><strong>Math.fround()</strong> ：Math.fround方法返回一个数的32位单精度浮点数形式。<br>**Math.hypot()**：Math.hypot方法返回所有参数的平方和的平方根。</li><li>指数运算符<br>ES2016 新增了一个指数运算符（**）。</li><li>BigInt 数据类型<br>BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。</li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>ES6 notes (part1)</title>
-      <link href="2020/11/26/ES6%20notes%EF%BC%88part1%EF%BC%89/"/>
-      <url>2020/11/26/ES6%20notes%EF%BC%88part1%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>作用：ES6 代码–&gt;ES5 代码<br>安装：<code>npm install --save-dev @babel/core</code><br>转码规则：<code>npm install --save-dev @babel/preset-env</code><br>react转码规则：<code>npm install --save-dev @babel/preset-react</code><br>配置文件（.babelrc ）： </p><pre><code> &#123;    &quot;presets&quot;: [      &quot;@babel/env&quot;,      &quot;@babel/preset-react&quot;    ],    &quot;plugins&quot;: []  &#125;</code></pre><p>命令行转码（@babel/cli）：<code>npm install --save-dev @babel/cli</code><br>babel-node:提供一个支持 ES6 的 REPL 环境,支持 Node 的 REPL 环境的所有功能，而且可以直接运行 ES6 代码。</p><ul><li>安装：<code>npm install --save-dev @babel/node</code></li><li>进入REPL环境：<code>npx babel-node</code></li><li>直接运行 ES6 脚本：<code>npx babel-node es6.js</code></li></ul><p>@babel/register 模块：<code>npm install --save-dev @babel/register</code><br>此模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用 Babel 进行转码。  </p><pre><code>require(&#39;@babel/register&#39;);require(&#39;./es6.js&#39;);</code></pre><h2 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h2><p>Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>安装：<code>npm install --save-dev core-js regenerator-runtime</code><br>脚本头部加入：</p><pre><code>import &#39;core-js&#39;;import &#39;regenerator-runtime/runtime&#39;;</code></pre><p>或</p><pre><code>require(&#39;core-js&#39;);require(&#39;regenerator-runtime/runtime);</code></pre><h2 id="浏览器环境"><a href="#浏览器环境" class="headerlink" title="浏览器环境"></a>浏览器环境</h2><pre><code>&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/babel&quot;&gt;// Your ES6 code&lt;/script&gt;</code></pre><h1 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let&amp;const"></a>let&amp;const</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>作用：声明变量<br>和var的区别：<br>1.var是全局的，而let只在命令所在的代码块内有效<br>2.var命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined；let命令所声明的变量一定要在声明后使用，否则报错。<br>3.let不允许重复声明<br>暂时性死区:只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。<br>块级作用域:let实际上为 JavaScript 新增了块级作用域</p><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>const 声明一个只读<strong>常量</strong>，声明之后不允许改变。一旦声明必须初始化，只声明不赋值，就会报错。<br>const声明的常量，也与let一样不可重复声明。 </p><h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。<br>数组模型的解构：<code>let [a, b, c] = [1, 2, 3];</code><br>对象模型的解构：<code>let &#123; foo, bar &#125; = &#123; foo: &#39;aaa&#39;, bar: &#39;bbb&#39; &#125;;</code><br>Set 结构：<code>let [x, y, z] = new Set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]);</code><br>解构赋值允许指定默认值：<code>let [x, y = &#39;b&#39;] = [&#39;a&#39;]; </code> or <code>var &#123;x = 3&#125; = &#123;&#125;;</code><br>字符串的解构:<code>const [a, b, c, d, e] = &#39;hello&#39;;</code></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>react-router</title>
-      <link href="2020/11/05/react-router/"/>
-      <url>2020/11/05/react-router/</url>
-      
-        <content type="html"><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>npm install --save react-router react-router-dom</code></pre><h2 id="编写组件"><a href="#编写组件" class="headerlink" title="编写组件"></a>编写组件</h2><pre><code>import React from &#39;react&#39;;export default class Demo extends React.Component&#123;    render()&#123;        return(            &lt;div&gt;demo&lt;/div&gt;        );    &#125;&#125;</code></pre><h2 id="route"><a href="#route" class="headerlink" title="route"></a>route</h2><ol><li>在src下创建一个routes文件</li><li>在该文件夹下创建一个index.js</li><li>将编写好的Demo组件import过来 <code>import Demo from &#39;  (路径) &#39;</code></li></ol><pre><code>    &lt;Router&gt;        &lt;Switch&gt;      &lt;Route exact path=&quot;/&quot; component=&#123;Demo&#125;/&gt;         &lt;Route path=&quot;/demo&quot; component=&#123;Demo&#125; /&gt;          &lt;/Switch&gt;    &lt;/Router&gt;</code></pre><h2 id="Switch-amp-exact"><a href="#Switch-amp-exact" class="headerlink" title="Switch&amp;exact"></a>Switch&amp;exact</h2><ul><li>Switch组件渲染第一个被匹配到的Route</li><li>exact属性精准对比URL和Path</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> react </tag>
-            
-            <tag> router </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>React notes</title>
-      <link href="2020/11/05/react%20notes/"/>
-      <url>2020/11/05/react%20notes/</url>
-      
-        <content type="html"><![CDATA[<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code>create-react-app demo</code></pre><h2 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h2><pre><code>ReactDOM.render(  &lt;h1&gt;Hello, world!&lt;/h1&gt;,  document.getElementById(&#39;root&#39;));</code></pre><h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><ol><li>JSX可以使用引号来定义以字符串为值的属性</li></ol><pre><code>const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</code></pre><ol start="2"><li>也可以使用大括号来定义以JavaScript表达式为值的属性</li></ol><pre><code>const element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</code></pre><ol start="3"><li>JSX标签是闭合式的，结尾处用/&gt;表示</li><li>可嵌套</li><li>在JSX中可任意使用JavaScript表达式，但要包含在大括号里</li><li>Babel转译器会把JSX转换成一个名为React.createElement()的方法调用</li></ol><pre><code>const element=(...);</code></pre><p>等价于</p><pre><code>const element=React.createElement(...);</code></pre><ol start="7"><li>在 JSX 中不能使用 if else 语句</li><li>JSX 允许在模板中插入数组，数组会自动展开所有成员</li></ol><h2 id="元素渲染-amp-条件渲染"><a href="#元素渲染-amp-条件渲染" class="headerlink" title="元素渲染&amp;条件渲染"></a>元素渲染&amp;条件渲染</h2><p>元素渲染</p><ol><li>将元素渲染到根DOM节点</li></ol><pre><code>const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;ReactDOM.render(element, document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>更新已渲染的元素<br>将要展示的部分封装起来，再调用setInterval()</li></ol><p>条件渲染</p><ol><li>if语句</li></ol><pre><code>class LoginControl extends React.Component &#123;  constructor(props) &#123;    super(props);    this.handleLoginClick = this.handleLoginClick.bind(this);    this.handleLogoutClick = this.handleLogoutClick.bind(this);    this.state = &#123;isLoggedIn: false&#125;;  &#125;  handleLoginClick() &#123;    this.setState(&#123;isLoggedIn: true&#125;);  &#125;  handleLogoutClick() &#123;    this.setState(&#123;isLoggedIn: false&#125;);  &#125;  render() &#123;    const isLoggedIn = this.state.isLoggedIn;    let button;    if (isLoggedIn) &#123;      button = &lt;LogoutButton onClick=&#123;this.handleLogoutClick&#125; /&gt;;    &#125; else &#123;      button = &lt;LoginButton onClick=&#123;this.handleLoginClick&#125; /&gt;;    &#125;    return (      &lt;div&gt;        &lt;Greeting isLoggedIn=&#123;isLoggedIn&#125; /&gt;        &#123;button&#125;      &lt;/div&gt;    );  &#125;&#125;ReactDOM.render(  &lt;LoginControl /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>与运算符</li></ol><pre><code>function Mailbox(props) &#123;  const unreadMessages = props.unreadMessages;  return (    &lt;div&gt;      &lt;h1&gt;Hello!&lt;/h1&gt;      &#123;unreadMessages.length &gt; 0 &amp;&amp;        &lt;h2&gt;          You have &#123;unreadMessages.length&#125; unread messages.        &lt;/h2&gt;      &#125;    &lt;/div&gt;  );&#125;const messages = [&#39;React&#39;, &#39;Re: React&#39;, &#39;Re:Re: React&#39;];ReactDOM.render(  &lt;Mailbox unreadMessages=&#123;messages&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="3"><li>三目运算符</li></ol><pre><code>render() &#123;  const isLoggedIn = this.state.isLoggedIn;  return (    &lt;div&gt;      The user is &lt;b&gt;&#123;isLoggedIn ? &#39;currently&#39; : &#39;not&#39;&#125;&lt;/b&gt; logged in.    &lt;/div&gt;  );&#125;</code></pre><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ol><li>函数组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;</code></pre><ol start="2"><li>ES6类定义组件（等价于函数组件）</li></ol><pre><code>class Welcome extends React.Component &#123;  render() &#123;    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;  &#125;&#125;</code></pre><ol start="3"><li>元素可代表用户定义的组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render(  element,  document.getElementById(&#39;root&#39;));</code></pre><ol start="4"><li>复合组件</li></ol><pre><code>function Firstame(props) &#123;    return &lt;h1&gt;网站名称：&#123;props.firstname&#125;&lt;/h1&gt;;&#125;function Lastname(props) &#123;    return &lt;h1&gt;网站小名：&#123;props.lastname&#125;&lt;/h1&gt;;&#125;function App() &#123;    return (    &lt;div&gt;        &lt;Firstname firstname=&quot;Amebi&quot; /&gt;        &lt;Lastname lastname=&quot;Ban&quot; /&gt;    &lt;/div&gt;    );&#125;ReactDOM.render(     &lt;App /&gt;,    document.getElementById(&#39;root&#39;));</code></pre><h2 id="props-amp-state"><a href="#props-amp-state" class="headerlink" title="props&amp;state"></a>props&amp;state</h2><p>props:</p><ol><li><p>是一个从外部传进组件的参数</p></li><li><p>主要作用是从父组件向子组件传递数据</p></li><li><p>不可改变，除非通过外部组件传入新的props重新渲染子组件</p><p>state：</p></li><li><p>主要作用是组件保存、控制以及修改自己的状态</p></li><li><p>可改变</p></li><li><p>在修改state的值时，不能直接对它操作，必须通过state方法</p></li><li><p>当调用this.state时，组件的数据状态state更新，并重新调用render方法</p><h2 id="处理事件"><a href="#处理事件" class="headerlink" title="处理事件"></a>处理事件</h2></li></ol><ol><li>采用camelCase(驼峰式)命名</li><li>使用JSX语法时，要传入一个函数作为事件处理函数</li></ol><pre><code>&lt;button onClick=&#123;handleClick&#125;&gt;click me&lt;/button&gt;</code></pre><ol start="3"><li>箭头函数：将原函数的function和函数名都删除，用=&gt;连接参数和函数体<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol><li>设置状态 <code>setState(object nextState[, function callback])</code></li><li>替换状态 <code>replaceState(object nextState[, function callback])</code></li><li>设置属性 <code>setProps(object nextProps[, function callback])</code></li><li>替换属性 <code>replaceProps(object nextProps[, function callback])</code></li><li>强制更新 <code>forceUpdate([function callback])</code></li><li>获取DOM节点 <code>DOMElement findDOMNode()</code></li><li>判断组件挂载状态 <code>bool isMounted()</code></li></ol></li></ol><h2 id="list-amp-key"><a href="#list-amp-key" class="headerlink" title="list&amp;key"></a>list&amp;key</h2><pre><code>function ListItem(props) &#123;  // Correct! There is no need to specify the key here:  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;&#125;function NumberList(props) &#123;  const numbers = props.numbers;  const listItems = numbers.map((number) =&gt;    // Correct! Key should be specified inside the array.    &lt;ListItem key=&#123;number.toString()&#125;              value=&#123;number&#125; /&gt;  );  return (    &lt;ul&gt;      &#123;listItems&#125;    &lt;/ul&gt;  );&#125;const numbers = [1, 2, 3, 4, 5];ReactDOM.render(  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><p>该段代码演示了将array转化为list,且将key赋在数组里的元素上<br>要注意的是，键仅在包含带key属性的元素的数组的上下文中有意义</p><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="https://img-blog.csdnimg.cn/20201030143640454.jpg?x-oss-process=image" alt="在这里插入图片描述"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> react </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>react-creat-app+antd</title>
-      <link href="2020/10/24/react-creat-app+antd/"/>
-      <url>2020/10/24/react-creat-app+antd/</url>
-      
-        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>npx create-react-app demo</code></pre><p>cd到该文件路径下</p><pre><code>npm start</code></pre><p><img src="https://img-blog.csdnimg.cn/20201023153441508.png?x-oss-process=image"></p><pre><code>npm add antd</code></pre><h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><h2 id="1-在App-js中输入-例为按钮组件"><a href="#1-在App-js中输入-例为按钮组件" class="headerlink" title="1.在App.js中输入(例为按钮组件)"></a>1.在App.js中输入(例为按钮组件)</h2><pre><code>import &#123; button &#125; from &#39;antd&#39;;</code></pre><pre><code>const App = () =&gt; (  &lt;div className=&quot;App&quot;&gt;    &lt;Button type=&quot;primary&quot;&gt;Button&lt;/Button&gt;  &lt;/div&gt;);</code></pre><p>代码在：<a href="https://ant.design/components/overview-cn/">https://ant.design/components/overview-cn/</a></p><h2 id="2-在App-css顶部加上"><a href="#2-在App-css顶部加上" class="headerlink" title="2.在App.css顶部加上"></a>2.在App.css顶部加上</h2><pre><code>@import &#39;~antd/dist/antd.css&#39;;</code></pre><h2 id="3-最终效果"><a href="#3-最终效果" class="headerlink" title="3.最终效果"></a>3.最终效果</h2><p><img src="https://img-blog.csdnimg.cn/20201023155250809.png?x-oss-process=image"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="column内width属性失效问题"><a href="#column内width属性失效问题" class="headerlink" title="column内width属性失效问题"></a>column内width属性失效问题</h1><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以</p><pre><code>        &lt;Table                            columns=&#123;columns&#125;                            scroll=&#123;&#123; x: "100%"&#125;&#125;                                                /&gt;</code></pre><h1 id="option下拉框样式问题"><a href="#option下拉框样式问题" class="headerlink" title="option下拉框样式问题"></a>option下拉框样式问题</h1><h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>选项中的内容过长，导致下拉框长度变化，并且不能够显示所有内容。</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><pre><code>    &lt;Form.Item label=&quot;xxx&quot; name=&quot;xxx&quot; &gt;                            &lt;Select                                placeholder=&quot;请选择&quot;                                allowClear=&#123;true&#125;                                style=&#123;&#123; width: "130px" &#125;&#125;                            &gt;                                &#123;industryType.map(item=&gt; (                                    &lt;Option key=&#123;item&#125; value=&#123;item&#125; title=&#123;item&#125;&gt;                                        &#123;item&#125;                                    &lt;/Option&gt;                                ))&#125;                            &lt;/Select&gt;                        &lt;/Form.Item&gt;</code></pre><p>1.为select添加宽度(防止被内容撑开，或长短随内容变化)<br>2.为Option添加title（鼠标悬停在下拉框的每一个选项时，都能够看到详细内容）</p>]]></content>
       
       
       <categories>
@@ -370,35 +153,6 @@
             
             <tag> antd </tag>
             
-            <tag> react </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JS之原型链，闭包，cookie</title>
-      <link href="2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/"/>
-      <url>2020/10/12/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/</url>
-      
-        <content type="html"><![CDATA[<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>eg:</p><pre><code>function Grandfather()&#123;&#125;;Grandfather.prototype.name=&quot;Mike&quot;;function Father()&#123;&#125;;Father.prototype=new Grandfather();var me=new Father();console.log(me.name)；//Mike</code></pre><p>在me中没有找到name属性，于是往上找，在父级中依旧没有找到，再往上找，在Grandfather中找到。</p><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul><li>闭包就是能够读取其他函数内部变量的函数。</li><li>在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包(所有的function都是一个闭包).</li></ul><p>eg1:</p><pre><code>function me() &#123;  var name = &quot;Mike&quot;; //内部变量  return function() &#123;    console.log(name);  &#125;;&#125;var person = me();person(); //Mike</code></pre><p>eg2：</p><pre><code>var sum= 0;function sum1()&#123;  function sum2()&#123;            sum =sum + 1;          console.log(sum);     &#125;       return sum1;   &#125;   var a =sum1();   var b =sum1();   a();//1   b();//2   a();//3   b();//4</code></pre><p>eg3：</p><pre><code>function sum() &#123;   var sum = 0;  return function() &#123;    sum =sum + 1;     console.log(sum);  &#125;;&#125;var sum1 = sum();//外部函数sum1(); //1sum1(); //2var sum2 = sum();//新的外部函数地址sum2(); //1sum2(); //2</code></pre><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>eg from <a href="http://www.runoob.com/">www.runoob.com</a></p><pre><code>function setCookie(cname,cvalue,exdays)&#123;  //setCookie设置cookie    var d = new Date();    d.setTime(d.getTime()+(exdays*24*60*60*1000));    var expires = &quot;expires=&quot;+d.toGMTString(); //expires设置过期时间                                                                      //若想删除cookie，将expires设置为早于当前的时间    document.cookie = cname+&quot;=&quot;+cvalue+&quot;; &quot;+expires; //创建cookie语句：document.cookie=&quot; &quot;;&#125;function getCookie(cname)&#123; //getCookie获取cookie    var name = cname + &quot;=&quot;;    var ca = document.cookie.split(&#39;;&#39;);   //读取cookie语句：var x=document.cookie;                                                             //修改cookie语句：直接在document.cookie=后写上新的语句覆盖    for(var i=0; i&lt;ca.length; i++) &#123;        var c = ca[i].trim();        if (c.indexOf(name)==0) &#123; return c.substring(name.length,c.length); &#125;    &#125;    return &quot;&quot;;&#125;function checkCookie()&#123;  //checkCookie检测cookie    var user=getCookie(&quot;username&quot;);    if (user!=&quot;&quot;)&#123;        alert(&quot;欢迎 &quot; + user + &quot; 再次访问&quot;);    &#125;    else &#123;        user = prompt(&quot;请输入你的名字:&quot;,&quot;&quot;);          if (user!=&quot;&quot; &amp;&amp; user!=null)&#123;            setCookie(&quot;username&quot;,user,30);        &#125;    &#125;&#125;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 名为「技术」の魔法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> JavaScript </tag>
-            
-            <tag> cookie </tag>
-            
         </tags>
       
     </entry>
@@ -407,8 +161,8 @@
     
     <entry>
       <title>vue+json实现数据导入</title>
-      <link href="2020/10/11/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/"/>
-      <url>2020/10/11/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/</url>
+      <link href="2022/03/28/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/"/>
+      <url>2022/03/28/vue+json%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%BC%E5%85%A5/</url>
       
         <content type="html"><![CDATA[<h2 id="step-0-准备"><a href="#step-0-准备" class="headerlink" title="step 0 准备"></a>step 0 准备</h2><p>(此例子为用户管理系统)<br>template中的代码为：</p><pre><code>&lt;template&gt;  &lt;div class=&quot;customers container&quot;&gt;   &lt;h1 class=&quot;page-header&quot;&gt;用户管理系统&lt;/h1&gt;     &lt;table class=&quot;table table-striped&quot;&gt;        &lt;thead&gt;           &lt;tr&gt;               &lt;th&gt;编号&lt;/th&gt;                   &lt;th&gt;姓名&lt;/th&gt;              &lt;th&gt;年龄&lt;/th&gt;                          &lt;/tr&gt;         &lt;/thead&gt;         &lt;tbody&gt;           &lt;tr v-for=&quot;customer in customers&quot; v-bind:key=&quot;customer&quot;&gt;             &lt;td&gt;&#123;&#123;customer.id&#125;&#125; &lt;/td&gt;                &lt;td&gt;&#123;&#123;customer.name&#125;&#125; &lt;/td&gt;                &lt;td&gt;&#123;&#123;customer.age&#125;&#125; &lt;/td&gt;                     &lt;/tr&gt;           &lt;/tbody&gt;         &lt;/table&gt;           &lt;/div&gt;        &lt;/template&gt;</code></pre><p>还要自己准备一个json文件，储存数据。</p><pre><code>&#123;    &quot;data1&quot;:&#123;        &quot;id&quot;: &quot;001&quot;,         &quot;name&quot;: &quot;LiLy&quot;,          &quot;age&quot;: 24               &#125;,           &quot;data2&quot;: &#123;            &quot;id&quot;: &quot;002&quot;,             &quot;name&quot;: &quot;Jack&quot;,               &quot;age&quot;: 25    &#125;,     &quot;data3&quot;: &#123;              &quot;id&quot;: &quot;003&quot;,                &quot;name&quot;: &quot;Mike&quot;,                 &quot;age&quot;: 27    &#125;,       &quot;data4&quot;: &#123;            &quot;id&quot;: &quot;004&quot;,             &quot;name&quot;: &quot;Sara&quot;,              &quot;age&quot;: 21           &#125;     &#125;</code></pre><h2 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h2><p>在存有json文件的文件夹中git bash（或cmd cd到该文件路径下）</p><pre><code>npm run json:server</code></pre><p><img src="https://img-blog.csdnimg.cn/20201011092841525.png?x-oss-process=image,t_70#pic_center">得到端口</p><pre><code>http://localhost:3000</code></pre><p>将其在网页中打开，再后面添上要导入的json文件名</p><pre><code>http://localhost:3000/db</code></pre><p><img src="https://img-blog.csdnimg.cn/20201011093325307.png?x-oss-process=imaget_70#pic_center"></p><h2 id="step2-vue中添加方法和函数"><a href="#step2-vue中添加方法和函数" class="headerlink" title="step2 vue中添加方法和函数"></a>step2 vue中添加方法和函数</h2><pre><code>&lt;script&gt;export default &#123;  name: &#39;customers&#39;,   data () &#123;     return &#123;      customers:[]      &#125;   &#125;,     methods:&#123;        fetchCustomers()&#123;         this.$http.get(&quot;http://localhost:3000/db&quot;)         .then(function(response)&#123;            this.customers=response.body;           &#125;)        &#125;      &#125;,     created()&#123;       this.fetchCustomers();      &#125;    &#125;    &lt;/script&gt;</code></pre><p>再在cmd中输入<code>cnpm install vue-resource --save</code><br><img src="https://img-blog.csdnimg.cn/2020101109483552.png#pic_center"></p><h2 id="step-3-main-js中的添加"><a href="#step-3-main-js中的添加" class="headerlink" title="step 3 main.js中的添加"></a>step 3 main.js中的添加</h2><pre><code>import VueResource from &#39;vue-resource&#39;</code></pre><pre><code>Vue.use(VueResource)</code></pre><p>最终效果<br><img src="https://img-blog.csdnimg.cn/20201011095101574.png?x-oss-process=image#pic_center"></p>]]></content>
       
@@ -433,11 +187,11 @@
     
     
     <entry>
-      <title>配置json-server</title>
-      <link href="2020/09/28/%E9%85%8D%E7%BD%AEjson-server/"/>
-      <url>2020/09/28/%E9%85%8D%E7%BD%AEjson-server/</url>
+      <title>TypeScript notes</title>
+      <link href="2022/03/28/TypeScript%20notes/"/>
+      <url>2022/03/28/TypeScript%20notes/</url>
       
-        <content type="html"><![CDATA[<pre><code>npm install -g joson-server</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928083908147.png#pic_center"></p><p>创建一个放json文件的文件夹，然后cd到路径内<br>初始化一个名为package的json文件</p><pre><code>npm init</code></pre><p><img src="https://img-blog.csdnimg.cn/20200928084014439.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center">选项为：enter enter 描述自定义 enter enter enter enter enter enter enter</p><p>再来装一下json-server模块并保存数据</p><pre><code>npm install json-server --save</code></pre><p><img src="https://img-blog.csdnimg.cn/2020092808564123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>在文件夹中再创建一个db.json，内容自定义，最好包含多个属性。</p><p>将package.json中script下的内容改为</p><pre><code>&quot;json:server&quot;: &quot;json-server --watch db.json&quot;</code></pre><p>如图<br><img src="https://img-blog.csdnimg.cn/20200928084712254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>回到cmd中运行</p><pre><code>npm run json:server</code></pre><p>结果<br><img src="https://img-blog.csdnimg.cn/20200928085753892.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"></p><p>最后可以在浏览器中通过地址查询想要的数据。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>全局安装</p><pre><code>npm install -g typescript</code></pre><p>将 TypeScript 转换为 JavaScript 代码</p><pre><code>tsc 文件名.ts</code></pre><p>tsc 常用编译参数如下表所示：<br><img src="https://img-blog.csdnimg.cn/20201202102531787.png?x-oss-process=image" alt="在这里插入图片描述"></p><h2 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h2><p><strong>任意类型</strong> <code>any</code>：声明为 any 的变量可以赋予任意类型的值。<br><strong>数字类型</strong>    <code>number</code>：双精度 64 位浮点值。它可以用来表示整数和分数。<br><strong>字符串类型</strong> <code>string</code>：一个字符系列，使用单引号（’）或双引号（”）来表示字符串类型。反引号（`）来定义多行文本和内嵌表达式。</p><p><strong>布尔类型</strong><code>boolean</code>：表示逻辑值：true 和 false。<br><strong>枚举</strong>    <code>enum</code>：枚举类型用于定义数值集合。<br><strong>void</strong>    <code>void</code>：用于标识方法返回值的类型，表示该方法没有返回值。<br><strong>null</strong>    <code>null</code>：表示对象值缺失。<br><strong>undefined</strong>    <code>undefined</code>：用于初始化变量为一个未定义的值。<br><strong>never</strong>    <code>never</code>：是其它类型（包括 null 和 undefined）的子类型，代表从不会出现的值。</p><h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p><strong>TypeScript 变量的命名规则</strong>：</p><ul><li>变量名称可以包含数字和字母。</li><li>除了下划线 _ 和美元 $ 符号外，不能包含其他特殊字符，包括空格。</li><li>变量名不能以数字开头。</li></ul><p><strong>声明变量的始终方式</strong>：</p><p>声明变量的类型及初始值：</p><pre><code>var [变量名] : [类型] = 值;</code></pre><p>声明变量的类型，但没有初始值，变量值会设置为 undefined：</p><pre><code>var [变量名] : [类型];</code></pre><p>声明变量并初始值，但不设置类型，该变量可以是任意类型：</p><pre><code>var [变量名] = 值;</code></pre><p>声明变量没有设置类型和初始值，类型可以是任意类型，默认初始值为 undefined：</p><pre><code>var [变量名];</code></pre><h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ol><li>算术运算符</li></ol><pre><code>+  -  *  /  %  ++  --</code></pre><ol start="2"><li>逻辑运算符</li></ol><pre><code>&amp;&amp;  ||  ! </code></pre><ol start="3"><li>关系运算符</li></ol><pre><code>==  !=  &gt;  &lt;  &gt;=  &lt;=</code></pre><ol start="4"><li>按位运算符</li></ol><pre><code>&amp;  !  ~  ^  &lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></pre><ol start="5"><li>赋值运算符</li></ol><pre><code>=  += -=  *=  /=</code></pre><ol start="6"><li>三元/条件运算符</li></ol><pre><code>Test ? expr1 : expr2</code></pre><ol start="7"><li>字符串运算符</li></ol><pre><code>连接运算符 (+)</code></pre><ol start="8"><li>类型运算符</li></ol><pre><code>typeof  instanceof </code></pre><h2 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h2><ol><li>if</li></ol><pre><code>if(boolean_expression)&#123;    # 在布尔表达式 boolean_expression 为 true 执行&#125;</code></pre><ol start="2"><li>if…else</li></ol><pre><code>if(boolean_expression)&#123;   # 在布尔表达式 boolean_expression 为 true 执行&#125;else&#123;   # 在布尔表达式 boolean_expression 为 false 执行&#125;</code></pre><ol start="3"><li>if…else if….else<pre><code>if(boolean_expression 1)&#123;# 在布尔表达式 boolean_expression 1 为 true 执行&#125;else if( boolean_expression 2)&#123;# 在布尔表达式 boolean_expression 2 为 true 执行&#125;else if(( boolean_expression 3)&#123;# 在布尔表达式 boolean_expression 3 为 true 执行&#125;else&#123;# 布尔表达式的条件都为 false 时执行&#125;</code></pre></li><li>switch </li></ol><pre><code>switch(expression)&#123;    case constant-expression  :       statement(s);       break; /* 可选的 */    case constant-expression  :       statement(s);       break; /* 可选的 */    /* 您可以有任意数量的 case 语句 */    default : /* 可选的 */       statement(s);&#125;</code></pre><h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><ol><li>for<pre><code>for ( init; condition; increment )&#123;statement(s);&#125;</code></pre></li><li>for…in</li></ol><pre><code>for (var val in list) &#123;     //语句 &#125;</code></pre><ol start="3"><li>for…of</li></ol><pre><code>let someArray = [1, &quot;string&quot;, false];for (let entry of someArray) &#123;    console.log(entry); // 1, &quot;string&quot;, false&#125;</code></pre><ol start="4"><li>forEach</li></ol><pre><code>let list = [4, 5, 6];list.forEach((val, idx, array) =&gt; &#123;    // val: 当前值    // idx：当前index    // array: Array&#125;);</code></pre><ol start="5"><li>every<pre><code>let list = [4, 5, 6];list.every((val, idx, array) =&gt; &#123;// val: 当前值// idx：当前index// array: Arrayreturn true; // Continues// Return false will quit the iteration&#125;);</code></pre></li><li>while<pre><code>while(condition)&#123;statement(s);&#125;</code></pre></li><li>do…while </li></ol><pre><code>do&#123;   statement(s);&#125;while( condition );</code></pre><ol start="8"><li>无限循环</li></ol><pre><code>for(;;) &#123;    // 语句&#125;</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数定义 </p><pre><code>function function_name()&#123;    // 执行代码&#125;</code></pre><p>调用函数 <code>function_name()</code><br>函数返回值</p><pre><code>function function_name():return_type &#123;     // 语句    return value; &#125;</code></pre><p>带参数函数</p><pre><code>function func_name( param1 [:datatype], param2 [:datatype]) &#123;   &#125;</code></pre><p>匿名函数 <code>var res = function( [arguments] ) &#123; ... &#125;</code><br>构造函数 <code>var res = new Function ([arg1[, arg2[, ...argN]],] functionBody)</code><br>Lambda 函数 <code>( [param1, parma2,…param n] )=&gt;statement;</code><br>函数重载<br>参数类型不同：</p><pre><code>function disp(string):void; function disp(number):void;</code></pre><p>参数数量不同：</p><pre><code>function disp(n1:number):void; function disp(x:number,y:number):void;</code></pre><p>参数类型顺序不同：</p><pre><code>function disp(n1:number,s1:string):void; function disp(s:string,n:number):void;</code></pre><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><pre><code>var num = new Number(value);</code></pre><p> 对象属性<br> <code>MAX_VALUE</code>  <code>MIN_VALUE</code>  <code>NaN</code>  <code>NEGATIVE_INFINITY</code>  <code>POSITIVE_INFINITY</code>  <code>prototype  constructor</code><br> 对象方法<br> <code>toExponential()</code>  <code>toFixed()</code>  <code>toLocaleString()</code>  <code>toPrecision()</code>  <code>toString()</code>  <code>valueOf()</code></p><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><pre><code> var array_name[:datatype];        //声明 array_name = [val1,val2,valn..]   //初始化</code></pre><p>or</p><pre><code>var array_name[:data type] = [val1,val2…valn]</code></pre><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><pre><code>let myMap = new Map();</code></pre><pre><code>let myMap = new Map([        [&quot;key1&quot;, &quot;value1&quot;],        [&quot;key2&quot;, &quot;value2&quot;]    ]); </code></pre><p><strong>Map 相关的函数与属性</strong>：</p><p><code>map.clear()</code> – 移除 Map 对象的所有键/值对 。<br><code>map.set()</code> – 设置键值对，返回该 Map 对象。<br><code>map.get()</code> – 返回键对应的值，如果不存在，则返回 undefined。<br><code>map.has()</code> – 返回一个布尔值，用于判断 Map 中是否包含键对应的值。<br><code>map.delete()</code> – 删除 Map 中的元素，删除成功返回 true，失败返回 false。<br><code>map.size</code> – 返回 Map 对象键/值对的数量。<br><code>map.keys()</code> - 返回一个 Iterator 对象， 包含了 Map 对象中每个元素的键 。<br><code>map.values()</code> – 返回一个新的Iterator对象，包含了Map对象中每个元素的值 。</p><h2 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h2><p>数组中元素的数据类型都一般是相同的（any[] 类型的数组可以不同），如果存储的元素数据类型不同，则需要使用元组。<br>元组中允许存储不同类型的元素，元组可以作为参数传递给函数。</p><pre><code>var tuple_name = [value1,value2,value3,…value n]</code></pre><h2 id="联合类型"><a href="#联合类型" class="headerlink" title="联合类型"></a>联合类型</h2><p>Type1|Type2|Type3 </p><h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><pre><code>interface interface_name &#123; &#125;</code></pre><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><pre><code>class class_name &#123;     // 类作用域&#125;</code></pre><p>创建实例化对象</p><pre><code>var object_name = new class_name([ arguments ])</code></pre><p>类的继承</p><pre><code>class child_class_name extends parent_class_name</code></pre>]]></content>
       
       
       <categories>
@@ -449,7 +203,182 @@
       
         <tags>
             
-            <tag> json </tag>
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test:记忆碎片</title>
+      <link href="2022/03/28/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/"/>
+      <url>2022/03/28/test%EF%BC%9A%E8%AE%B0%E5%BF%86%E7%A2%8E%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="人类世界的记忆"><a href="#人类世界的记忆" class="headerlink" title="人类世界的记忆"></a>人类世界的记忆</h2><p><img src="https://img-blog.csdnimg.cn/dec747943f294836940e1ef37a32a1c5.png?x-oss-process=image" alt="quantum mechanics"><br><img src="https://img-blog.csdnimg.cn/15fbba97acb04c8288b5105e63813cab.png?x-oss-process=image" alt="general physics or SQL?"><br><img src="https://img-blog.csdnimg.cn/986e2cdce48246d3923040d460926190.png?x-oss-process=image" alt="matlab"><br><img src="https://img-blog.csdnimg.cn/403252514f484688810932e6977a41d3.png?x-oss-process=image" alt="神秘组织の申请"><br><img src="https://img-blog.csdnimg.cn/927b15bef8ed4417861fc301031d98fa.png?x-oss-process=image" alt="《Pride And Prejudice》"><br><img src="https://img-blog.csdnimg.cn/c2ae9c40d4174d0c820be769e7e9bb9d.png?x-oss-process=image" alt="《The Nightingale And The Rose》"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三次元世界の生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> plog </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>subway_gis_bg开发手册</title>
+      <link href="2022/03/28/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
+      <url>2022/03/28/subway_gis_bg%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="subway-gis-bg开发手册"><a href="#subway-gis-bg开发手册" class="headerlink" title="subway_gis_bg开发手册"></a>subway_gis_bg开发手册</h1><h2 id="一-入口"><a href="#一-入口" class="headerlink" title="(一) 入口"></a>(一) 入口</h2><h2 id="Pages"><a href="#Pages" class="headerlink" title="Pages"></a>Pages</h2><pre><code>Login Earth - 如果套iframe就不用Home - Header 字体管理(现改为辅助功能)、操作日志、通知中心、管理员     - LeftPanel 导航     - RightPanel 页面内容(都在Component下)</code></pre><h2 id="二-页面"><a href="#二-页面" class="headerlink" title="(二) 页面"></a>(二) 页面</h2><h2 id="Component"><a href="#Component" class="headerlink" title="Component"></a>Component</h2><pre><code>HomePage -首页 AssetManagement(资产管理) - new/edit 资产新增/编辑                         -new/editInspection 盘点巡检新增/编辑                         -tabPages 五个文件夹分别对应五个tab页面(已取消ManagementContract(经营管理合同),现为四个)ContractManagement(合同管理) - 命名方式同上 new/edit xxxVisualizationManagement(可视化管理) - Layer (图层)                                   - 3DModeling (3D建模)WarrantManagement(权证管理)AssessManagement(评估管理) - 不要和资产管理搞错PassengerFlow(客流信息)SettingPage(设置) - 原结构为组织、角色、管理员，现加入白名单。</code></pre><h2 id="三-组件"><a href="#三-组件" class="headerlink" title="(三) 组件"></a>(三) 组件</h2><h2 id="Component-gt-Widgets"><a href="#Component-gt-Widgets" class="headerlink" title="Component-&gt;Widgets"></a>Component-&gt;Widgets</h2><pre><code>Charts - 所有图表ChartsBlock - 统一背景等样式的图表块，目前只在首页中使用Header - 统一部分新增页的头部样式Inputs - 暂时无用More - 首页中图表页的控制功能Relate - 关联功能组件，在合同新增和盘点巡查新增里用到Search - 所有页面用到的搜索，有prop的函 个数SelectBlock - 筛选块 各编辑页用到TableBlock - 统一样式的table prop中的transfer表示是否有移交(目前都不要)</code></pre><h2 id="四-接口"><a href="#四-接口" class="headerlink" title="(四) 接口"></a>(四) 接口</h2><p> 全部代码都有注释</p><h2 id="五-容易被遗漏的可进入页面或功能"><a href="#五-容易被遗漏的可进入页面或功能" class="headerlink" title="(五) 容易被遗漏的可进入页面或功能"></a>(五) 容易被遗漏的可进入页面或功能</h2><pre><code>header -  所有按钮的点击首页 - 配置分析报表 进入后是表格的配置操作资产新增 - 草稿箱        - 基本信息 为按钮的字段点击后都有功能资产编辑 - 表格 操作中几项点击会跳转新页面盘点巡查新增 - 可切换两个页面(剩下的页面都同理)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 无法归类の情报 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react-router</title>
+      <link href="2022/03/28/react-router/"/>
+      <url>2022/03/28/react-router/</url>
+      
+        <content type="html"><![CDATA[<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><pre><code>npm install --save react-router react-router-dom</code></pre><h2 id="编写组件"><a href="#编写组件" class="headerlink" title="编写组件"></a>编写组件</h2><pre><code>import React from &#39;react&#39;;export default class Demo extends React.Component&#123;    render()&#123;        return(            &lt;div&gt;demo&lt;/div&gt;        );    &#125;&#125;</code></pre><h2 id="route"><a href="#route" class="headerlink" title="route"></a>route</h2><ol><li>在src下创建一个routes文件</li><li>在该文件夹下创建一个index.js</li><li>将编写好的Demo组件import过来 <code>import Demo from &#39;  (路径) &#39;</code></li></ol><pre><code>    &lt;Router&gt;        &lt;Switch&gt;      &lt;Route exact path=&quot;/&quot; component=&#123;Demo&#125;/&gt;         &lt;Route path=&quot;/demo&quot; component=&#123;Demo&#125; /&gt;          &lt;/Switch&gt;    &lt;/Router&gt;</code></pre><h2 id="Switch-amp-exact"><a href="#Switch-amp-exact" class="headerlink" title="Switch&amp;exact"></a>Switch&amp;exact</h2><ul><li>Switch组件渲染第一个被匹配到的Route</li><li>exact属性精准对比URL和Path</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> router </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react-creat-app+antd</title>
+      <link href="2022/03/28/react-creat-app+antd/"/>
+      <url>2022/03/28/react-creat-app+antd/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>npx create-react-app demo</code></pre><p>cd到该文件路径下</p><pre><code>npm start</code></pre><p><img src="https://img-blog.csdnimg.cn/20201023153441508.png?x-oss-process=image"></p><pre><code>npm add antd</code></pre><h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><h2 id="1-在App-js中输入-例为按钮组件"><a href="#1-在App-js中输入-例为按钮组件" class="headerlink" title="1.在App.js中输入(例为按钮组件)"></a>1.在App.js中输入(例为按钮组件)</h2><pre><code>import &#123; button &#125; from &#39;antd&#39;;</code></pre><pre><code>const App = () =&gt; (  &lt;div className=&quot;App&quot;&gt;    &lt;Button type=&quot;primary&quot;&gt;Button&lt;/Button&gt;  &lt;/div&gt;);</code></pre><p>代码在：<a href="https://ant.design/components/overview-cn/">https://ant.design/components/overview-cn/</a></p><h2 id="2-在App-css顶部加上"><a href="#2-在App-css顶部加上" class="headerlink" title="2.在App.css顶部加上"></a>2.在App.css顶部加上</h2><pre><code>@import &#39;~antd/dist/antd.css&#39;;</code></pre><h2 id="3-最终效果"><a href="#3-最终效果" class="headerlink" title="3.最终效果"></a>3.最终效果</h2><p><img src="https://img-blog.csdnimg.cn/20201023155250809.png?x-oss-process=image"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> antd </tag>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>React notes</title>
+      <link href="2022/03/28/react%20notes/"/>
+      <url>2022/03/28/react%20notes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><pre><code>create-react-app demo</code></pre><h2 id="基本框架"><a href="#基本框架" class="headerlink" title="基本框架"></a>基本框架</h2><pre><code>ReactDOM.render(  &lt;h1&gt;Hello, world!&lt;/h1&gt;,  document.getElementById(&#39;root&#39;));</code></pre><h2 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h2><ol><li>JSX可以使用引号来定义以字符串为值的属性</li></ol><pre><code>const element = &lt;div tabIndex=&quot;0&quot;&gt;&lt;/div&gt;;</code></pre><ol start="2"><li>也可以使用大括号来定义以JavaScript表达式为值的属性</li></ol><pre><code>const element = &lt;img src=&#123;user.avatarUrl&#125; /&gt;;</code></pre><ol start="3"><li>JSX标签是闭合式的，结尾处用/&gt;表示</li><li>可嵌套</li><li>在JSX中可任意使用JavaScript表达式，但要包含在大括号里</li><li>Babel转译器会把JSX转换成一个名为React.createElement()的方法调用</li></ol><pre><code>const element=(...);</code></pre><p>等价于</p><pre><code>const element=React.createElement(...);</code></pre><ol start="7"><li>在 JSX 中不能使用 if else 语句</li><li>JSX 允许在模板中插入数组，数组会自动展开所有成员</li></ol><h2 id="元素渲染-amp-条件渲染"><a href="#元素渲染-amp-条件渲染" class="headerlink" title="元素渲染&amp;条件渲染"></a>元素渲染&amp;条件渲染</h2><p>元素渲染</p><ol><li>将元素渲染到根DOM节点</li></ol><pre><code>const element = &lt;h1&gt;Hello, world&lt;/h1&gt;;ReactDOM.render(element, document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>更新已渲染的元素<br>将要展示的部分封装起来，再调用setInterval()</li></ol><p>条件渲染</p><ol><li>if语句</li></ol><pre><code>class LoginControl extends React.Component &#123;  constructor(props) &#123;    super(props);    this.handleLoginClick = this.handleLoginClick.bind(this);    this.handleLogoutClick = this.handleLogoutClick.bind(this);    this.state = &#123;isLoggedIn: false&#125;;  &#125;  handleLoginClick() &#123;    this.setState(&#123;isLoggedIn: true&#125;);  &#125;  handleLogoutClick() &#123;    this.setState(&#123;isLoggedIn: false&#125;);  &#125;  render() &#123;    const isLoggedIn = this.state.isLoggedIn;    let button;    if (isLoggedIn) &#123;      button = &lt;LogoutButton onClick=&#123;this.handleLogoutClick&#125; /&gt;;    &#125; else &#123;      button = &lt;LoginButton onClick=&#123;this.handleLoginClick&#125; /&gt;;    &#125;    return (      &lt;div&gt;        &lt;Greeting isLoggedIn=&#123;isLoggedIn&#125; /&gt;        &#123;button&#125;      &lt;/div&gt;    );  &#125;&#125;ReactDOM.render(  &lt;LoginControl /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="2"><li>与运算符</li></ol><pre><code>function Mailbox(props) &#123;  const unreadMessages = props.unreadMessages;  return (    &lt;div&gt;      &lt;h1&gt;Hello!&lt;/h1&gt;      &#123;unreadMessages.length &gt; 0 &amp;&amp;        &lt;h2&gt;          You have &#123;unreadMessages.length&#125; unread messages.        &lt;/h2&gt;      &#125;    &lt;/div&gt;  );&#125;const messages = [&#39;React&#39;, &#39;Re: React&#39;, &#39;Re:Re: React&#39;];ReactDOM.render(  &lt;Mailbox unreadMessages=&#123;messages&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><ol start="3"><li>三目运算符</li></ol><pre><code>render() &#123;  const isLoggedIn = this.state.isLoggedIn;  return (    &lt;div&gt;      The user is &lt;b&gt;&#123;isLoggedIn ? &#39;currently&#39; : &#39;not&#39;&#125;&lt;/b&gt; logged in.    &lt;/div&gt;  );&#125;</code></pre><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><ol><li>函数组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;</code></pre><ol start="2"><li>ES6类定义组件（等价于函数组件）</li></ol><pre><code>class Welcome extends React.Component &#123;  render() &#123;    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;  &#125;&#125;</code></pre><ol start="3"><li>元素可代表用户定义的组件</li></ol><pre><code>function Welcome(props) &#123;  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;&#125;const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;ReactDOM.render(  element,  document.getElementById(&#39;root&#39;));</code></pre><ol start="4"><li>复合组件</li></ol><pre><code>function Firstame(props) &#123;    return &lt;h1&gt;网站名称：&#123;props.firstname&#125;&lt;/h1&gt;;&#125;function Lastname(props) &#123;    return &lt;h1&gt;网站小名：&#123;props.lastname&#125;&lt;/h1&gt;;&#125;function App() &#123;    return (    &lt;div&gt;        &lt;Firstname firstname=&quot;Amebi&quot; /&gt;        &lt;Lastname lastname=&quot;Ban&quot; /&gt;    &lt;/div&gt;    );&#125;ReactDOM.render(     &lt;App /&gt;,    document.getElementById(&#39;root&#39;));</code></pre><h2 id="props-amp-state"><a href="#props-amp-state" class="headerlink" title="props&amp;state"></a>props&amp;state</h2><p>props:</p><ol><li><p>是一个从外部传进组件的参数</p></li><li><p>主要作用是从父组件向子组件传递数据</p></li><li><p>不可改变，除非通过外部组件传入新的props重新渲染子组件</p><p>state：</p></li><li><p>主要作用是组件保存、控制以及修改自己的状态</p></li><li><p>可改变</p></li><li><p>在修改state的值时，不能直接对它操作，必须通过state方法</p></li><li><p>当调用this.state时，组件的数据状态state更新，并重新调用render方法</p><h2 id="处理事件"><a href="#处理事件" class="headerlink" title="处理事件"></a>处理事件</h2></li></ol><ol><li>采用camelCase(驼峰式)命名</li><li>使用JSX语法时，要传入一个函数作为事件处理函数</li></ol><pre><code>&lt;button onClick=&#123;handleClick&#125;&gt;click me&lt;/button&gt;</code></pre><ol start="3"><li>箭头函数：将原函数的function和函数名都删除，用=&gt;连接参数和函数体<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ol><li>设置状态 <code>setState(object nextState[, function callback])</code></li><li>替换状态 <code>replaceState(object nextState[, function callback])</code></li><li>设置属性 <code>setProps(object nextProps[, function callback])</code></li><li>替换属性 <code>replaceProps(object nextProps[, function callback])</code></li><li>强制更新 <code>forceUpdate([function callback])</code></li><li>获取DOM节点 <code>DOMElement findDOMNode()</code></li><li>判断组件挂载状态 <code>bool isMounted()</code></li></ol></li></ol><h2 id="list-amp-key"><a href="#list-amp-key" class="headerlink" title="list&amp;key"></a>list&amp;key</h2><pre><code>function ListItem(props) &#123;  // Correct! There is no need to specify the key here:  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;&#125;function NumberList(props) &#123;  const numbers = props.numbers;  const listItems = numbers.map((number) =&gt;    // Correct! Key should be specified inside the array.    &lt;ListItem key=&#123;number.toString()&#125;              value=&#123;number&#125; /&gt;  );  return (    &lt;ul&gt;      &#123;listItems&#125;    &lt;/ul&gt;  );&#125;const numbers = [1, 2, 3, 4, 5];ReactDOM.render(  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,  document.getElementById(&#39;root&#39;));</code></pre><p>该段代码演示了将array转化为list,且将key赋在数组里的元素上<br>要注意的是，键仅在包含带key属性的元素的数组的上下文中有意义</p><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p><img src="https://img-blog.csdnimg.cn/20201030143640454.jpg?x-oss-process=image" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>promise&amp;fetch</title>
+      <link href="2022/03/28/promise&amp;fetch/"/>
+      <url>2022/03/28/promise&amp;fetch/</url>
+      
+        <content type="html"><![CDATA[<h1 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h1><h2 id="promise状态"><a href="#promise状态" class="headerlink" title="promise状态"></a>promise状态</h2><p>pending（进行中）、fulfilled（已成功）和 rejected（已失败）。</p><h2 id="then方法"><a href="#then方法" class="headerlink" title="then方法"></a>then方法</h2><ol><li>then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise<br>执行失败时的回调，两个函数只会有一个被调用。</li><li>通过 .then 形式添加的回调函数，不论什么时候，都会被调用。</li></ol><h1 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h1><ol><li>fetch 规范与 jQuery.ajax() 的区别：</li></ol><ul><li>当接收到一个代表错误的 HTTP 状态码时，从 fetch() 返回的 Promise 不会被标记为 reject， 即使响应的 HTTP状态码是 404 或 500。相反，它会将 Promise 状态标记为 resolve （但是会将 resolve 的返回值的 ok属性设置为 false ），仅当网络故障时或请求被阻止时，才会标记为 reject。</li><li>fetch() 可以不会接受跨域 cookies；你也可以不能使用 fetch() 建立起跨域会话。其他网站的 Set-Cookie头部字段将会被无视。</li><li>fetch 不会发送 cookies。除非你使用了credentials 的初始化选项。</li></ul><p>eg：</p><pre><code>fetch(&#39;http://example.com/movies.json&#39;)  .then(function(response) &#123;    return response.json();  &#125;)  .then(function(myJson) &#123;    console.log(myJson);  &#125;);</code></pre><ol start="2"><li>支持的请求参数<br>fetch() 接受第二个可选参数，一个可以控制不同配置的 init 对象</li><li>发送带凭据的请求<br>为了让浏览器发送包含凭据的请求（即使是跨域源），要将credentials: ‘include’添加到传递给 fetch()方法的init对象。<br>如果只想在请求URL与调用脚本位于同一起源处时发送凭据，添加 credentials: ‘same-origin’。<br>要改为确保浏览器不在请求中包含凭据，使用 credentials: ‘omit’。</li><li>上传 JSON 数据<br>使用 fetch() POST JSON数据</li><li>上传文件<br>可以通过 HTML <code>&lt;input type=&quot;file&quot; /&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>上传多个文件<br>可以通过HTML <code>&lt;input type=&quot;file&quot; mutiple/&gt;</code> 元素，<code>FormData()</code> 和 <code>fetch()</code> 上传文件。</li><li>检测请求是否成功<br>如果遇到网络故障，<code>fetch()</code> promise 将会 reject，带上一个 TypeError 对象。虽然这个情况经常是遇到了权限问题或类似问题——比如 404 不是一个网络故障。想要精确的判断 <code>fetch()</code> 是否成功，需要包含 promise resolved 的情况，此时再判断 Response.ok 是不是为 true。</li><li>自定义请求对象<br>除了传给 <code>fetch()</code> 一个资源的地址，还可以通过使用 <code>Request()</code> 构造函数来创建一个 request 对象，然后再作为参数传给 <code>fetch()</code></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 异步 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS之原型链，闭包，cookie</title>
+      <link href="2022/03/28/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/"/>
+      <url>2022/03/28/JS%E4%B9%8B%E5%8E%9F%E5%9E%8B%E9%93%BE%EF%BC%8C%E9%97%AD%E5%8C%85%EF%BC%8Ccookie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>eg:</p><pre><code>function Grandfather()&#123;&#125;;Grandfather.prototype.name=&quot;Mike&quot;;function Father()&#123;&#125;;Father.prototype=new Grandfather();var me=new Father();console.log(me.name)；//Mike</code></pre><p>在me中没有找到name属性，于是往上找，在父级中依旧没有找到，再往上找，在Grandfather中找到。</p><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul><li>闭包就是能够读取其他函数内部变量的函数。</li><li>在 JavaScript 中，每当函数被创建，就会在函数生成时生成闭包(所有的function都是一个闭包).</li></ul><p>eg1:</p><pre><code>function me() &#123;  var name = &quot;Mike&quot;; //内部变量  return function() &#123;    console.log(name);  &#125;;&#125;var person = me();person(); //Mike</code></pre><p>eg2：</p><pre><code>var sum= 0;function sum1()&#123;  function sum2()&#123;            sum =sum + 1;          console.log(sum);     &#125;       return sum1;   &#125;   var a =sum1();   var b =sum1();   a();//1   b();//2   a();//3   b();//4</code></pre><p>eg3：</p><pre><code>function sum() &#123;   var sum = 0;  return function() &#123;    sum =sum + 1;     console.log(sum);  &#125;;&#125;var sum1 = sum();//外部函数sum1(); //1sum1(); //2var sum2 = sum();//新的外部函数地址sum2(); //1sum2(); //2</code></pre><h2 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h2><p>eg from <a href="http://www.runoob.com/">www.runoob.com</a></p><pre><code>function setCookie(cname,cvalue,exdays)&#123;  //setCookie设置cookie    var d = new Date();    d.setTime(d.getTime()+(exdays*24*60*60*1000));    var expires = &quot;expires=&quot;+d.toGMTString(); //expires设置过期时间                                                                      //若想删除cookie，将expires设置为早于当前的时间    document.cookie = cname+&quot;=&quot;+cvalue+&quot;; &quot;+expires; //创建cookie语句：document.cookie=&quot; &quot;;&#125;function getCookie(cname)&#123; //getCookie获取cookie    var name = cname + &quot;=&quot;;    var ca = document.cookie.split(&#39;;&#39;);   //读取cookie语句：var x=document.cookie;                                                             //修改cookie语句：直接在document.cookie=后写上新的语句覆盖    for(var i=0; i&lt;ca.length; i++) &#123;        var c = ca[i].trim();        if (c.indexOf(name)==0) &#123; return c.substring(name.length,c.length); &#125;    &#125;    return &quot;&quot;;&#125;function checkCookie()&#123;  //checkCookie检测cookie    var user=getCookie(&quot;username&quot;);    if (user!=&quot;&quot;)&#123;        alert(&quot;欢迎 &quot; + user + &quot; 再次访问&quot;);    &#125;    else &#123;        user = prompt(&quot;请输入你的名字:&quot;,&quot;&quot;);          if (user!=&quot;&quot; &amp;&amp; user!=null)&#123;            setCookie(&quot;username&quot;,user,30);        &#125;    &#125;&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> cookie </tag>
             
         </tags>
       
@@ -459,8 +388,8 @@
     
     <entry>
       <title>Jquery notes</title>
-      <link href="2020/09/26/JQuery%20notes/"/>
-      <url>2020/09/26/JQuery%20notes/</url>
+      <link href="2022/03/28/JQuery%20notes/"/>
+      <url>2022/03/28/JQuery%20notes/</url>
       
         <content type="html"><![CDATA[<h2 id="0-储备知识"><a href="#0-储备知识" class="headerlink" title="0.储备知识"></a>0.储备知识</h2><p>基本语法：<code>$(selector).action()</code><br>文档就绪：<code>$(document).ready(function()&#123;&#125;);</code>或<code>$(function()&#123;&#125;);</code><br>选择器：<code>$(&quot;p&quot;)</code></p><h2 id="1-事件"><a href="#1-事件" class="headerlink" title="1.事件"></a>1.事件</h2><ul><li>鼠标事件 :click、dbclick、hover、mouseenter、mouseleave</li></ul><p>例：</p><pre><code>$(selector).click(function)or$(selector).click()</code></pre><ul><li>键盘事件：keypress、keydown、keyup<br>例：</li></ul><pre><code>$(selector).keypress(function)or$(selector).keypress()</code></pre><ul><li>表单事件：submit、change、focus、blur<br>例：</li></ul><pre><code>$(selector).submit(function)or$(selector).submit()</code></pre><ul><li><p>文档/窗口事件：load、unload、resize、scroll<br>例：<code>$(selector).load(function)</code></p><h2 id="2-效果"><a href="#2-效果" class="headerlink" title="2.效果"></a>2.效果</h2></li><li><p>隐藏和显示<code>hide();show()</code></p></li><li><p>fading: <code>fadeIn();fadeOut();fadeToggle();fadeTo()</code></p></li><li><p>滑动：<code>slideDown()；slideUp()；slideToggle()</code></p></li><li><p>动画：<code>animate();stop()</code></p><h2 id="3-HTML操作"><a href="#3-HTML操作" class="headerlink" title="3.HTML操作"></a>3.HTML操作</h2></li><li><p>捕获:<code>text();html();val();attr()</code></p></li><li><p>设置：<code>text();html();val();attr()</code></p></li><li><p>增删：<code>append() ；prepend() ；after() ；before()；remove() ；empty()</code></p><h2 id="4-CSS操作"><a href="#4-CSS操作" class="headerlink" title="4.CSS操作"></a>4.CSS操作</h2></li></ul><ul><li>类：<code>addClass()；removeClass()；toggleClass() ；css()</code></li><li>方法：</li></ul><pre><code>css(&quot;propertyname&quot;);orcss(&quot;propertyname&quot;,&quot;value&quot;);orcss(&#123;&quot;propertyname&quot;:&quot;value&quot;,&quot;propertyname&quot;:&quot;value&quot;,...&#125;);</code></pre><ul><li><p>尺寸 ：<code>width()；height()；innerWidth()；innerHeight()；outerWidth()；outerHeight()</code></p><h2 id="5-遍历"><a href="#5-遍历" class="headerlink" title="5.遍历"></a>5.遍历</h2></li><li><p>祖先：<code>parent();parents();parentsUntil()</code></p></li><li><p>后代：<code>children();find();</code></p></li><li><p>兄弟：<code>siblings();next();nextALL();nextUntil()</code></p></li><li><p>过滤：<code>first();last();eq(n);filter();not()</code></p><h2 id="6-AJAX操作"><a href="#6-AJAX操作" class="headerlink" title="6.AJAX操作"></a>6.AJAX操作</h2></li><li><p><code>$(selector).load(URL,data,callback);</code></p></li><li><p><code>$.get(URL,callback);</code></p></li></ul>]]></content>
       
@@ -483,11 +412,11 @@
     
     
     <entry>
-      <title>搭建vue脚手架</title>
-      <link href="2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/"/>
-      <url>2020/09/26/%E6%90%AD%E5%BB%BAvue%E8%84%9A%E6%89%8B%E6%9E%B6/</url>
+      <title>ES6 notes (part2)</title>
+      <link href="2022/03/28/ES6%20notes%EF%BC%88part2%EF%BC%89/"/>
+      <url>2022/03/28/ES6%20notes%EF%BC%88part2%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<h1 id="STEPS"><a href="#STEPS" class="headerlink" title="STEPS"></a>STEPS</h1><h2 id="0-检查已配置的环境"><a href="#0-检查已配置的环境" class="headerlink" title="0.检查已配置的环境"></a>0.检查已配置的环境</h2><p>打开cmd，输入：</p><pre><code>node -vnpm -v</code></pre><p><img src="https://img-blog.csdnimg.cn/20200926090156597.png#pic_center" alt="输出版本号即成功。"></p><h2 id="1-找到要搭建的路径"><a href="#1-找到要搭建的路径" class="headerlink" title="1.找到要搭建的路径"></a>1.找到要搭建的路径</h2><pre><code>cd D:\work\code\vscode\projects</code></pre><p>d:<br>cd+space+路径</p><h2 id="2-搭建"><a href="#2-搭建" class="headerlink" title="2.搭建"></a>2.搭建</h2><pre><code>vue init webpack pro</code></pre><p>pro为文件名，可自定义<br><img src="https://img-blog.csdnimg.cn/20200926091304321.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center"><br>选项为：enter enter enter enter no no no no enter</p><p><img src="https://img-blog.csdnimg.cn/20200926091711797.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="安装成功！"></p><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>cd到pro文件夹下</p><pre><code>cd D:\work\code\vscode\projects\pro</code></pre><pre><code>npm run dev</code></pre><p><img src="https://img-blog.csdnimg.cn/20200926092043467.png#pic_center" alt="成功">将这个地址在浏览器中打开</p><p><img src="https://img-blog.csdnimg.cn/20200926092221442.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzOTc3ODI5,size_16,color_FFFFFF,t_70#pic_center" alt="成功"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h2><ol><li>字符的 Unicode 表示法<br>将码点放入大括号：<code>&quot;\u&#123;41&#125;\u&#123;42&#125;\u&#123;43&#125;&quot;</code></li><li>字符串的遍历器接口<br>ES6 为字符串添加了遍历器接口，使得字符串可以被for…of循环遍历。</li><li>JavaScript 规定有5个字符，不能在字符串里面直接使用，只能使用转义形式</li></ol><pre><code>U+005C：反斜杠（reverse solidus)U+000D：回车（carriage return）U+2028：行分隔符（line separator）U+2029：段分隔符（paragraph separator）U+000A：换行符（line feed）</code></pre><ol start="4"><li>JSON.stringify() 的改造<br>如果遇到0xD800到0xDFFF之间的单个码点，或者不存在的配对形式，它会返回转义字符串，留给应用自己决定下一步的处理。</li><li>模板字符串<br>模板字符串（template string）是增强版的字符串，用反引号（`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。</li><li>标签模板<br>它可以紧跟在一个函数名后面，该函数将被调用来处理这个模板字符串。</li></ol><h2 id="字符串的新增方法"><a href="#字符串的新增方法" class="headerlink" title="字符串的新增方法"></a>字符串的新增方法</h2><ol><li>String.fromCodePoint()<br>从 Unicode 码点返回对应字符，并且可以识别大于0xFFFF的字符。</li><li>String.raw()<br>返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，往往用于模板字符串的处理方法。</li><li>实例方法：codePointAt()<br>能够正确处理 4 个字节储存的字符，返回一个字符的码点。</li><li>实例方法：normalize()<br>用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</li><li>实例方法：includes(), startsWith(), endsWith()</li></ol><pre><code>includes()：返回布尔值，表示是否找到了参数字符串。startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部。</code></pre><ol start="6"><li><p>实例方法：repeat()<br>repeat方法返回一个新字符串，表示将原字符串重复n次。</p></li><li><p>实例方法：padStart()，padEnd()<br>如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全</p></li><li><p>实例方法：trimStart()，trimEnd()<br>trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。</p></li><li><p>实例方法：matchAll()<br>matchAll()方法返回一个正则表达式在当前字符串的所有匹配</p></li><li><p>实例方法：replaceAll()<br>可以一次性替换所有匹配。它的用法与replace()相同，返回一个新字符串，不会改变原字符串。</p><h2 id="正则的扩展"><a href="#正则的扩展" class="headerlink" title="正则的扩展"></a>正则的扩展</h2></li><li><p>RegExp构造函数<br>如果RegExp构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。</p></li><li><p>字符串的正则方法</p></li></ol><pre><code>String.prototype.match 调用 RegExp.prototype[Symbol.match]String.prototype.replace 调用 RegExp.prototype[Symbol.replace]String.prototype.search 调用 RegExp.prototype[Symbol.search]String.prototype.split 调用 RegExp.prototype[Symbol.split]</code></pre><ol start="3"><li>u 修饰符<br><strong>点字符</strong>:点（.）字符在正则表达式中，含义是除了换行符以外的任意单个字符。对于码点大于0xFFFF的 Unicode 字符，点字符不能识别，必须加上u修饰符。<br><strong>Unicode 字符表示法</strong>:ES6 新增了使用大括号表示 Unicode 字符，这种表示法在正则表达式中必须加上u修饰符，才能识别当中的大括号，否则会被解读为量词。<br><strong>量词</strong>:使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>预定义模式</strong>:u修饰符也影响到预定义模式，能否正确识别码点大于0xFFFF的 Unicode 字符。<br><strong>i 修饰符</strong>:有些 Unicode 字符的编码不同，但是字型很相近，比如，\u004B与\u212A都是大写的K。<br><strong>转义</strong>:没有u修饰符的情况下，正则中没有定义的转义（如逗号的转义,）无效，而在u模式会报错。</li><li>RegExp.prototype.unicode 属性<br>正则实例对象新增unicode属性，表示是否设置了u修饰符。</li><li>y 修饰符<br>y修饰符的作用与g修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g修饰符只要剩余位置中存在匹配就可，而y修饰符确保匹配必须从剩余的第一个位置开始。</li><li>RegExp.prototype.sticky 属性<br>与y修饰符相匹配，ES6 的正则实例对象多了sticky属性，表示是否设置了y修饰符。</li><li>RegExp.prototype.flags 属性<br>ES6 为正则表达式新增了flags属性，会返回正则表达式的修饰符。</li><li>s 修饰符：dotAll 模式<br>ES2018 引入s修饰符，使得.可以匹配任意单个字符。<code>/foo.bar/s.test(&#39;foo\nbar&#39;) // true</code><br>这被称为dotAll模式，即点（dot）代表一切字符。所以，正则表达式还引入了一个dotAll属性，返回一个布尔值，表示该正则表达式是否处在dotAll模式。</li><li>后行断言<br>x只有在y后面才匹配，必须写成<code>/(?&lt;=y)x/</code></li><li>Unicode 属性类<br>引入了一种新的类的写法\p{…}和\P{…}，允许正则表达式匹配符合 Unicode 某种属性的所有字符。</li><li>具名组匹配<br>引入了具名组匹配（Named Capture Groups），允许为每一个组匹配指定一个名字，既便于阅读代码，又便于引用。</li><li>正则匹配索引</li></ol><pre><code>const text = &#39;zabbcdef&#39;;const re = /ab/;const result = re.exec(text);result.index // 1result.indices //  [1, 3] </code></pre><p>exec()方法的返回结果result，它的index属性是整个匹配结果（ab）的开始位置，而它的indices属性是一个数组，成员是每个匹配的开始位置和结束位置的数组。由于该例子的正则表达式没有组匹配，所以indices数组只有一个成员，表示整个匹配的开始位置是1，结束位置是3。<br>13. String.prototype.matchAll()<br>ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。</p><h2 id="数值的扩展"><a href="#数值的扩展" class="headerlink" title="数值的扩展"></a>数值的扩展</h2><ol><li>二进制和八进制表示法<br>ES6 提供了二进制和八进制数值的新的写法，分别用前缀0b（或0B）和0o（或0O）表示。</li><li>Number.isFinite(), Number.isNaN()<br>Number.isFinite()用来检查一个数值是否为有限的（finite），Number.isNaN()用来检查一个值是否为NaN。</li><li>Number.parseInt(), Number.parseFloat()<br>ES6 将全局方法parseInt()和parseFloat()，移植到Number对象上面，行为完全保持不变。</li><li>Number.isInteger()<br>Number.isInteger()用来判断一个数值是否为整数。</li><li>Number.EPSILON<br>ES6 在Number对象上面，新增一个极小的常量Number.EPSILON。根据规格，它表示 1 与大于 1 的最小浮点数之间的差。</li><li>安全整数和 Number.isSafeInteger()<br>JavaScript 能够准确表示的整数范围在-2^53到2^53之间（不含两个端点），超过这个范围，无法精确表示这个值。</li><li>Math 对象的扩展<br><strong>Math.trunc()**：用于去除一个数的小数部分，返回整数部分。<br>**Math.sign()</strong> ：Math.sign方法用来判断一个数到底是正数、负数、还是零。对于非数值，会先将其转换为数值。<br><strong>Math.cbrt()**：Math.cbrt()方法用于计算一个数的立方根。<br>**Math.clz32()</strong> ：Math.clz32()方法将参数转为 32 位无符号整数的形式，然后返回这个 32 位值里面有多少个前导 0。<br><strong>Math.imul()</strong> ：Math.imul方法返回两个数以 32 位带符号整数形式相乘的结果，返回的也是一个 32 位的带符号整数。<br><strong>Math.fround()</strong> ：Math.fround方法返回一个数的32位单精度浮点数形式。<br>**Math.hypot()**：Math.hypot方法返回所有参数的平方和的平方根。</li><li>指数运算符<br>ES2016 新增了一个指数运算符（**）。</li><li>BigInt 数据类型<br>BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。</li></ol>]]></content>
       
       
       <categories>
@@ -499,9 +428,107 @@
       
         <tags>
             
-            <tag> VUE </tag>
+            <tag> ES6 </tag>
             
-            <tag> vue-cli </tag>
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6 notes (part1)</title>
+      <link href="2022/03/28/ES6%20notes%EF%BC%88part1%EF%BC%89/"/>
+      <url>2022/03/28/ES6%20notes%EF%BC%88part1%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h1><h2 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h2><p>作用：ES6 代码–&gt;ES5 代码<br>安装：<code>npm install --save-dev @babel/core</code><br>转码规则：<code>npm install --save-dev @babel/preset-env</code><br>react转码规则：<code>npm install --save-dev @babel/preset-react</code><br>配置文件（.babelrc ）： </p><pre><code> &#123;    &quot;presets&quot;: [      &quot;@babel/env&quot;,      &quot;@babel/preset-react&quot;    ],    &quot;plugins&quot;: []  &#125;</code></pre><p>命令行转码（@babel/cli）：<code>npm install --save-dev @babel/cli</code><br>babel-node:提供一个支持 ES6 的 REPL 环境,支持 Node 的 REPL 环境的所有功能，而且可以直接运行 ES6 代码。</p><ul><li>安装：<code>npm install --save-dev @babel/node</code></li><li>进入REPL环境：<code>npx babel-node</code></li><li>直接运行 ES6 脚本：<code>npx babel-node es6.js</code></li></ul><p>@babel/register 模块：<code>npm install --save-dev @babel/register</code><br>此模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用 Babel 进行转码。  </p><pre><code>require(&#39;@babel/register&#39;);require(&#39;./es6.js&#39;);</code></pre><h2 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h2><p>Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。<br>安装：<code>npm install --save-dev core-js regenerator-runtime</code><br>脚本头部加入：</p><pre><code>import &#39;core-js&#39;;import &#39;regenerator-runtime/runtime&#39;;</code></pre><p>或</p><pre><code>require(&#39;core-js&#39;);require(&#39;regenerator-runtime/runtime);</code></pre><h2 id="浏览器环境"><a href="#浏览器环境" class="headerlink" title="浏览器环境"></a>浏览器环境</h2><pre><code>&lt;script src=&quot;https://unpkg.com/@babel/standalone/babel.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/babel&quot;&gt;// Your ES6 code&lt;/script&gt;</code></pre><h1 id="let-amp-const"><a href="#let-amp-const" class="headerlink" title="let&amp;const"></a>let&amp;const</h1><h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>作用：声明变量<br>和var的区别：<br>1.var是全局的，而let只在命令所在的代码块内有效<br>2.var命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined；let命令所声明的变量一定要在声明后使用，否则报错。<br>3.let不允许重复声明<br>暂时性死区:只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。<br>块级作用域:let实际上为 JavaScript 新增了块级作用域</p><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>const 声明一个只读<strong>常量</strong>，声明之后不允许改变。一旦声明必须初始化，只声明不赋值，就会报错。<br>const声明的常量，也与let一样不可重复声明。 </p><h1 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h1><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构。<br>数组模型的解构：<code>let [a, b, c] = [1, 2, 3];</code><br>对象模型的解构：<code>let &#123; foo, bar &#125; = &#123; foo: &#39;aaa&#39;, bar: &#39;bbb&#39; &#125;;</code><br>Set 结构：<code>let [x, y, z] = new Set([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]);</code><br>解构赋值允许指定默认值：<code>let [x, y = &#39;b&#39;] = [&#39;a&#39;]; </code> or <code>var &#123;x = 3&#125; = &#123;&#125;;</code><br>字符串的解构:<code>const [a, b, c, d, e] = &#39;hello&#39;;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6 notes (part4)</title>
+      <link href="2022/03/28/ES6%20notes%20(part4)/"/>
+      <url>2022/03/28/ES6%20notes%20(part4)/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h1><p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</p><pre><code>let s = Symbol();typeof s// &quot;symbol&quot;</code></pre><h1 id="Map-amp-Set"><a href="#Map-amp-Set" class="headerlink" title="Map &amp; Set"></a>Map &amp; Set</h1><h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><p>ES6 提供了新的数据结构 Set。它类似于数组，但是成员的值都是唯一的，没有重复的值。<br>Set本身是一个构造函数，用来生成 Set 数据结构。<br>Set函数可以接受一个数组（或者具有 iterable 接口的其他数据结构）作为参数，用来初始化。</p><p><strong>Set 结构的实例有以下属性:</strong></p><p><code>Set.prototype.constructor</code>：构造函数，默认就是Set函数。<br><code>Set.prototype.size</code>：返回Set实例的成员总数。<br>Set 实例的方法分为两大类：操作方法（用于操作数据）和遍历方法（用于遍历成员）。下面先介绍四个操作方法。</p><p><code>Set.prototype.add(value)</code>：添加某个值，返回 Set 结构本身。<br><code>Set.prototype.delete(value)</code>：删除某个值，返回一个布尔值，表示删除是否成功。<br><code>Set.prototype.has(value)</code>：返回一个布尔值，表示该值是否为Set的成员。<br><code>Set.prototype.clear()</code>：清除所有成员，没有返回值。</p><p><strong>Set 结构的实例有四个遍历方法:</strong></p><p><code>Set.prototype.keys()</code>：返回键名的遍历器<br><code>Set.prototype.values()</code>：返回键值的遍历器<br><code>Set.prototype.entries()</code>：返回键值对的遍历器<br><code>Set.prototype.forEach()</code>：使用回调函数遍历每个成员</p><h2 id="WeakSet"><a href="#WeakSet" class="headerlink" title="WeakSet"></a>WeakSet</h2><pre><code>const ws = new WeakSet();</code></pre><p>WeakSet 结构与 Set 类似，也是不重复的值的集合。但是，它与 Set 有两个区别。<br>WeakSet 的成员只能是对象，而不能是其他类型的值。<br>WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。</p><p><strong>WeakSet 结构有以下三个方法:</strong></p><p>WeakSet.prototype.add(value)：向 WeakSet 实例添加一个新成员。<br>WeakSet.prototype.delete(value)：清除 WeakSet 实例的指定成员。<br>WeakSet.prototype.has(value)：返回一个布尔值，表示某个值是否在 WeakSet 实例之中。</p><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应，是一种更完善的 Hash 结构实现。</p><p><strong>Map 结构的实例有以下属性和操作方法:</strong><br>（1）<code>size</code> 属性<br>size属性返回 Map 结构的成员总数。<br>（2）<code>Map.prototype.set(key, value)</code><br>set方法设置键名key对应的键值为value，然后返回整个 Map 结构。如果key已经有值，则键值会被更新，否则就新生成该键。<br>（3）<code>Map.prototype.get(key)</code><br>get方法读取key对应的键值，如果找不到key，返回undefined。<br>（4）<code>Map.prototype.has(key)</code><br>has方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。<br>（5）<code>Map.prototype.delete(key)</code><br>delete方法删除某个键，返回true。如果删除失败，返回false。<br>（6）<code>Map.prototype.clear()</code><br>clear方法清除所有成员，没有返回值。</p><p><strong>Map 结构原生提供三个遍历器生成函数和一个遍历方法:</strong></p><p><code>Map.prototype.keys()：</code>返回键名的遍历器。<br><code>Map.prototype.values()：</code>返回键值的遍历器。<br><code>Map.prototype.entries()：</code>返回所有成员的遍历器。<br><code>Map.prototype.forEach()：</code>遍历 Map 的所有成员。</p><h2 id="WeakMap"><a href="#WeakMap" class="headerlink" title="WeakMap"></a>WeakMap</h2><p>WeakMap结构与Map结构类似，也是用于生成键值对的集合。<br>WeakMap与Map的区别有两点。WeakMap只接受对象作为键名（null除外），不接受其他类型的值作为键名。WeakMap的键名所指向的对象，不计入垃圾回收机制。</p><h1 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h1><p>Proxy 用于修改某些操作的默认行为，等同于在语言层面做出修改，所以属于一种“元编程”（meta programming），即对编程语言进行编程。<br><code>Proxy.revocable()</code>方法返回一个可取消的 Proxy 实例。</p><h1 id="Reflect"><a href="#Reflect" class="headerlink" title="Reflect"></a>Reflect</h1><p>Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。Reflect对象的设计目的有这样几个：<br>（1） 将Object对象的一些明显属于语言内部的方法（比如Object.defineProperty），放到Reflect对象上。现阶段，某些方法同时在Object和Reflect对象上部署，未来的新方法将只部署在Reflect对象上。也就是说，从Reflect对象上可以拿到语言内部的方法。<br>（2） 修改某些Object方法的返回结果，让其变得更合理。<br>（3） 让Object操作都变成函数行为。<br>（4）Reflect对象的方法与Proxy对象的方法一一对应，只要是Proxy对象的方法，就能在Reflect对象上找到对应的方法。这就让Proxy对象可以方便地调用对应的Reflect方法，完成默认行为，作为修改行为的基础。 </p><h1 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h1><p>它是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。<br>Iterator 的作用有三个：一是为各种数据结构，提供一个统一的、简便的访问接口；二是使得数据结构的成员能够按某种次序排列；三是 ES6 创造了一种新的遍历命令for…of循环，Iterator 接口主要供for…of消费。</p><p><strong>Iterator 的遍历过程:</strong></p><p>（1）创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。<br>（2）第一次调用指针对象的next方法，可以将指针指向数据结构的第一个成员。<br>（3）第二次调用指针对象的next方法，指针就指向数据结构的第二个成员。<br>（4）不断调用指针对象的next方法，直到它指向数据结构的结束位置。</p><h1 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h1><p>Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。<br>Generator 函数有多种理解角度。语法上，首先可以把它理解成，Generator 函数是一个状态机，封装了多个内部状态。<br>执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。<br>形式上，Generator 函数是一个普通函数，但是有两个特征。<strong>一是，function关键字与函数名之间有一个星号；二是，函数体内部使用yield表达式，定义不同的内部状态.</strong><br>*<em>其中 * 用来表示函数为 Generator 函数，yield 用来定义函数内部的状态。*</em><br><code>Generator.prototype.throw()：</code>Generator 函数返回的遍历器对象，都有一个throw方法，可以在函数体外抛出错误，然后在 Generator 函数体内捕获。<br><code>Generator.prototype.return() ：</code>Generator 函数返回的遍历器对象，还有一个return()方法，可以返回给定的值，并且终结遍历 Generator 函数。</p><h1 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h1><p>async函数就是将 Generator 函数的星号（*）替换成async，将yield替换成await<br>async函数对 Generator 函数的改进，体现在以下四点。</p><p><strong>（1）内置执行器。</strong><br>Generator 函数的执行必须靠执行器，所以才有了co模块，而async函数自带执行器。也就是说，async函数的执行，与普通函数一模一样，只要一行。</p><pre><code>asyncReadFile();</code></pre><p>上面的代码调用了asyncReadFile函数，然后它就会自动执行，输出最后结果。这完全不像 Generator 函数，需要调用next方法。或者用co模块，才能真正执行，得到最后结果。<br><strong>（2）更好的语义。</strong><br>async和await，比起星号和yield，语义更清楚了。async表示函数里有异步操作，await表示紧跟在后面的表达式需要等待结果。<br><strong>（3）更广的适用性。</strong><br>co模块约定，yield命令后面只能是 Thunk 函数或 Promise 对象，而async函数的await命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时会自动转成立即 resolved 的 Promise 对象）。<br><strong>（4）返回值是 Promise。</strong><br>async函数的返回值是 Promise 对象，这比 Generator 函数的返回值是 Iterator 对象方便多了。你可以用then方法指定下一步的操作。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ES6 notes (part3)</title>
+      <link href="2022/03/28/ES6%20notes%20(part3)/"/>
+      <url>2022/03/28/ES6%20notes%20(part3)/</url>
+      
+        <content type="html"><![CDATA[<h2 id="函数的扩展"><a href="#函数的扩展" class="headerlink" title="函数的扩展"></a>函数的扩展</h2><ol><li>函数参数的默认值<br>ES6 允许为函数的参数设置默认值，即直接写在参数定义的后面。</li><li>rest 参数<br>ES6 引入 rest 参数（<strong>形式为…变量名</strong>），用于获取函数的多余参数，这样就不需要使用arguments对象了。<br><strong>rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错。</strong></li><li>严格模式<br>只要函数参数使用了默认值、解构赋值、或者扩展运算符，那么函数内部就不能显式设定为严格模式，否则会报错。</li><li>name 属性<br>如果将一个匿名函数赋值给一个变量，ES5 的name属性，会返回空字符串，而 ES6 的name属性会返回实际的函数名。</li><li>箭头函数<br>ES6 允许使用“箭头”（=&gt;）定义函数。<br>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。<br>箭头函数有几个使用注意点。<br>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。<br>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。<br>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。<br>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</li><li>尾调用优化<br>尾调用：某个函数的最后一步是调用另一个函数。<br>尾调用优化:保留内层函数的调用帧<br>尾递归:尾调用自身，就称为尾递归</li><li>函数参数的尾逗号<br>ES2017 允许函数的最后一个参数有尾逗号</li><li>Function.prototype.toString()<br>toString()方法返回函数代码本身</li><li>catch 命令的参数省略<br>ES2019 允许catch语句省略参数</li></ol><h2 id="数组的扩展"><a href="#数组的扩展" class="headerlink" title="数组的扩展"></a>数组的扩展</h2><ol><li>扩展运算符<br>扩展运算符（spread）是三个点（…）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。</li><li>Array.from()<br>Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。</li><li>Array.of()<br>Array.of方法用于将一组值，转换为数组。</li><li>数组实例的 copyWithin()<br>在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。</li><li>数组实例的 find() 和 findIndex()<br>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。<br>数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。</li><li>数组实例的 fill()<br>fill方法使用给定值，填充一个数组。</li><li>数组实例的 entries()，keys() 和 values()<br>keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。</li><li>数组实例的 includes()<br>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。</li><li>数组实例的 flat()，flatMap()<br>Array.prototype.flat()用于将嵌套的数组“拉平”，变成一维的数组。该方法返回一个新数组，对原数据没有影响。<br><code>flat()</code>默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将flat()方法的参数写成一个整数，表示想要拉平的层数，默认为1。<br><code>flatMap()</code>方法对原数组的每个成员执行一个函数（相当于执行Array.prototype.map()），然后对返回值组成的数组执行flat()方法。该方法返回一个新数组，不改变原数组。</li><li>数组的空位<br>数组的空位指，数组的某一个位置没有任何值。由于空位的处理规则非常不统一，所以建议避免出现空位。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ES6 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>antd组件英文改中文</title>
+      <link href="2022/03/28/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/"/>
+      <url>2022/03/28/antd%E7%BB%84%E4%BB%B6%E8%8B%B1%E6%96%87%E6%94%B9%E4%B8%AD%E6%96%87/</url>
+      
+        <content type="html"><![CDATA[<p>英文版<br><img src="https://img-blog.csdnimg.cn/20210106091533901.png"><br>需要加入的代码<br>1、引入中文包和ConfigProvid配置</p><pre><code>import zhCN from &#39;antd/es/locale/zh_CN&#39;;import &#123; ConfigProvider &#125; from &#39;antd&#39;</code></pre><p>2.用ConfigProvid包裹需要汉化的组件</p><pre><code> &lt;ConfigProvider locale=&#123;zhCN&#125;&gt; &lt;xxx组件&gt; &lt;/ConfigProvider&gt;</code></pre><p>效果（中文版）</p><p><img src="https://img-blog.csdnimg.cn/20210106092938861.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> antd </tag>
             
         </tags>
       
