@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vscode格式化失效问题, Banamebi">
+    <meta name="keywords" content="leaflet-地图去掉右上角图层, Banamebi">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vscode格式化失效问题 | Banamebi</title>
+    <title>leaflet-地图去掉右上角图层 | Banamebi</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vscode格式化失效问题</h1>
+                    <h1 class="description center-align post-title">leaflet-地图去掉右上角图层</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vscode/">
-                                <span class="chip bg-color">vscode</span>
+                            <a href="/tags/leaflet/">
+                                <span class="chip bg-color">leaflet</span>
                             </a>
                         
                     </div>
@@ -455,7 +455,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-28
+                    2022-04-14
                 </div>
                 
 
@@ -471,38 +471,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="setting-json"><a href="#setting-json" class="headerlink" title="setting.json"></a>setting.json</h2><p>除了一些必要的配置，如 <code>&quot;eslint.autoFixOnSave&quot;: true</code>, <code>&quot;editor.formatOnSave&quot;: true</code>,  <code>&quot;eslint.enable&quot;: true</code>,等，容易疏漏的有：</p>
-<pre><code>  &quot;eslint.options&quot;: &#123;
-      &quot;extensions&quot;: [
-          &quot;.js&quot;,
-          &quot;.jsx&quot;,
-          &quot;.vue&quot;,
-          &quot;.ts&quot;,
-          &quot;.tsx&quot;
-      ]
-  &#125;,</code></pre>
-<p>和</p>
-<pre><code> &quot;eslint.validate&quot;: [
-      &quot;javascript&quot;,
-      &quot;javascriptreact&quot;,
-      &#123;
-          &quot;language&quot;: &quot;vue&quot;,
-          &quot;autoFix&quot;: true
-      &#125;,
-      &#123;
-        &quot;language&quot;: &quot;html&quot;,
-        &quot;autoFix&quot;: true
-    &#125;,
-    &#123;
-        &quot;language&quot;: &quot;typescript&quot;,
-        &quot;autoFix&quot;: true
-    &#125;,
-    &#123;
-        &quot;language&quot;: &quot;typescriptreact&quot;,
-        &quot;autoFix&quot;: true
-    &#125;
-  ],</code></pre>
-<h2 id="shift-alt-F"><a href="#shift-alt-F" class="headerlink" title="shift+alt+F"></a>shift+alt+F</h2><p>选择格式化插件</p>
+                <p><strong>在getMap()里加入</strong></p>
+<pre><code>  document.getElementsByClassName(
+        &quot;leaflet-control-layers&quot;
+      )[0].style.visibility = &quot;hidden&quot;;</code></pre>
 
             </div>
             <hr/>
@@ -528,7 +500,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://banamebi.github.io/2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/">https://banamebi.github.io/2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</a>
+                    <a href="https://banamebi.github.io/2022/04/14/leaflet-%E5%9C%B0%E5%9B%BE%E5%8E%BB%E6%8E%89%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%9B%BE%E5%B1%82/">https://banamebi.github.io/2022/04/14/leaflet-%E5%9C%B0%E5%9B%BE%E5%8E%BB%E6%8E%89%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%9B%BE%E5%B1%82/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -566,8 +538,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vscode/">
-                                    <span class="chip bg-color">vscode</span>
+                                <a href="/tags/leaflet/">
+                                    <span class="chip bg-color">leaflet</span>
                                 </a>
                             
                         </div>
@@ -757,9 +729,63 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/04/14/leaflet-%E5%9C%B0%E5%9B%BE%E5%8E%BB%E6%8E%89%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%9B%BE%E5%B1%82/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="leaflet-地图去掉右上角图层">
+                        
+                        <span class="card-title">leaflet-地图去掉右上角图层</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            在getMap()里加入
+  document.getElementsByClassName(
+        &quot;leaflet-control-layers&quot;
+      )[0].style.visibility =
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8D%E4%B8%BA%E3%80%8C%E6%8A%80%E6%9C%AF%E3%80%8D%E3%81%AE%E9%AD%94%E6%B3%95/" class="post-category">
+                                    名为「技术」の魔法
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leaflet/">
+                        <span class="chip bg-color">leaflet</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/04/14/vue%E7%BB%84%E4%BB%B6%E4%B9%8Bel-tree%E3%80%81el-select%E3%80%81el-autocomplete%E3%80%81el-table%E7%AF%87/">
                     <div class="card-image">
@@ -780,9 +806,9 @@ methods部分
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -804,63 +830,6 @@ methods部分
                     
                     <a href="/tags/vue/">
                         <span class="chip bg-color">vue</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/28/%E9%A2%84%E9%98%B2%E8%80%81%E5%B9%B4%E7%97%B4%E5%91%86/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/24.png" class="responsive-img" alt="预防老年痴呆">
-                        
-                        <span class="card-title">预防老年痴呆</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            **.ssh**
- ~~id-rsa~~  ~~id-rsa.pub~~ 
-**cmd**
-git config --global user.name &#39; &#39;
-git config --global user.email &
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%90%8D%E4%B8%BA%E3%80%8C%E6%8A%80%E6%9C%AF%E3%80%8D%E3%81%AE%E9%AD%94%E6%B3%95/" class="post-category">
-                                    名为「技术」の魔法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>

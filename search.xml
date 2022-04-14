@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>leaflet-地图去掉右上角图层</title>
+      <link href="2022/04/14/leaflet-%E5%9C%B0%E5%9B%BE%E5%8E%BB%E6%8E%89%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%9B%BE%E5%B1%82/"/>
+      <url>2022/04/14/leaflet-%E5%9C%B0%E5%9B%BE%E5%8E%BB%E6%8E%89%E5%8F%B3%E4%B8%8A%E8%A7%92%E5%9B%BE%E5%B1%82/</url>
+      
+        <content type="html"><![CDATA[<p><strong>在getMap()里加入</strong></p><pre><code>  document.getElementsByClassName(        &quot;leaflet-control-layers&quot;      )[0].style.visibility = &quot;hidden&quot;;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> leaflet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue组件之el-tree、el-select、el-autocomplete、el-table篇</title>
+      <link href="2022/04/14/vue%E7%BB%84%E4%BB%B6%E4%B9%8Bel-tree%E3%80%81el-select%E3%80%81el-autocomplete%E3%80%81el-table%E7%AF%87/"/>
+      <url>2022/04/14/vue%E7%BB%84%E4%BB%B6%E4%B9%8Bel-tree%E3%80%81el-select%E3%80%81el-autocomplete%E3%80%81el-table%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-el-tree-多选-gt-单选"><a href="#1-el-tree-多选-gt-单选" class="headerlink" title="1.el-tree  多选-&gt;单选"></a>1.el-tree  多选-&gt;单选</h2><p><strong>html部分</strong></p><pre><code>&lt;el-tree @check=&quot;change&quot; @ref=&quot;treeRef&quot;&gt;&lt;/el-tree&gt;</code></pre><p><strong>methods部分</strong></p><pre><code>change(data,checked,indeterminate)&#123;this.$ref.treeRef.setCheckedkeys([]);this.$ref.treeRef.setCheckedkeys([data.id]);&#125;</code></pre><h2 id="2-el-select-选中option之后没有立即生效"><a href="#2-el-select-选中option之后没有立即生效" class="headerlink" title="2.el-select  选中option之后没有立即生效"></a>2.el-select  选中option之后没有立即生效</h2><p><strong>html部分</strong></p><pre><code>&lt;el-select @change=&quot;chooseChange&quot;</code></pre><p><strong>methods部分</strong></p><pre><code>chooseChange()&#123;this.$forceUpdate();&#125;</code></pre><h2 id="3-el-autocomplete-代替input-table的写法"><a href="#3-el-autocomplete-代替input-table的写法" class="headerlink" title="3.el-autocomplete 代替input+table的写法"></a>3.el-autocomplete 代替input+table的写法</h2><p><strong>html部分</strong></p><pre><code>      &lt;el-autocomplete        v-model=&quot;state&quot;        :fetch-suggestions=&quot;querySearchAsync&quot;        placeholder=&quot;请输入内容&quot;        style=&quot;width: 300px&quot;      &gt;&lt;/el-autocomplete&gt;</code></pre><p><strong>data部分</strong></p><pre><code>  filterStationList: [],  state: &quot;&quot;,  timeout: null,</code></pre><p><strong>mounted部分</strong></p><pre><code>  this.filterStationList = this.loadAll();</code></pre><p><strong>methods部分</strong></p><pre><code>    loadAll() &#123;      this.$Http(&quot;接口&quot;, &#123;&#125;, &quot;GET&quot;).then((res) =&gt; &#123;        return res;  //拿到需要搜索的列表数据      &#125;);    &#125;,    querySearchAsync(queryString, cb) &#123;      var filterStationList = this.filterStationList;      var results = queryString        ? filterStationList.filter(this.createFilter(queryString))        : [];      cb(results);      this.pointList = results;    &#125;,     createFilter(queryString) &#123;      return (state) =&gt; &#123;        return (          state.value.toLowerCase().indexOf(queryString.toLowerCase()) !== -1        );      &#125;;    &#125;,</code></pre><h2 id="4-el-table-双击内容变为输入框"><a href="#4-el-table-双击内容变为输入框" class="headerlink" title="4.el-table 双击内容变为输入框"></a>4.el-table 双击内容变为输入框</h2><p><strong>html部分</strong></p><pre><code>&lt;el-table @cell-dbclick=&quot;editData&gt;&lt;/el-table&gt;</code></pre><p><strong>methods部分</strong></p><pre><code>editData(row,column,cell,event)&#123;const str=`&lt;div&gt;&lt;input/&gt;&lt;div&gt;`event.target.innerHTML=strconsole.log(row,column,cell,event)//可以打印一下这四个值进行一系列操作&#125;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 名为「技术」の魔法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> element </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vscode格式化失效问题</title>
       <link href="2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/"/>
       <url>2022/03/28/vscode%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98/</url>
